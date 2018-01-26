@@ -1,0 +1,1 @@
+# Backoffice Configuration Validation

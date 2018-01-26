@@ -29,11 +29,11 @@ public class MyDriver implements IDriver {
 ## Driver Interfaces
 To provide certain functionality which can be used by unTill(r) POS, driver must declare that it supports one or more interfaces derived from `IDriverInterface`:
 - [IEft](eft) - for handling EFT operations (payments by cards)
-- `IBillsHandler` - handling bill operations (bill closed, bill re-opened, proforma printed, bill re-printed)
-- `IFiscalPrinter` - fiscal printer operations
-- `IHotelInterface` - connection to a hotel management systems
-- `IHasPeriodicalTasks` - implement to support periodical background tasks
-- `IConfigurationValidation` - implement if you need to additionally validate driver configuration before it is saved in backoffice.
+- [IBillsHandler](bills_handling) - handling bill operations (bill closed, bill re-opened, proforma printed, bill re-printed)
+- [IFiscalPrinter](fiscal_printers) - fiscal printer operations
+- [IHotelInterface](hotel_interface) - connection to a hotel management systems
+- [IHasPeriodicalTasks](periodical_tasks) - implement to support periodical background tasks
+- [IConfigurationValidation](configuration_validation) - implement if you need to additionally validate driver configuration before it is saved in backoffice.
 
 Declaration of supported interfaces is made by `init` method which is called at driver initialization stage. Driver must return a map of supported interfaces:
 ```java
@@ -50,128 +50,6 @@ public Map<Class<? extends IDriverInterface>, IDriverInterface> init(
 ```
 
 Depending on interfaces provided by driver, unTill(r) POS calls corresponding interface methods in appropriate cases.
-
-### IEft
-This interface allows handling card payment operations:
-```java
-
-```
-
-### IHotelInterface
-Handles interface to hotel management systems: reading guest information and charging "room"-payments. 
-
-`getGuests` method can be called in two cases:
-1. When waiter calls 'Get HC Client info' function in unTill(r) POS to identify guest.
-2. When room-payment must be handled and guest is not identified yet. In this case unTill(r) POS calls this method automatically.
-
-A guest is identified in requests by an instance of class derived from `GuestLookupCriteria`:
-- `GuestLookupByRoom` - room number provided
-- `GuestLookupByReservationId` - reservation Id provided 
-- `GuestLookupCustom` - custom criteria provided (see below).
-Returning empty array means no guests found for provided criteria. If `getGuests` method returns more than one `HotelGuest` objects, POS asks to choose one from the list of returned. Note that `HotelGuest` must have either `room` or `reservationId` filled, otherwise it is not possible to identify this client in POS and guest can not be charged.
-
-`charge` method called only after client selected in POS. Either `GuestLookupByReservationId` or `GuestLookupByRoom` criteria passed to this method, depending if client has `reservationId` filled or not.
-
-```java
-public class MyDriver implements IDriver, IHotelInterface {}
-    // ...
-    @Override
-    public HotelChargeResult charge(DriverConfiguration cfg, HotelChargeRequest request) throws EHotelGuestNotFound {
-        String resvId = ((GuestLookupByReservationId)request.getCriteria()).
-                getReservationId();
-        MyServerConnection conn = getConnection(cfg);
-        if (request.getRequestKind() < 0) // Reopen bill
-            conn.refund(resvId, request.getData());
-        else
-            conn.charge(resvId, request.getData());
-        return new HotelChargeResult(); // empty result
-    }
-}
-```
-
-#### Hotel custom criterias
-It is possible to declare also that your driver supports requesting clients by custom criterias, like name, phone, card number, etc. To allow this, driver must support IHotelSupportsCustomLookupCriterias interface:
-```java
-public class MyDriver implements IDriver, IHotelInterface,  
-        IHotelSupportsCustomLookupCriterias {
-
-    @Override
-    public Map<Class<? extends IDriverInterface>, IDriverInterface> init(IDriverContext context) {
-        return DriverInterfaces.map(
-                IHotelInterface.class, this, IHotelSupportsCustomLookupCriterias.class, this);
-    }
-
-    @Override
-    public CustomLookupCriterias getCustomLookupCriterias(DriverConfiguration cfg) {
-        CustomLookupCriterias criterias = new CustomLookupCriterias();
-        criterias.getItems().put(MyDriverConst.CRITERIA_NAME, "Name");
-        criterias.getItems().put(MyDriverConst.CRITERIA_CARD, "CustomerCard");
-
-        // We want this field to be filled automatically from MSR
-        criterias.setHardwareInputCriteriaKey(MyDriverConst.CRITERIA_CARD); 
-        return criterias;
-    }    
-
-    @Override
-    public GetHotelGuestResult getGuests(DriverConfiguration cfg,
-            GetHotelGuestRequest request) {
-        if (request.getCriteria() instanceof GuestLookupCustom) {
-            GuestLookupCustom c = (GuestLookupCustom)request.getCriteria();
-            if (MyDriverConst.CRITERIA_CARD.equals(c.getKey())) {
-                String card = c.getValue();
-                // ...lookup by card...
-            } else {
-                String name = c.getValue();
-                // ...lookup by name...
-            }
-        } else {
-            // ...lookup by standard criterias...
-        }
-    }    
-
-}
-```
-
-### Fiscal Printers
-
-### Bills Handling
-
-Bills handling driver gets called when one of the following events happens:
-- Bill printed
-- Bill re-opened
-- Bill re-printed
-- Proforma printed
-
-Bills handling drivers support asynchronous error handling, for the cases 
-when operation in case of failure should not block POS flow. To handle error asynchronously, Bills Handling driver may throw one of two exceptions:
-- `EBillErrorAsyncResolution` - when this error thrown, POS continues normal flow, in one minute the same driver method is called again with the same arguments, in case of same failure error show in in POS allowing user to choose what to do:
-  - Retry - another attempt of the same operation
-  - Ignore - cancel this job, do not make more attempts of this operation
-- `EBillErrorAsyncRetry` - POS continues normal flow, in one minute the same driver method is called again with the same arguments.
-
-```java
-public class MyBillsHandler implements IBillsHandler {    
-    // ...
-
-    @Override
-    public BillsHandlerResult operation(DriverConfiguration cfg, BillsHandlerRequest request) {
-        if (request instanceof BillClosingRequest) {
-            try {
-                getConnection(cfg).sendStatistics(request.getBill());
-                return new BillsHandlerResult(); // Return empty result
-            } catch (IOException e) {
-                log.error("Error sending statistics", e);
-                throw new EBillErrorAsyncResolution(e); 
-            }
-        }
-        return null;
-    }
-}
-```
-
-### Periodical Tasks
-
-### Parameters Validation
 
 ## Development 
 
