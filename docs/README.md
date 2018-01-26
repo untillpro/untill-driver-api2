@@ -1,5 +1,5 @@
 # API Basics
-Untill Driver API2 is a Java library containing API of unTill(r) HoReCa software drivers. Below is a brief description of this API. This API is a part of [UntillSDK](/untill_sdk) which should be used for developing unTill(r) drivers and provides tools for driver building automation. More details on API classes can be found in Javadoc. 
+Untill Driver API2 is a Java library containing API of unTill(r) HoReCa software drivers. Below is a brief description of API. This API is a part of [UntillSDK](/untill_sdk) which should be used for developing unTill(r) drivers and provides tools for driver building automation. More details on API classes can be found in Javadoc. 
 
 # Drivers in General 
 unTill(r) drivers are folders in **UNTILL_HOME/plugins/drivers** with at least one JAR-archive having `Main-Class` declared in MANIFEST.MF file pointing to a class which implements `IDriver` interface. Any other JARs in the same folder are automatically loaded and available to the driver classes. 
@@ -123,9 +123,11 @@ File keystore = new File(context.getAbsolutePath("keystore.jks"));
 ```
 
 ### Error handling
+
 At any time driver may throw `java.lang.RuntimeException` to indicate that there was an processing error. A POS operation will be interrupted and error message from exception object will be shown in POS. 
 
 ## unTIll(r) APIs
+
 unTill(r) API is an interface providing some additional predefined functionality. API can be obtained using `IDriverContext.getApi` method. Below is the list of APIs available to drivers:
 - `IUntillTimeApi` requesting system timezone;
 - `IUntillCurrencyApi` working with currency, getting main currency information;
@@ -141,4 +143,34 @@ TimeZone tz = time.getSystemTimeZone();
 
 ## Testing
 
-### Emulation mode
+Driver may include JUnit tests which are executed automatically when driver is being built by SDK. 
+
+Driver may also  support so called "emulation mode" which is enabled in unTill by putting a line in **UNTILL_HOME/untill.ini**:
+```
+[common]
+EmulateDevices=1
+```
+
+When this mode enabled, driver should emulate activity and return some predefined dummy results. This mode may be useful for making some tests before going live:
+
+```java
+IDriverContext ctx;
+
+public MyEft(IDriverContext ctx) {
+    this.ctx = ctx;
+}
+
+@Override
+public EftResult operation(DriverConfiguration cfg, EftRequest request) {
+   
+    if (request instanceof EftPaymentRequest) {         
+        if (ctx.isEmulationModeEnabled())
+            return getEmulatedPaymentResult();
+        else
+            return handlePayment((EftPaymentRequest)request);
+    }
+    //...
+    throw new RuntimeException("Request not supported");
+}
+```
+
