@@ -28,7 +28,7 @@ public class MyDriver implements IDriver {
 
 ## Driver Interfaces
 To provide certain functionality which can be used by unTill(r) POS, driver must declare that it supports one or more interfaces derived from `IDriverInterface`:
-- [IEft](docs/eft) - for handling EFT operations (payments by cards)
+- [IEft](docs/eft.md) - for handling EFT operations (payments by cards)
 - [IBillsHandler](docs/bills_handling) - handling bill operations (bill closed, bill re-opened, proforma printed, bill re-printed)
 - [IFiscalPrinter](docs/fiscal_printers) - fiscal printer operations
 - [IHotelInterface](docs/hotel_interface) - connection to a hotel management systems
