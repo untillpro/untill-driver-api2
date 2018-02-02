@@ -29,11 +29,11 @@ public class MyDriver implements IDriver {
 ## Driver Interfaces
 To provide certain functionality which can be used by unTill(r) POS, driver must declare that it supports one or more interfaces derived from `IDriverInterface`:
 - [IEft](docs/eft.md) - for handling EFT operations (payments by cards)
-- [IBillsHandler](docs/bills_handling) - handling bill operations (bill closed, bill re-opened, proforma printed, bill re-printed)
-- [IFiscalPrinter](docs/fiscal_printers) - fiscal printer operations
-- [IHotelInterface](docs/hotel_interface) - connection to a hotel management systems
-- [IHasPeriodicalTasks](docs/periodical_tasks) - implement to support periodical background tasks
-- [IConfigurationValidation](docs/configuration_validation) - implement if you need to additionally validate driver configuration before it is saved in backoffice.
+- [IBillsHandler](docs/bills_handling.md) - handling bill operations (bill closed, bill re-opened, proforma printed, bill re-printed)
+- [IFiscalPrinter](docs/fiscal_printers.md) - fiscal printer operations
+- [IHotelInterface](docs/hotel_interface.md) - connection to a hotel management systems
+- [IHasPeriodicalTasks](docs/periodical_tasks.md) - implement to support periodical background tasks
+- [IConfigurationValidation](docs/configuration_validation.md) - implement if you need to additionally validate driver configuration before it is saved in backoffice.
 
 Declaration of supported interfaces is made by `init` method which is called at driver initialization stage. Driver must return a map of supported interfaces:
 ```java
@@ -64,9 +64,11 @@ unTill(r) POS loads and creates one instance of your driver, calling it's method
     
     private synchronized EftResult sendRequest(String comPort, 
             EftRequest request) {
-        ...
+        // TODO: thread-safe method body
     }
 ```
+
+When developer expects some requests to be executed for a long time, [IDriverProgress](docs/progress.md) may be used for displaying execution progress and response to user "Cancel" action.
 
 ### Driver finalization
 Method `finit()` called just before driver is unloaded and unTill(r) JServer stopped. Put any code here to free allocated resources used by your driver, close opened connections, etc.
@@ -103,15 +105,6 @@ To set up logging level, add line(s) in <UNTILL_HOME>/log4j.properties file:
 log4j.logger.com.untill.drivers.mypackage=DEBUG
 log4j.logger.com.untill.drivers.mypackage.MyDriver=TRACE
 ```
-
-### Execution Progress
-Some driver functions execution may take long time. There is a possibility to show progress status message, or interrupt execution from unTill(r) side (cancel operation by waiter). Use `IDriverProgress` interface which is available from `IDriverContext.getProgress()` and provides 2 methods:
-- `isCancelRequested` - returns true when user pressed "Cancel" in POS progress dialog;
-- `showProgressMessage` - shows text message in POS progress dialog
-```java
-
-```
-
 
 ### Timeouts
 If unTill(r) doesn't receive answer from driver in 90 seconds, this call is cancelled and error shown in unTill. Driver developer should take care that functions doesn’t consume more time, and any communication from driver to external interface also finishes before timeout reached. Otherwise it may happen that unTill ends with timeout and starts new request, and driver is still busy with previous call.
