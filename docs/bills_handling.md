@@ -1,4 +1,4 @@
-# Bills Handling
+# Bills Handler - IBillsHandler
 
 Bills handling driver gets called when one of the following events happens:
 - Bill printed

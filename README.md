@@ -28,11 +28,12 @@ public class MyDriver implements IDriver {
 
 ## Driver Interfaces
 To provide certain functionality which can be used by unTill(r) POS, driver must declare that it supports one or more interfaces derived from `IDriverInterface`:
-- [IEft](docs/eft.md) - for handling EFT operations (payments by cards)
-- [IBillsHandler](docs/bills_handling.md) - handling bill operations (bill closed, bill re-opened, proforma printed, bill re-printed)
-- [IFiscalPrinter](docs/fiscal_printers.md) - fiscal printer operations
-- [IHotelInterface](docs/hotel_interface.md) - connection to a hotel management systems
-- [IHasPeriodicalTasks](docs/periodical_tasks.md) - implement to support periodical background tasks
+- [IEft](docs/eft.md) - for handling EFT operations (payments by cards).
+- [IBillsHandler](docs/bills_handling.md) - handling bill operations (bill closed, bill re-opened, proforma printed, bill re-printed).
+- [IFiscalPrinter](docs/fiscal_printers.md) - fiscal printer operations.
+- [IHotelInterface](docs/hotel_interface.md) - connection to a hotel management systems.
+- [IFingerPrintReader](docs/finger_print_reader.md) - finger print reader interface.
+- [IHasPeriodicalTasks](docs/periodical_tasks.md) - implement to support periodical background tasks.
 - [IConfigurationValidation](docs/configuration_validation.md) - implement if you need to additionally validate driver configuration before it is saved in backoffice.
 
 Declaration of supported interfaces is made by `init` method which is called at driver initialization stage. Driver must return a map of supported interfaces:
@@ -54,7 +55,7 @@ Depending on interfaces provided by driver, unTill(r) POS calls corresponding in
 ## Development 
 
 ### Lifecycle and Multithreading
-unTill(r) POS loads and creates one instance of your driver, calling it's methods when POS needs to handle certain operation. It is possible that methods of your driver called from different threads, thus you must take care that your driver is thread safe, if required:
+unTill(r) POS loads and creates one instance of the driver, calling it's methods when POS needs to handle certain operation. It is possible that methods of your driver called from different threads, thus you must take care that your driver is thread safe, if needed:
 ```java
     @Override
     public EftResult operation(DriverConfiguration cfg, EftRequest request) {

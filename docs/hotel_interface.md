@@ -1,4 +1,4 @@
-# IHotelInterface
+# Hotel Interface - IHotelInterface
 
 Handles interface to hotel management systems: reading guest information and charging "room"-payments. 
 
