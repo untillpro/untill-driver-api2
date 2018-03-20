@@ -88,7 +88,8 @@ There is a way to customize some default EFT driver behaviour:
   }
 ```
 
-- `setWaitTimeout` overrides default 90 second timeout.
-- `setCancellingByWaiterSupported` return true if you want to support cancelling from POS. In this way unTill(r) shows "Cancel" button on "Wait please" popup and sends cancel signal to EFT driver which can be caught using [IDriverProgress](progress.md) interface.
-- `setTipsReplaced` - indicates if each `EftTipsRequest` operation replaces previous tips amount for the transaction (true) or adds amount (false).
-- `setVoidWhenSameDay` indicates if void opetaion can only be executed within the same working hours (true). Otherwise (false) it can be executed at anytime.
+- `waitTimeout` overrides default 90 second timeout.
+- `vancellingByWaiterSupported` return true if you want to support cancelling from POS. In this way unTill(r) shows "Cancel" button on "Wait please" popup and sends cancel signal to EFT driver which can be caught using [IDriverProgress](progress.md) interface.
+- `tipsReplaced` - indicates if each `EftTipsRequest` operation replaces previous tips amount for the transaction (true) or adds amount (false).
+- `voidWhenSameDay` indicates if "void" operation must be used instead of "return" when re-opening bill within the same working hours (true). Otherwise (false) "return" operation executed.
+- `tipsIncludedInReturn` - **true** when tips amount included (if exists) in RETURN or VOID request

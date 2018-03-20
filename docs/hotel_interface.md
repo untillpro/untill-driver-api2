@@ -74,3 +74,8 @@ public class MyDriver implements IDriver, IHotelInterface,
 }
 ```
 
+## Get Room Information
+Driver may introduce `IHotelSupportsRoomInformation` interface which allows to handle "Get Room Information" operation.
+
+## Support "End Of Day" 
+Driver may introduce `IHotelSupportsEndOfDay` interface which allows to handle "End Of Day" request.
