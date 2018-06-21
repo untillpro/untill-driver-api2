@@ -11,6 +11,7 @@ import java.util.Map;
  */
 
 public class PaymentItem {
+	private long paymentId;
 	private int paymentKind;
 	private int paymentNumber;
 	private String paymentName;
@@ -30,6 +31,14 @@ public class PaymentItem {
 		this.paymentName = paymentName;
 		this.amount = amount;
 		this.customerAmount = customerAmount;
+	}
+
+	public long getPaymentId() {
+		return paymentId;
+	}
+
+	public void setPaymentId(long paymentId) {
+		this.paymentId = paymentId;
 	}
 
 	/**
