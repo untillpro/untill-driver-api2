@@ -1,6 +1,8 @@
 package com.untill.driver.interfaces.bills;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Payment item which includes payment information.
@@ -16,6 +18,7 @@ public class PaymentItem {
 	private BigDecimal customerAmount;
 	private String currencyDigitalCode;
 	private String currencyCharCode;
+	private Map<String, String> data = new HashMap<>();
 
 	public PaymentItem() {
 	}
@@ -27,6 +30,17 @@ public class PaymentItem {
 		this.paymentName = paymentName;
 		this.amount = amount;
 		this.customerAmount = customerAmount;
+	}
+
+	/**
+	 * @return Returns map of data associated with this payment item
+	 */
+	public Map<String, String> getData() {
+		return data;
+	}
+
+	public void setData(Map<String, String> data) {
+		this.data = data;
 	}
 
 	/**
