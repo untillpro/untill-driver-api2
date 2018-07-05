@@ -1,5 +1,5 @@
 # API Basics
-Untill Driver API2 is a Java library containing API of unTill(r) Hospitality software drivers. Below is a brief description of API. This API is a part of [UntillSDK](/untill_sdk) which should be used for developing unTill(r) drivers and provides tools for driver building automation. More details on API classes can be found in Javadoc. 
+Untill Driver API2 is a Java library containing API of unTill(r) Hospitality software drivers. Below is a brief description of API. This API is a part of [Untill Driver DevKit](https://github.com/untillpro/untill-driver-devkit) which should be used for developing unTill(r) drivers and provides tools for driver building automation. More details on API classes can be found in Javadoc. 
 
 # Drivers in General 
 unTill(r) drivers are folders in **UNTILL_HOME/plugins/drivers** with at least one JAR-archive having `Main-Class` declared in MANIFEST.MF file pointing to a class which implements `IDriver` interface. Any other JARs in the same folder are automatically loaded and available to the driver classes. 
