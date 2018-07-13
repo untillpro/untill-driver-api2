@@ -72,10 +72,16 @@ public class EndOfDayPaymentItem {
 		this.totalAmount = totalAmount;
 	}
 
+	/**
+	 * @deprecated Use {@link EndOfDayExtraItem} with kind "tip"
+	 */
 	public BigDecimal getTotalTipAmount() {
 		return totalTipAmount;
 	}
 
+	/**
+	 * @deprecated Use {@link EndOfDayExtraItem} with kind "tip"
+	 */
 	public void setTotalTipAmount(BigDecimal totalTipAmount) {
 		this.totalTipAmount = totalTipAmount;
 	}
