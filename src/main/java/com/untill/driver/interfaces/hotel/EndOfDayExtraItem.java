@@ -16,6 +16,8 @@ public class EndOfDayExtraItem {
 
 	private int salesAreaNumber;
 
+	private String salesAreaName;
+
 	/**
 	 * @return Returns item kind: "tip" means total tips over the period
 	 */
@@ -49,6 +51,14 @@ public class EndOfDayExtraItem {
 
 	public void setSalesAreaNumber(int salesAreaNumber) {
 		this.salesAreaNumber = salesAreaNumber;
+	}
+
+	public String getSalesAreaName() {
+		return salesAreaName;
+	}
+
+	public void setSalesAreaName(String salesAreaName) {
+		this.salesAreaName = salesAreaName;
 	}
 
 }
