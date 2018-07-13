@@ -16,6 +16,8 @@ public class EndOfDayData {
 
 	private List<EndOfDayTurnoverItem> turnover = new ArrayList<>();
 
+	private List<EndOfDayExtraItem> extra = new ArrayList<>();
+
 	private List<EndOfDayPaymentItem> payments = new ArrayList<>();
 
 	/**
@@ -69,5 +71,19 @@ public class EndOfDayData {
 	public void setPayments(List<EndOfDayPaymentItem> payments) {
 		this.payments = payments;
 	}
+
+	/**
+	 * @return Returns the list of extra items over the period
+	 * @see EndOfDayExtraItem
+	 */
+	public List<EndOfDayExtraItem> getExtra() {
+		return extra;
+	}
+
+	public void setExtra(List<EndOfDayExtraItem> extra) {
+		this.extra = extra;
+	}
+	
+	
 
 }
