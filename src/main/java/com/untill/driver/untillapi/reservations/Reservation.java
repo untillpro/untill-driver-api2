@@ -32,4 +32,124 @@ public class Reservation {
 	
 	String extraData;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getReference() {
+		return reference;
+	}
+
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+
+	public Integer getTableNumber() {
+		return tableNumber;
+	}
+
+	public void setTableNumber(Integer tableNumber) {
+		this.tableNumber = tableNumber;
+	}
+
+	public Long getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(Long clientId) {
+		this.clientId = clientId;
+	}
+
+	public Long getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
+
+	public Long getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(Long updateTime) {
+		this.updateTime = updateTime;
+	}
+
+	public Long getCloseTime() {
+		return closeTime;
+	}
+
+	public void setCloseTime(Long closeTime) {
+		this.closeTime = closeTime;
+	}
+
+	public ReservationStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(ReservationStatus status) {
+		this.status = status;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public ReservationOrigin getOrigin() {
+		return origin;
+	}
+
+	public void setOrigin(ReservationOrigin origin) {
+		this.origin = origin;
+	}
+
+	public Integer getPersons() {
+		return persons;
+	}
+
+	public void setPersons(Integer persons) {
+		this.persons = persons;
+	}
+
+	public Integer getChildren() {
+		return children;
+	}
+
+	public void setChildren(Integer children) {
+		this.children = children;
+	}
+
+	public String getClientInfo() {
+		return clientInfo;
+	}
+
+	public void setClientInfo(String clientInfo) {
+		this.clientInfo = clientInfo;
+	}
+
+	public String getClientContact() {
+		return clientContact;
+	}
+
+	public void setClientContact(String clientContact) {
+		this.clientContact = clientContact;
+	}
+
+	public String getExtraData() {
+		return extraData;
+	}
+
+	public void setExtraData(String extraData) {
+		this.extraData = extraData;
+	}
+
 }
