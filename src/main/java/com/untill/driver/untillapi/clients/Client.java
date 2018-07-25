@@ -34,7 +34,7 @@ public class Client {
 	
 	private Long lastUpdate;
 	
-	private Boolean active;
+	private Boolean active = true;
 
 	public Boolean isActive() {
 		return active;

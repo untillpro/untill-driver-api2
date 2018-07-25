@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.untill.driver.IDriverContext;
 import com.untill.driver.untillapi.IUntillApi;
-import com.untill.driver.untillapi.countries.Country;
 
 /**
  * UntillAPI for working with Clients

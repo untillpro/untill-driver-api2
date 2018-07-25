@@ -10,7 +10,7 @@ public class Country {
 
 	private CountryKind kind;
 	
-	private Boolean active;
+	private Boolean active = true;
 
 	
 	public Boolean isActive() {
