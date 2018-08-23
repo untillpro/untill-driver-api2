@@ -15,7 +15,7 @@ public interface IUntillReservationsApi extends IUntillApi {
 	/**
 	 * @return Returns reservations by reference
 	 */
-	public List<Reservation> getReservation(String reference);
+	public List<Reservation> getReservations(String reference);
 	
 	/**
 	 * Inserts or updates reservation in database. When "id" is null, item inserted, otherwise updated
