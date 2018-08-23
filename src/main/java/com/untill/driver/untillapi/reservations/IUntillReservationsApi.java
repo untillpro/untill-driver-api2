@@ -1,5 +1,7 @@
 package com.untill.driver.untillapi.reservations;
 
+import java.util.List;
+
 import com.untill.driver.IDriverContext;
 import com.untill.driver.untillapi.IUntillApi;
 
@@ -11,9 +13,9 @@ import com.untill.driver.untillapi.IUntillApi;
 public interface IUntillReservationsApi extends IUntillApi {
 	
 	/**
-	 * @return Returns reservation by it's reference
+	 * @return Returns reservations by reference
 	 */
-	public Reservation getReservation(String reference);
+	public List<Reservation> getReservation(String reference);
 	
 	/**
 	 * Inserts or updates reservation in database. When "id" is null, item inserted, otherwise updated
