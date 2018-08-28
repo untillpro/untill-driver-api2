@@ -19,7 +19,8 @@ public interface IUntillClientsApi extends IUntillApi {
 	/**
 	 * Inserts or updates client in database. When "id" is null, item inserted, otherwise updated
 	 * @param item
+	 * @return Returns item ID
 	 */
-	public void saveClient(Client item);
+	public Long saveClient(Client item);
 
 }
