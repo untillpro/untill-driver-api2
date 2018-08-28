@@ -20,7 +20,8 @@ public interface IUntillReservationsApi extends IUntillApi {
 	/**
 	 * Inserts or updates reservation in database. When "id" is null, item inserted, otherwise updated
 	 * @param item Reservation to insert or update
+	 * @return Returns item ID
 	 */
-	public void saveReservation(Reservation item);
+	public Long saveReservation(Reservation item);
 
 }

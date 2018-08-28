@@ -20,7 +20,8 @@ public interface IUntillCountriesApi extends IUntillApi {
 	/**
 	 * Inserts or updates country in database. When "id" is null, item inserted, otherwise updated
 	 * @param item Country to insert or update
+	 * @return Returns item ID
 	 */
-	public void saveCountry(Country item);
+	public Long saveCountry(Country item);
 
 }
