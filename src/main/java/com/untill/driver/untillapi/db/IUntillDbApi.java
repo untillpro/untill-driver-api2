@@ -13,6 +13,11 @@ public interface IUntillDbApi extends IUntillApi {
 	/**
 	 * @return Generates and returns the next ID in current database
 	 */
-	int getNextId();
+	Long getNextId();
+	
+	/**
+	 * @return Returns GUID of the current database
+	 */
+	String getGuid();
 
 }
