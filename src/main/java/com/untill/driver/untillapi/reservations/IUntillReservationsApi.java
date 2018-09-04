@@ -38,7 +38,5 @@ public interface IUntillReservationsApi extends IUntillApi {
 	 * @return List of reservations
 	 */
 	public List<Reservation> getReservations(Long updatedSince);
-	
-	public Reservation getReservation(Long id);
 
 }
