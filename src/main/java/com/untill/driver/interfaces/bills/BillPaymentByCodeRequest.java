@@ -10,7 +10,19 @@ public class BillPaymentByCodeRequest extends BillsHandlerRequest {
 
 	String code;
 	
-	String splitInfo;
+	private boolean billSplit;
+
+	/**
+	 * @return Returns true if bill was splitted
+	 */
+	public boolean isBillSplit() {
+		return billSplit;
+	}
+
+	public void setBillSplit(boolean billSplit) {
+		this.billSplit = billSplit;
+	}
+
 
 	/**
 	 * @return Returns the code which was typed or scanned in POS when user executed "Request Payment by Code" action in POS
@@ -21,17 +33,6 @@ public class BillPaymentByCodeRequest extends BillsHandlerRequest {
 
 	public void setCode(String code) {
 		this.code = code;
-	}
-
-	/**
-	 * @return Returns non-null when bill was splitted
-	 */
-	public String getSplitInfo() {
-		return splitInfo;
-	}
-
-	public void setSplitInfo(String splitInfo) {
-		this.splitInfo = splitInfo;
 	}
 	
 }
