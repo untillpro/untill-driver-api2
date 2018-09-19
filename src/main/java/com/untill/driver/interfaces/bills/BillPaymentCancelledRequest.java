@@ -6,6 +6,6 @@ package com.untill.driver.interfaces.bills;
  * @see IBillsHandler
  * @see BillsHandlerRequest
  */
-public class BillPaymentCancelled extends BillsHandlerRequest {
+public class BillPaymentCancelledRequest extends BillsHandlerRequest {
 
 }
