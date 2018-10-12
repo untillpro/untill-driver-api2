@@ -168,3 +168,5 @@ public EftResult operation(DriverConfiguration cfg, EftRequest request) {
 }
 ```
 
+## Migration from API1
+[Instruction](docs/migration.md)
