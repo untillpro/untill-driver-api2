@@ -13,4 +13,8 @@ public abstract class UntillProperties {
 	 */
 	public static final String VAT_TYPE = "restaurant.vatType";
 
+	/**
+	 * Returns the license Uid, or null when no license loaded
+	 */
+	public static final String LICENSE_UID = "untill.licenseUid";
 }
