@@ -13,7 +13,25 @@ import com.untill.driver.interfaces.DriverResult;
 public class EftResult extends DriverResult {
 
 	private Map<String, String> data = new HashMap<>();
+	
 	private int transactionResult;
+	
+	private String displayMessage;
+
+	/**
+	 * @return Returns the message to display in POS
+	 */
+	public String getDisplayMessage() {
+		return displayMessage;
+	}
+
+	/**
+	 * Sets the message to display in POS
+	 * @param displayMessage Message to display in POS
+	 */
+	public void setDisplayMessage(String displayMessage) {
+		this.displayMessage = displayMessage;
+	}
 
 	public EftResult() {
 	}
