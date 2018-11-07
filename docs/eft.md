@@ -51,6 +51,9 @@ Sometimes you receive a pre-formatted multiline receipt from the EFT interface w
 A good solution would be to return this ticket(s) to unTill for saving and printing. 
 When you configure EFT driver in unTill(r) Beckoffice, there is a setting called "EFT Receipt". If you set this property, the specified layout will be printed either after each EFT operation, or declined EFT operations only (as you choose). To configure this layout, use fields from "EFT Payment Receipt" unTill(r) dataset. It shows all the data from `EftResult.data` map returned by the EFT driver, so you can display pre-formatted receipts using `NV.val(map, key)` function on the ticket. Option "Multiline" must be enabled for that field on the ticket.
 
+### Showing POS message
+There is a possibility to show some text in POS after `EftPaymentRequest` or `EftReturnRequest` processed. Use `displayMessage` property of the `EftResult` class. When driver returns non-null value, POS shows the screen with text and "Ok" button.
+
 ## Custom commands
 There is a way to execute any custom command if you need this in your interface: re printing last ticket, closing the day, etc. 
 
