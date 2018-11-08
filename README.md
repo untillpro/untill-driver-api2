@@ -168,5 +168,12 @@ public EftResult operation(DriverConfiguration cfg, EftRequest request) {
 }
 ```
 
+## unTill Properties
+`IDriverContext` provides method for reading some unTill(r) configuration properties:
+```java
+String unTillVersion = context.getProperty(UntillProperties.UNTILL_VERSION);
+String licenseUid = context.getProperty(UntillProperties.LICENSE_UID);
+```
+
 ## Migration from API1
 [Instruction](docs/migration.md)
