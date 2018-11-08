@@ -31,6 +31,26 @@ public class Reservation {
 	String clientContact;
 	
 	String extraData;
+	
+	ReservationCancelReason cancelReason;
+	
+	Long userId;
+
+	public ReservationCancelReason getCancelReason() {
+		return cancelReason;
+	}
+
+	public void setCancelReason(ReservationCancelReason cancelReason) {
+		this.cancelReason = cancelReason;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 
 	public Long getId() {
 		return id;
