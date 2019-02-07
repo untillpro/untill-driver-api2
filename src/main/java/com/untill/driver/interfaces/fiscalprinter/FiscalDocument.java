@@ -41,6 +41,15 @@ public class FiscalDocument {
 	private List<FiscalItem> items;
 	private List<FiscalPayment> payments;
 	private String comments;
+	private String pcName;
+
+	public String getPcName() {
+		return pcName;
+	}
+
+	public void setPcName(String pcName) {
+		this.pcName = pcName;
+	}
 
 	public FiscalDocument() {
 	}
@@ -57,7 +66,7 @@ public class FiscalDocument {
 				+ ", serviceChargePercent=" + serviceChargePercent + ", serviceChargeDescription="
 				+ serviceChargeDescription + ", customerName=" + customerName + ", customerNumber=" + customerNumber
 				+ ", customerExempted=" + customerExempted + ", customerTaxId=" + customerTaxId + ", items=" + items
-				+ ", payments=" + payments + ", comments=" + comments + "]";
+				+ ", payments=" + payments + ", comments=" + comments + ", pcName=" + pcName + "]";
 	}
 
 	public Date getTimestamp() {
