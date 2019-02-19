@@ -1,6 +1,8 @@
 package com.untill.driver.interfaces.bills;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class representing a result of "Request Payment by Code" action in POS, handled by {@link IBillsHandler}}
@@ -17,6 +19,23 @@ public class BillPaymentByCodeResult extends BillsHandlerResult {
 	BigDecimal tip;
 	
 	String displayText;
+	
+	List<BillDiscountedItem> discountedItems = new ArrayList<>();
+
+	/**
+	 * @return Returns the list of discounted items
+	 */
+	public List<BillDiscountedItem> getDiscountedItems() {
+		return discountedItems;
+	}
+
+	/**
+	 * Sets the list of discounted items
+	 * @param discountedItems discounted items
+	 */
+	public void setDiscountedItems(List<BillDiscountedItem> discountedItems) {
+		this.discountedItems = discountedItems;
+	}
 
 	/**
 	 * @return Returns the ID of payment mode

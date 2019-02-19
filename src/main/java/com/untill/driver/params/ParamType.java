@@ -7,7 +7,7 @@ package com.untill.driver.params;
 public enum ParamType {
 
 	INT("int"), STRING("string"), BOOLEAN("boolean"), LIST("list"), REGASM("regasm"), REGSVR("regsvr32"), SYS32(
-			"sys32"), PAYMENT_MODE("payment_mode"), TEXT("text");
+			"sys32"), PAYMENT_MODE("payment_mode"), TEXT("text"), DISCOUNT_REASON("discount_reason");
 
 	ParamType(String id) {
 		this.id = id;
