@@ -20,21 +20,21 @@ public class BillPaymentByCodeResult extends BillsHandlerResult {
 	
 	String displayText;
 	
-	List<BillDiscountedItem> discountedItems = new ArrayList<>();
+	List<BillDiscountItem> discountItems = new ArrayList<>();
 
 	/**
-	 * @return Returns the list of discounted items
+	 * @return Returns the list of discount items
 	 */
-	public List<BillDiscountedItem> getDiscountedItems() {
-		return discountedItems;
+	public List<BillDiscountItem> getDiscountItems() {
+		return discountItems;
 	}
 
 	/**
-	 * Sets the list of discounted items
-	 * @param discountedItems discounted items
+	 * Sets the list of discount items
+	 * @param discountItems discount items
 	 */
-	public void setDiscountedItems(List<BillDiscountedItem> discountedItems) {
-		this.discountedItems = discountedItems;
+	public void setDiscountItems(List<BillDiscountItem> discountItems) {
+		this.discountItems = discountItems;
 	}
 
 	/**
