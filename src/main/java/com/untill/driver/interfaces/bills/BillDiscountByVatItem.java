@@ -12,6 +12,16 @@ public class BillDiscountByVatItem extends BillDiscountItem {
 	
 	private String discountTitle;
 	
+	private String discountDescription;	
+	
+	public String getDiscountDescription() {
+		return discountDescription;
+	}
+
+	public void setDiscountDescription(String discountDescription) {
+		this.discountDescription = discountDescription;
+	}
+
 	public String getDiscountKey() {
 		return discountKey;
 	}
