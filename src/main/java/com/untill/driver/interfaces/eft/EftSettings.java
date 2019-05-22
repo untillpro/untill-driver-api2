@@ -15,11 +15,29 @@ public class EftSettings {
 
 	private boolean tipsIncludedInReturn = true;
 
+	@Deprecated
 	private boolean voidWhenSameDay = false;
 
 	private boolean cancellingByWaiterSupported = false;
 
 	private int waitTimeout = DEFAULT_WAIT_TIMEOUT;
+	
+	private EftReopenPolicy reopenPolicy = null;
+
+	/**
+	 * @return Returns the policy which defines which operation must be made when bill is re-opened
+	 */
+	public EftReopenPolicy getReopenPolicy() {
+		return reopenPolicy;
+	}
+
+	/**
+	 * Defines which operation must be made when bill is re-opened
+	 * @param reopenPolicy Re-open policy
+	 */
+	public void setReopenPolicy(EftReopenPolicy reopenPolicy) {
+		this.reopenPolicy = reopenPolicy;
+	}
 
 	/**
 	 * @return Returns timeout in milliseconds telling how long unTill waits for
@@ -98,9 +116,11 @@ public class EftSettings {
 	}
 
 	/**
+	 * @deprecated Use getReopenPolicy
 	 * @return Returns true when VOID must be used instead of RETURN when
 	 *         re-opening in the timerange of the same working day
 	 */
+	@Deprecated 
 	public boolean isVoidWhenSameDay() {
 		return voidWhenSameDay;
 	}
@@ -111,7 +131,9 @@ public class EftSettings {
 	 * "return" operation executed
 	 * 
 	 * @param voidWhenSameDay
+	 * @deprecated Use setReopenPolicy
 	 */
+	@Deprecated
 	public void setVoidWhenSameDay(boolean voidWhenSameDay) {
 		this.voidWhenSameDay = voidWhenSameDay;
 	}
