@@ -22,20 +22,39 @@ public class EftSettings {
 
 	private int waitTimeout = DEFAULT_WAIT_TIMEOUT;
 	
-	private EftReopenPolicy reopenPolicy = null;
-
 	/**
-	 * @return Returns the policy which defines which operation must be made when bill is re-opened
+	 * Always return funds when bill re-opened: {@link EftReturnRequest} or {@link EftGiftCardReloadRequest} (for gift cards) 
 	 */
-	public EftReopenPolicy getReopenPolicy() {
+	public static final String REOPEN_POLICY_RETURN_FUNDS = "return-funds"; 
+	/**
+	 * Always use VoidSale when bill re-opened: {@link EftVoidSaleRequest} or {@link EftGiftCardCancelRequest} (for gift cards)
+	 */
+	public static final String REOPEN_POLICY_VOID_SALE = "void-sale";
+	/**
+	 * VOID must be used instead of RETURN when
+	 * re-opening in the timerange of the same working day
+	 */
+	public static final String REOPEN_POLICY_VOID_WITHIN_SAME_DAY = "void-within-same-day";
+
+	private String reopenPolicy = null;
+	
+	/**
+	 * Defines which operation must be made when bill is re-opened
+	 */
+	public String getReopenPolicy() {
 		return reopenPolicy;
 	}
 
 	/**
-	 * Defines which operation must be made when bill is re-opened
-	 * @param reopenPolicy Re-open policy
+	 * Defines which operation must be made when bill is re-opened. 
+	 * When not defined, unTill returns funds using {@link EftReturnRequest} or {@link EftGiftCardReloadRequest} (for gift cards).
+	 * AvailablePolicies are: <ul>
+	 * 	<li>{@link #REOPEN_POLICY_RETURN_FUNDS}</li>
+	 * 	<li>{@link #REOPEN_POLICY_VOID_SALE}</li>
+	 * 	<li>{@link #REOPEN_POLICY_VOID_WITHIN_SAME_DAY}</li>
+	 * </ul>
 	 */
-	public void setReopenPolicy(EftReopenPolicy reopenPolicy) {
+	public void setReopenPolicy(String reopenPolicy) {
 		this.reopenPolicy = reopenPolicy;
 	}
 
@@ -116,7 +135,7 @@ public class EftSettings {
 	}
 
 	/**
-	 * @deprecated Use getReopenPolicy
+	 * @deprecated Use {@link EftSettings}.REOPEN_POLICY
 	 * @return Returns true when VOID must be used instead of RETURN when
 	 *         re-opening in the timerange of the same working day
 	 */
@@ -131,7 +150,7 @@ public class EftSettings {
 	 * "return" operation executed
 	 * 
 	 * @param voidWhenSameDay
-	 * @deprecated Use setReopenPolicy
+	 * @deprecated Use {@link EftSettings}.REOPEN_POLICY
 	 */
 	@Deprecated
 	public void setVoidWhenSameDay(boolean voidWhenSameDay) {
