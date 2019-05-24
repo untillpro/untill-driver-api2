@@ -1,5 +1,10 @@
 package com.untill.driver.interfaces.eft;
 
+/**
+ * 
+ * Returns {@link EftGiftCardResult}
+ *
+ */
 public class EftGiftCardReadRequest extends EftRequest {
 
 	private String cardId;
