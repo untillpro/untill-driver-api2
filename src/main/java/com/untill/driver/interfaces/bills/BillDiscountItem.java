@@ -2,7 +2,7 @@ package com.untill.driver.interfaces.bills;
 
 import java.math.BigDecimal;
 
-public class BillDiscountItem {
+public abstract class BillDiscountItem {
 	
 	private BigDecimal amount;
 	
