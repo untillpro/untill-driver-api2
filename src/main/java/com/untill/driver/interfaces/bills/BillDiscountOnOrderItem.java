@@ -5,6 +5,16 @@ public class BillDiscountOnOrderItem extends BillDiscountItem {
 	private String orderItemSignature;
 
 	private String discountDescription;
+	
+	private Long discountReason;
+	
+	public Long getDiscountReason() {
+		return discountReason;
+	}
+
+	public void setDiscountReason(Long discountReason) {
+		this.discountReason = discountReason;
+	}
 
 	public String getOrderItemSignature() {
 		return orderItemSignature;

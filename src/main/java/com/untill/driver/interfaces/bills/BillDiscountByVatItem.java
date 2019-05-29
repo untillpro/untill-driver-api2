@@ -14,16 +14,6 @@ public class BillDiscountByVatItem extends BillDiscountItem {
 	
 	private String discountDescription;
 	
-	private Long discountReason;
-	
-	public Long getDiscountReason() {
-		return discountReason;
-	}
-
-	public void setDiscountReason(Long discountReason) {
-		this.discountReason = discountReason;
-	}
-
 	public String getDiscountDescription() {
 		return discountDescription;
 	}
