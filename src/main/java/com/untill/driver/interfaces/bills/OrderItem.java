@@ -31,6 +31,25 @@ public class OrderItem {
 	private int articleNumber;
 	private String articleName;
 	private BigDecimal discountAmount;
+	
+	private String signature;
+
+	/**
+	 * @return Returns the string which is unique per order item configuration. 
+	 * unTill guarantees that if there is any difference between order items (price, course, quantity, options, etc) they've got different signatures.
+	 * Only if items are absolutely identical then signature is the same.
+	 */
+	public String getSignature() {
+		return signature;
+	}
+
+	/**
+	 * Sets the signature
+	 * @param signature
+	 */
+	public void setSignature(String signature) {
+		this.signature = signature;
+	}
 
 	/**
 	 * @return Returns article HQ Id
