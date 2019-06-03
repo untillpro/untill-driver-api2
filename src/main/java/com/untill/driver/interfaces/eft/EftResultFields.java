@@ -37,6 +37,9 @@ public abstract class EftResultFields {
 	public static final String EXTRA_FIELD_14 = "field14";
 	public static final String EXTRA_FIELD_15 = "field15";
 
+	public static final String CURRENT_BALANCE = "balance";
+	public static final String OLD_BALANCE = "old_balance";
+
 	/**
 	 * Some terminals allows entering tips during sale operation. In this case, this field
 	 * must return tips amount in cents (integer value)
