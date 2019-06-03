@@ -2,7 +2,7 @@ package com.untill.driver.interfaces.eft;
 
 /**
  * 
- * Returns {@link EftGiftCardResult}
+ * Returns {@link EftResult}
  *
  */
 public class EftGiftCardReadRequest extends EftRequest {
