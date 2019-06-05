@@ -1,6 +1,6 @@
 # EFT Interface - IEft
 ## Operations
-This interface allows handling card payment operations. `operation` method gets a request object. This object, depending on the POS action, is an instance of class:
+[IEft interface](../src/main/java/com/untill/driver/interfaces/eft/IEft.java) allows handling card payment operations. `operation` method gets a request object. This object, depending on the POS action, is an instance of class:
 
 - Transaction requests:
   - EftPaymentRequest
