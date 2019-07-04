@@ -1,6 +1,10 @@
 # EFT Interface - IEft
-## Operations
-[IEft interface](../src/main/java/com/untill/driver/interfaces/eft/IEft.java) allows handling card payment operations. `operation` method gets a request object. This object, depending on the POS action, is an instance of class:
+
+## Card Payment Operations
+[IEft interface](../src/main/java/com/untill/driver/interfaces/eft/IEft.java) allows handling card payment operations - actions with unTill(r) payment modes having kind "Card".
+For such payment modes you should choose your driver as an EFT interface in Backoffice, then your driver starts receiving commands from POS.
+
+`IEft.operation` method gets a request object. This object, depending on the POS action, is an instance of class:
 
 - Transaction requests:
   - EftPaymentRequest
@@ -53,6 +57,24 @@ When you configure EFT driver in unTill(r) Beckoffice, there is a setting called
 
 ### Showing POS message
 There is a possibility to show some text in POS after `EftPaymentRequest` or `EftReturnRequest` processed. Use `displayMessage` property of the `EftResult` class. When driver returns non-null value, POS shows the screen with text and "Ok" button.
+
+## Gift card operations
+The same `IEft` interface is used for working with Gift Card operations (actions with unTill(r) payment modes having kind "Gift Card"). Regarding payments it works close to regular card payments, there are following requests for working with giftcard payments:
+- EftGiftCardPaymentRequest - when payment is done and the amount is positive;
+- EftGiftCardReloadRequest - when payment is done and the amount is negative;
+- EftGiftCardCancelRequest - when re-open is done for this payment.
+
+Before executing any of these request, unTill(r) POS shows the popup asking type or scan the card number, and this value is provided then in request. `EftGiftCardCancel` request works very similar to `EftVoidRequest`, providing details of the original transaction which must be cancelled. However, due to security reasons unTill(r) POS will ask for the card number before executing this operation. It's up to driver developer to check the validity of the card, or directly revert the original transaction using the data provided in `EftGiftCardCancel` request.
+
+Besides payments, there are also number of gift card operations available which are used on `Gift Card Management` unTill(r) POS screen:
+- EftGiftCardActivateRequest - card activation
+- EftGiftCardDeactivateRequest - card deactivation
+- EftGiftCardReadRequest - reading card balance
+- EftGiftCardReloadRequest - reloading card, e.g. adding some amount to the giftcard
+- EftGiftCardCancelRequest - cancelling some transaction (activation, deactivation, reloading, also used to cancel gift card payment).
+
+Driver should return instance of `EftResult` in response of any of these gift card operation requests, or throw error when request is not supported. Current balance returned in `EftResult.data` under key `EftResultFields.CURRENT_BALANCE` (in cents). 
+Some data may be returned for showing on receipts. For example operations which change balance may return previous balance, returning the value in `EftResult.data` under key `EftResultFields.OLD_BALANCE` (in cents). Other keys from `EftResultFields` may be also used to indicate card type, masked card number, etc. 
 
 ## Custom commands
 There is a way to execute any custom command if you need this in your interface: re printing last ticket, closing the day, etc. 
