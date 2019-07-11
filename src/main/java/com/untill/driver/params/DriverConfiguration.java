@@ -33,7 +33,7 @@ public class DriverConfiguration {
 
 	/**
 	 * Sets unique configuraion UID
-	 * @param configurationGuid
+	 * @param configurationGuid Configuration Guid
 	 */
 	public void setConfigurationGuid(String configurationGuid) {
 		this.configurationGuid = configurationGuid;

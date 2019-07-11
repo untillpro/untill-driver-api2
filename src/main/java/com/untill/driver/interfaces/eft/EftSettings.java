@@ -155,7 +155,8 @@ public class EftSettings {
 	 * re-opening bill within the same working hours (true). Otherwise (false)
 	 * "return" operation executed
 	 * 
-	 * @param voidWhenSameDay
+	 * @param voidWhenSameDay True if "void" operation must be used instead of "return" when
+	 * re-opening bill within the same working hours
 	 * @deprecated Use {@link EftSettings}.REOPEN_POLICY
 	 */
 	@Deprecated
