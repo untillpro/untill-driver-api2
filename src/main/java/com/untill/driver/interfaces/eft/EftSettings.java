@@ -3,7 +3,7 @@ package com.untill.driver.interfaces.eft;
 import com.untill.driver.IDriverProgress;
 
 /**
- * {@link IEft} driver settings
+ * An instance of this class returned by {@link IEft}.getEftSettings to specify some details of driver behavior. 
  *
  * @see IEft
  */

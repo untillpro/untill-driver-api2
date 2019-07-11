@@ -6,7 +6,8 @@ import java.util.Map;
 import com.untill.driver.interfaces.DriverResult;
 
 /**
- * Represents result of {@link IEft} operation
+ * Represents result of {@link IEft} operation. 
+ * Use {@link EftResult#setTransactionResult(int)} to indicate result code of the operation. 
  *
  * @see IEft
  */
