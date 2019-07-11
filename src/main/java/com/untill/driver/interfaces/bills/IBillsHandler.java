@@ -21,6 +21,7 @@ public interface IBillsHandler extends IDriverInterface {
 	 * 
 	 * @param cfg			Driver instance configuration
 	 * @param request       Request, including bill
+	 * @return				Returns instance of BillsHandlerResult or null
 	 * @see BillsHandlerRequest
 	 * 
 	 */

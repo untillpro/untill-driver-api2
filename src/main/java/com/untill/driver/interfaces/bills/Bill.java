@@ -275,16 +275,16 @@ public class Bill {
 	}
 
 	/**
-	 * @return Returns sales area number
+	 * @return Returns sales area name
 	 */
 	public String getSalesAreaName() {
 		return salesAreaName;
 	}
 
 	/**
-	 * Sets sales area number
+	 * Sets sales area name
 	 * 
-	 * @param salesAreaName
+	 * @param salesAreaName Sales area name
 	 */
 	public void setSalesAreaName(String salesAreaName) {
 		this.salesAreaName = salesAreaName;

@@ -40,6 +40,10 @@ public class EftSettings {
 	
 	/**
 	 * Defines which operation must be made when bill is re-opened
+	 * @return Re-open policy
+	 * @see EftSettings#REOPEN_POLICY_RETURN_FUNDS
+	 * @see EftSettings#REOPEN_POLICY_VOID_SALE
+	 * @see EftSettings#REOPEN_POLICY_VOID_WITHIN_SAME_DAY
 	 */
 	public String getReopenPolicy() {
 		return reopenPolicy;
@@ -53,6 +57,7 @@ public class EftSettings {
 	 * 	<li>{@link #REOPEN_POLICY_VOID_SALE}</li>
 	 * 	<li>{@link #REOPEN_POLICY_VOID_WITHIN_SAME_DAY}</li>
 	 * </ul>
+	 * @param reopenPolicy Reopen Policy 
 	 */
 	public void setReopenPolicy(String reopenPolicy) {
 		this.reopenPolicy = reopenPolicy;
@@ -68,8 +73,9 @@ public class EftSettings {
 	}
 
 	/**
-	 * Sets timeout in milliseconds telling how long unTill waits for an answer
+	 * Sets timeout telling how long unTill waits for an answer
 	 * from driver before it shows "Timeout" error
+	 * @param waitTimeout Timeout, in milliseconds
 	 */
 	public void setWaitTimeout(int waitTimeout) {
 		this.waitTimeout = waitTimeout;
@@ -85,10 +91,11 @@ public class EftSettings {
 	}
 
 	/**
-	 * Allows specify if EFT driver supports cancelling operation by waiter (at
-	 * ECR side)
+	 * Allows specifying if EFT driver supports cancelling operation by waiter (at
+	 * ECR side). When true, unTill(r) POS shows "Cancel" button on a progress dialog. 
+	 * Driver must request {@link IDriverProgress#isCancelRequested(String)} to see if "Cancel" pressed by operator. 
 	 * 
-	 * @param cancellingByWaiterSupported
+	 * @param cancellingByWaiterSupported True if cancelling by waiter is supported by driver
 	 */
 	public void setCancellingByWaiterSupported(boolean cancellingByWaiterSupported) {
 		this.cancellingByWaiterSupported = cancellingByWaiterSupported;
@@ -110,7 +117,7 @@ public class EftSettings {
 	 * Indicates if each {@link EftTipsRequest} operation replaces previous tips
 	 * amount for the transaction (true) or adds amount (false)
 	 * 
-	 * @param tipsReplaced
+	 * @param tipsReplaced True if tips are replaced, false if tips are added
 	 */
 	public void setTipsReplaced(boolean tipsReplaced) {
 		this.tipsReplaced = tipsReplaced;
@@ -125,10 +132,9 @@ public class EftSettings {
 	}
 
 	/**
-	 * Indicates if tips amount included (if exists) in RETURN or VOID request
-	 * (true) or not (false)
+	 * Indicates if tip amount must be included (if exists) in the amount of Return request
 	 * 
-	 * @param tipsIncludedInReturn
+	 * @param tipsIncludedInReturn True when tip amount must be addedto the payment amount in Return request
 	 */
 	public void setTipsIncludedInReturn(boolean tipsIncludedInReturn) {
 		this.tipsIncludedInReturn = tipsIncludedInReturn;

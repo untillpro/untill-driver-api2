@@ -23,7 +23,7 @@ public abstract class BillsHandlerRequest extends DriverRequest {
 
 	/**
 	 * Sets the timestamp of the operation
-	 * @param timestamp
+	 * @param timestamp Timestamp to set
 	 */
 	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;
@@ -38,7 +38,7 @@ public abstract class BillsHandlerRequest extends DriverRequest {
 
 	/**
 	 * Sets the bill associated with the operation
-	 * @param bill
+	 * @param bill Bill to set
 	 */
 	public void setBill(Bill bill) {
 		this.bill = bill;

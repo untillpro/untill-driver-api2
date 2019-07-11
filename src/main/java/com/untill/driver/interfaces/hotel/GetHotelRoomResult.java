@@ -382,7 +382,7 @@ public class GetHotelRoomResult extends HotelInterfaceResult {
 	/**
 	 * Sets any extra information related to this room
 	 * 
-	 * @param extra
+	 * @param extra Extra information
 	 */
 	public void setExtra(Map<String, String> extra) {
 		this.extra = extra;

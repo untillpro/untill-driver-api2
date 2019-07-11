@@ -59,7 +59,7 @@ public class BillPaymentByCodeResult extends BillsHandlerResult {
 
 	/**
 	 * Sets the payment amount
-	 * @param amount 
+	 * @param amount Payment amount
 	 */
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
@@ -74,7 +74,7 @@ public class BillPaymentByCodeResult extends BillsHandlerResult {
 
 	/**
 	 * Sets the text to display (optional)
-	 * @param displayText
+	 * @param displayText text to display
 	 */
 	public void setDisplayText(String displayText) {
 		this.displayText = displayText;

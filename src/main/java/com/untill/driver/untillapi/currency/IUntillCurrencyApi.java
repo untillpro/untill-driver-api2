@@ -16,8 +16,8 @@ public interface IUntillCurrencyApi extends IUntillApi {
 	 * Get amount in cents using the rounding method which is the same with
 	 * unTill POS
 	 * 
-	 * @param amount
-	 * @return
+	 * @param amount Amount to return in cents
+	 * @return Amount in cents
 	 */
 	int getInCents(BigDecimal amount);
 

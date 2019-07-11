@@ -75,6 +75,7 @@ public class EndOfDayPaymentItem {
 
 	/**
 	 * @deprecated Use {@link EndOfDayExtraItem} with kind "tip"
+	 * @return Tip amount
 	 */
 	@Deprecated
 	public BigDecimal getTotalTipAmount() {
@@ -83,6 +84,7 @@ public class EndOfDayPaymentItem {
 
 	/**
 	 * @deprecated Use {@link EndOfDayExtraItem} with kind "tip"
+	 * @param totalTipAmount Tip amount
 	 */
 	@Deprecated
 	public void setTotalTipAmount(BigDecimal totalTipAmount) {

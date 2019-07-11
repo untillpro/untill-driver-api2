@@ -77,7 +77,7 @@ public class HotelChargeData {
 	/**
 	 * Sets table part
 	 * 
-	 * @param tablePart
+	 * @param tablePart Table part
 	 */
 	public void setTablePart(String tablePart) {
 		this.tablePart = tablePart;
@@ -297,7 +297,7 @@ public class HotelChargeData {
 	/**
 	 * Sets sales area number
 	 * 
-	 * @param salesAreaName
+	 * @param salesAreaName Sales area name
 	 */
 	public void setSalesAreaName(String salesAreaName) {
 		this.salesAreaName = salesAreaName;

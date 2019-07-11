@@ -55,7 +55,7 @@ public abstract class EftTransactionRequest extends EftRequest {
 
 	/**
 	 * Sets the receipt number which is unique per database
-	 * @param billNumber
+	 * @param billNumber Bill number
 	 */
 	public void setBillNumber(int billNumber) {
 		this.billNumber = billNumber;
@@ -70,7 +70,7 @@ public abstract class EftTransactionRequest extends EftRequest {
 
 	/**
 	 * Sets the receipt ID which is unique per all synced databases in location
-	 * @param orderId
+	 * @param orderId Order Id
 	 */
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;

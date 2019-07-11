@@ -27,10 +27,6 @@ public class EndOfDayData {
 		return from;
 	}
 
-	/**
-	 * Sets "from" date
-	 * @param from
-	 */
 	public void setFrom(Date from) {
 		this.from = from;
 	}
@@ -42,10 +38,6 @@ public class EndOfDayData {
 		return till;
 	}
 
-	/**
-	 * Sets "till" date
-	 * @param till
-	 */
 	public void setTill(Date till) {
 		this.till = till;
 	}

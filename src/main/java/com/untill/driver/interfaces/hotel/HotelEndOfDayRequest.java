@@ -17,8 +17,8 @@ public class HotelEndOfDayRequest extends HotelInterfaceRequest {
 
 	/**
 	 * Sets "End of Day" data
-	 * @param data
-	 */
+	 * @param data "End of Day" data 
+	 */ 
 	public void setData(EndOfDayData data) {
 		this.data = data;
 	}

@@ -46,6 +46,9 @@ public interface IUntillProformasApi extends IUntillApi {
 	 *            Proforma to pay
 	 * @param payment
 	 *            Payment details
+	 * @throws EUntillTpapiUnavailable when TPAPI is not configured properly in unTill(r)
+	 * @throws EUntillTpapiError in case of any TPAPI error
+	 * @throws EUntillApiCustomError in case of any custom error
 	 */
 	void payProforma(Proforma proforma, ProformaPayment payment)
 			throws EUntillTpapiUnavailable, EUntillTpapiError, EUntillApiCustomError;

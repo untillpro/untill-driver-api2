@@ -17,7 +17,7 @@ public class FprReadAndIdentificateResult extends FprReaderResult {
 
 	/**
 	 * Sets ID of a user identified
-	 * @param userId
+	 * @param userId User Id
 	 */
 	public void setUserId(Long userId) {
 		this.userId = userId;

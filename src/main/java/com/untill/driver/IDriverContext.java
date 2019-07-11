@@ -3,9 +3,9 @@ package com.untill.driver;
 import com.untill.driver.untillapi.IUntillApi;
 
 /**
- * Defines a set of methods to provide each driver with environment settings.
+ * Driver context functions 
  *
- * @see               IDriver
+ * @see IDriver
  */
 public interface IDriverContext {
 
@@ -54,6 +54,7 @@ public interface IDriverContext {
 	/**
 	 * Returns instance of class implementing certain unTill API
 	 * @param cls API interface which extends IUntillApi
+	 * @param <T> API Class 
 	 * @return Object which implements certain interface
 	 * @see IUntillApi
 	 */

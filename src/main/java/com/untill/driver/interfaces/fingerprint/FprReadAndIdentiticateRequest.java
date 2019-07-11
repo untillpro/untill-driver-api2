@@ -15,8 +15,8 @@ public class FprReadAndIdentiticateRequest extends FprReaderRequest {
 	}
 
 	/**
-	 * Sets timeout, in milliseconds
-	 * @param timeout
+	 * Sets request timeout
+	 * @param timeout Timeout, in milliseconds
 	 */
 	public void setTimeout(long timeout) {
 		this.timeout = timeout;

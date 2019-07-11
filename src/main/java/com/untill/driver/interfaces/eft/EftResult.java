@@ -47,7 +47,7 @@ public class EftResult extends DriverResult {
 	/**
 	 * Sets the operation result, one of {@link EftTransactionResult} codes
 	 * 
-	 * @param transactionResult
+	 * @param transactionResult Transaction Result, use constants declared in {@link EftTransactionResult} 
 	 */
 	public void setTransactionResult(int transactionResult) {
 		this.transactionResult = transactionResult;
@@ -65,7 +65,7 @@ public class EftResult extends DriverResult {
 	 * Sets the map of operation result data. Keys from the
 	 * {@link EftResultFields} may be used, or custom keys.
 	 * 
-	 * @param data
+	 * @param data Result data
 	 */
 	public void setData(Map<String, String> data) {
 		this.data = data;

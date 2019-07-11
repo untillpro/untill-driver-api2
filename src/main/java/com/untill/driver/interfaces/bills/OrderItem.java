@@ -45,7 +45,7 @@ public class OrderItem {
 
 	/**
 	 * Sets the signature
-	 * @param signature
+	 * @param signature Item signature
 	 */
 	public void setSignature(String signature) {
 		this.signature = signature;

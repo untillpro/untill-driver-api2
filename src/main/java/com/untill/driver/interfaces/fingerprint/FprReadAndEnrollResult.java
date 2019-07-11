@@ -17,7 +17,7 @@ public class FprReadAndEnrollResult extends FprReaderResult {
 
 	/**
 	 * Sets the binary data of a fingerprint
-	 * @param data
+	 * @param data Binary data
 	 */
 	public void setData(byte[] data) {
 		this.data = data;

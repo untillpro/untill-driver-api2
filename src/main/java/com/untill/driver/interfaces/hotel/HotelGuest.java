@@ -32,6 +32,7 @@ public class HotelGuest {
 	/**
 	 * Sets values which displayed for this client in
 	 * "Hotel Guest Identification" list
+	 * @param displayValues Values to display
 	 */
 	public void setDisplayValues(Map<String, String> displayValues) {
 		this.displayValues = displayValues;
@@ -99,7 +100,7 @@ public class HotelGuest {
 	/**
 	 * Sets any additional information related to this guest
 	 * 
-	 * @param extra
+	 * @param extra Extra information
 	 */
 	public void setExtra(Map<String, String> extra) {
 		this.extra = extra;

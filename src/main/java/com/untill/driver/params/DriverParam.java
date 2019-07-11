@@ -72,7 +72,7 @@ public class DriverParam {
 	/**
 	 * Sets the min value (for {@link ParamType} INT)
 	 * 
-	 * @param min
+	 * @param min Min value
 	 */
 	public void setMin(int min) {
 		this.min = min;
@@ -88,7 +88,7 @@ public class DriverParam {
 	/**
 	 * Sets the max value (for {@link ParamType} INT)
 	 * 
-	 * @param max
+	 * @param max Max value
 	 */
 	public void setMax(int max) {
 		this.max = max;
@@ -104,7 +104,7 @@ public class DriverParam {
 	/**
 	 * Sets options for params of {@link ParamType} LIST
 	 * 
-	 * @param options
+	 * @param options Options to set
 	 */
 	public void setOptions(Map<String, String> options) {
 		this.options = options;
@@ -155,7 +155,7 @@ public class DriverParam {
 	 * Sets parameter key. This key is used in {@link DriverConfiguration}
 	 * params to store this param value
 	 * 
-	 * @param key
+	 * @param key Parameter key
 	 */
 	public void setKey(String key) {
 		this.key = key;
@@ -171,7 +171,7 @@ public class DriverParam {
 	/**
 	 * Sets parameter title, displayed in unTill(r) Backoffice
 	 * 
-	 * @param title
+	 * @param title Parameter title
 	 */
 	public void setTitle(String title) {
 		this.title = title;
@@ -187,7 +187,7 @@ public class DriverParam {
 	/**
 	 * Sets the parameter type. Use constants from {@link ParamType}
 	 * 
-	 * @param type
+	 * @param type Parameter Type
 	 */
 	public void setType(String type) {
 		this.type = type;
@@ -204,7 +204,7 @@ public class DriverParam {
 	 * Sets the param description, will be displayed as additional text under
 	 * the param control
 	 * 
-	 * @param description
+	 * @param description Description
 	 */
 	public void setDescription(String description) {
 		this.description = description;
@@ -218,9 +218,9 @@ public class DriverParam {
 	}
 
 	/**
-	 * Declares if param value may not be empty
+	 * Declares if param value can not be empty
 	 * 
-	 * @param mandatory
+	 * @param mandatory True if parameter value can not be empty
 	 */
 	public void setMandatory(boolean mandatory) {
 		this.mandatory = mandatory;
@@ -236,7 +236,7 @@ public class DriverParam {
 	/**
 	 * Declares if param is read-only
 	 * 
-	 * @param readOnly
+	 * @param readOnly True if parameter value is read-only
 	 */
 	public void setReadOnly(boolean readOnly) {
 		this.readOnly = readOnly;
@@ -266,7 +266,7 @@ public class DriverParam {
 		/**
 		 * Sets the parameter type
 		 * 
-		 * @param type
+		 * @param type Parameter type
 		 */
 		public Builder type(ParamType type) {
 			param.setType(type.getId());
@@ -276,7 +276,7 @@ public class DriverParam {
 		/**
 		 * Sets parameter title, displayed in unTill(r) Backoffice
 		 * 
-		 * @param value
+		 * @param value Parameter title
 		 */
 		public Builder title(String value) {
 			param.setTitle(value);
@@ -299,7 +299,7 @@ public class DriverParam {
 		 * Sets the param description, will be displayed as additional text
 		 * under the param control
 		 * 
-		 * @param value
+		 * @param value Parameter description
 		 */
 		public Builder description(String value) {
 			param.setDescription(value);
@@ -310,7 +310,7 @@ public class DriverParam {
 		 * Sets parameter key. This key is used in {@link DriverConfiguration}
 		 * params to store this param value
 		 * 
-		 * @param value
+		 * @param value Parameter key
 		 */
 		public Builder key(String value) {
 			param.setKey(value);
@@ -318,9 +318,9 @@ public class DriverParam {
 		}
 
 		/**
-		 * Declares if param value may not be empty
+		 * Declares if param value can not be empty
 		 * 
-		 * @param value
+		 * @param value True if param value can not be empty 
 		 */
 		public Builder mandatory(boolean value) {
 			param.setMandatory(value);
@@ -330,7 +330,7 @@ public class DriverParam {
 		/**
 		 * Declares if param is read-only
 		 * 
-		 * @param value
+		 * @param value True if param is read-only 
 		 */
 		public Builder readOnly(boolean value) {
 			param.setReadOnly(value);
@@ -340,7 +340,7 @@ public class DriverParam {
 		/**
 		 * Sets the min value (for {@link ParamType} INT)
 		 * 
-		 * @param value
+		 * @param value Min value
 		 */
 		public Builder min(int value) {
 			param.setMin(value);
@@ -350,7 +350,7 @@ public class DriverParam {
 		/**
 		 * Sets the max value (for {@link ParamType} INT)
 		 * 
-		 * @param value
+		 * @param value Max value
 		 */
 		public Builder max(int value) {
 			param.setMax(value);

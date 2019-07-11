@@ -6,6 +6,7 @@ import com.untill.driver.params.DriverConfiguration;
 
 /**
  * Hotel Driver Interface
+ * 
  * @see IDriverInterface
  * @see IDriver
  */
@@ -20,7 +21,8 @@ public interface IHotelInterface extends IDriverInterface {
 	 * @param request
 	 *            {@link GuestLookupCriteria} descendant, implementing certain
 	 *            lookup method: can be either {@link GuestLookupByRoom},
-	 *            {@link GuestLookupByReservationId} or {@link GuestLookupCustom}
+	 *            {@link GuestLookupByReservationId} or
+	 *            {@link GuestLookupCustom}
 	 * @return Returns lists of guests found by given criteria, or empty list if
 	 *         no guests found.
 	 * @see HotelGuest
@@ -35,9 +37,10 @@ public interface IHotelInterface extends IDriverInterface {
 	 *            driver's backoffice configuration
 	 * @param request
 	 *            Charge request
+	 * @return Returns instance of {@link HotelChargeResult}
 	 * @throws EHotelGuestNotFound
 	 *             when no guest found
-	 * @see HotelChargeData
+	 * @see HotelChargeRequest
 	 * 
 	 */
 	HotelChargeResult charge(DriverConfiguration cfg, HotelChargeRequest request) throws EHotelGuestNotFound;

@@ -20,7 +20,7 @@ public class DriverRequest {
 	/**
 	 * Sets Pos Id
 	 * 
-	 * @param posId
+	 * @param posId PosId to set
 	 */
 	public void setPosId(String posId) {
 		this.posId = posId;
@@ -33,6 +33,9 @@ public class DriverRequest {
 		return guid;
 	}
 
+	/**
+	 * @param guid Guid to set
+	 */
 	public void setGuid(String guid) {
 		this.guid = guid;
 	}

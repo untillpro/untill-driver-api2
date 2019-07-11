@@ -18,7 +18,8 @@ public interface IFiscalPrinter extends IDriverInterface {
 	 *            Driver configuration
 	 * @param request
 	 *            print request
-	 * 
+	 *
+	 * @return instance of {@link FiscalPrinterResult}
 	 * @see FiscalPrintResult
 	 * @see FiscalPrintRequest
 	 * @see DriverConfiguration
@@ -32,7 +33,8 @@ public interface IFiscalPrinter extends IDriverInterface {
 	 *            Driver configuration
 	 * @param request
 	 *            Printing parameters
-	 * 
+	 *
+	 * @return Instance of {@link FiscalZReportResult}
 	 * @see DriverConfiguration
 	 * @see FiscalZReportRequest
 	 * @see FiscalZReportResult
@@ -47,7 +49,7 @@ public interface IFiscalPrinter extends IDriverInterface {
 	 * 
 	 * @param cfg			Driver instance configuration
 	 * @param request       Operation request
-	 * @return Returns either null or some user defined data, when required
+	 * @return Returns either null or some user defined data in {@link FiscalOperationResult}, when required
 	 * @see FiscalOperationRequest
 	 * @see DriverConfiguration
 	 * 

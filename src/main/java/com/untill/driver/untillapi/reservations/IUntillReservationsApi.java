@@ -15,6 +15,7 @@ public interface IUntillReservationsApi extends IUntillApi {
 
 	/**
 	 * @return Returns reservations by reference
+	 * @param reference Reference to find reservations by
 	 */
 	public List<Reservation> getReservations(String reference);
 
