@@ -39,6 +39,7 @@ public abstract class EftResultFields {
 
 	public static final String CURRENT_BALANCE = "balance";
 	public static final String OLD_BALANCE = "old_balance";
+	public static final String CARD_NUMBER = "card_number";
 
 	/**
 	 * Some terminals allows entering tips during sale operation. In this case, this field
