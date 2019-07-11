@@ -134,8 +134,8 @@ public class DriverParam {
 	/**
 	 * Helper function
 	 * 
-	 * @param params
-	 * @return
+	 * @param params {@link DriverParam} instances
+	 * @return Array of driver params
 	 */
 	public static final ArrayList<DriverParam> list(DriverParam... params) {
 		ArrayList<DriverParam> list = new ArrayList<>();
@@ -267,6 +267,7 @@ public class DriverParam {
 		 * Sets the parameter type
 		 * 
 		 * @param type Parameter type
+		 * @return {@link Builder} instance
 		 */
 		public Builder type(ParamType type) {
 			param.setType(type.getId());
@@ -277,6 +278,7 @@ public class DriverParam {
 		 * Sets parameter title, displayed in unTill(r) Backoffice
 		 * 
 		 * @param value Parameter title
+		 * @return {@link Builder} instance
 		 */
 		public Builder title(String value) {
 			param.setTitle(value);
@@ -289,6 +291,7 @@ public class DriverParam {
 		 * 
 		 * @param value
 		 *            Parameter default value
+		 * @return {@link Builder} instance
 		 */
 		public Builder defaultValue(String value) {
 			param.setDefaultValue(value);
@@ -300,6 +303,7 @@ public class DriverParam {
 		 * under the param control
 		 * 
 		 * @param value Parameter description
+		 * @return {@link Builder} instance
 		 */
 		public Builder description(String value) {
 			param.setDescription(value);
@@ -311,6 +315,7 @@ public class DriverParam {
 		 * params to store this param value
 		 * 
 		 * @param value Parameter key
+		 * @return {@link Builder} instance
 		 */
 		public Builder key(String value) {
 			param.setKey(value);
@@ -321,6 +326,7 @@ public class DriverParam {
 		 * Declares if param value can not be empty
 		 * 
 		 * @param value True if param value can not be empty 
+		 * @return {@link Builder} instance
 		 */
 		public Builder mandatory(boolean value) {
 			param.setMandatory(value);
@@ -331,6 +337,7 @@ public class DriverParam {
 		 * Declares if param is read-only
 		 * 
 		 * @param value True if param is read-only 
+		 * @return {@link Builder} instance
 		 */
 		public Builder readOnly(boolean value) {
 			param.setReadOnly(value);
@@ -341,6 +348,7 @@ public class DriverParam {
 		 * Sets the min value (for {@link ParamType} INT)
 		 * 
 		 * @param value Min value
+		 * @return {@link Builder} instance
 		 */
 		public Builder min(int value) {
 			param.setMin(value);
@@ -351,6 +359,7 @@ public class DriverParam {
 		 * Sets the max value (for {@link ParamType} INT)
 		 * 
 		 * @param value Max value
+		 * @return {@link Builder} instance
 		 */
 		public Builder max(int value) {
 			param.setMax(value);
@@ -364,6 +373,7 @@ public class DriverParam {
 		 *            An option value
 		 * @param text
 		 *            An option display text
+		 * @return {@link Builder} instance
 		 */
 		public Builder option(String value, String text) {
 			if (param.getOptions() == null)
@@ -392,6 +402,7 @@ public class DriverParam {
 		 *            A key of parameter to check
 		 * @param values
 		 *            A list of allowed values
+		 * @return {@link Builder} instance
 		 */
 		public Builder visibilityCondition(String paramKey, String... values) {
 			if (param.getVisibilityConditions() == null)
