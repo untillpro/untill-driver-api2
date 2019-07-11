@@ -16,8 +16,6 @@ public class BillPaymentByCodeResult extends BillsHandlerResult {
 	
 	BigDecimal amount;
 	
-	BigDecimal tip;
-	
 	String displayText;
 	
 	List<BillDiscountItem> discountItems = new ArrayList<>();
@@ -65,21 +63,6 @@ public class BillPaymentByCodeResult extends BillsHandlerResult {
 	 */
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
-	}
-
-	/**
-	 * @return The tip amount (optional)
-	 */
-	public BigDecimal getTip() {
-		return tip;
-	}
-
-	/**
-	 * Sets tip amount (optional)
-	 * @param tip
-	 */
-	public void setTip(BigDecimal tip) {
-		this.tip = tip;
 	}
 
 	/**
