@@ -35,6 +35,7 @@ To provide certain functionality which can be used by unTill(r) POS, driver must
 - [IFingerPrintReader](docs/finger_print_reader.md) - finger print reader interface.
 - [IHasPeriodicalTasks](docs/periodical_tasks.md) - implement to support periodical background tasks.
 - [IConfigurationValidation](docs/configuration_validation.md) - implement if you need to additionally validate driver configuration before it is saved in backoffice.
+- [IPrepaidArticles](docs/prepaid_articles.md) - implement for handling pre-paid articles operations.
 
 Declaration of supported interfaces is made by `init` method which is called at driver initialization stage. Driver must return a map of supported interfaces:
 ```java
