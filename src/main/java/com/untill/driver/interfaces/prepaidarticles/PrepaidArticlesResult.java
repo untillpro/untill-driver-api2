@@ -3,10 +3,12 @@ package com.untill.driver.interfaces.prepaidarticles;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.untill.driver.interfaces.DriverResult;
+
 /**
  * Basic class for {@link IPrepaidArticles} results
  */
-public abstract class PrepaidArticlesResult {
+public abstract class PrepaidArticlesResult extends DriverResult {
 
 	private Map<String, String> data = new HashMap<>();
 
