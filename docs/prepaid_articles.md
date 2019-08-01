@@ -11,9 +11,7 @@ Pre-paid article may be two types:
 public class PrepaidItem {
 
 	/**
-	 * This type describes a measure pre-paid articles <br/>
-	 * <b>0</b> - pieces <br/>
-	 * <b>1</b> - price <br/>
+	 * This type describes the measure units. Currently only supported value is "0" (pieces)<br>
 	 */
 	public int getValueType() {
 		return valueType;
