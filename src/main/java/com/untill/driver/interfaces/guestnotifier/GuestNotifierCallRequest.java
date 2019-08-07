@@ -8,13 +8,13 @@ public class GuestNotifierCallRequest extends GuestNotifierRequest {
 	/**
 	 * Caller identifier
 	 */
-	private Integer callerId;
+	private String callerId;
 
-	public Integer getCallerId() {
+	public String getCallerId() {
 		return callerId;
 	}
 
-	public void setCallerId(Integer callerId) {
+	public void setCallerId(String callerId) {
 		this.callerId = callerId;
 	}
 }
