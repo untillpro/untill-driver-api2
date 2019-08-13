@@ -31,8 +31,24 @@ public class OrderItem {
 	private int articleNumber;
 	private String articleName;
 	private BigDecimal discountAmount;
-	
+	private boolean discountAllowed;
 	private String signature;
+
+	
+	/**
+	 * @return True if discount is allowed for this item
+	 */
+	public boolean isDiscountAllowed() {
+		return discountAllowed;
+	}
+
+	/**
+	 * Specifies if the discount is allowed for this item
+	 * @param discountAllowed True when discount is allowed
+	 */
+	public void setDiscountAllowed(boolean discountAllowed) {
+		this.discountAllowed = discountAllowed;
+	}
 
 	/**
 	 * @return Returns the string which is unique per order item configuration. 
