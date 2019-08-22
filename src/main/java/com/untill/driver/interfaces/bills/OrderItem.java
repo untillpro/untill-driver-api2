@@ -31,10 +31,20 @@ public class OrderItem {
 	private int articleNumber;
 	private String articleName;
 	private BigDecimal discountAmount;
+	private String discountDescription;
+	
 	private boolean discountAllowed;
 	private String signature;
 
 	
+	public String getDiscountDescription() {
+		return discountDescription;
+	}
+
+	public void setDiscountDescription(String discountDescription) {
+		this.discountDescription = discountDescription;
+	}
+
 	/**
 	 * @return True if discount is allowed for this item
 	 */
