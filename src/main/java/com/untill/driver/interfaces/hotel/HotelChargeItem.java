@@ -25,6 +25,15 @@ public class HotelChargeItem {
 
 	private int articleNumber;
 	private String articleName;
+	private String sizeModifierName;
+
+	public String getSizeModifierName() {
+		return sizeModifierName;
+	}
+
+	public void setSizeModifierName(String sizeModifierName) {
+		this.sizeModifierName = sizeModifierName;
+	}
 
 	public BigDecimal getDiscountAmount() {
 		return discountAmount;

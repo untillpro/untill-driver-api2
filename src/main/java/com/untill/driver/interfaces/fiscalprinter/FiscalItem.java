@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 public class FiscalItem {
 	private int articleNumber;
 	private String articleName;
+	private String sizeModifierName;
 	private int departmentNumber;
 	private String departmentName;
 	private int courseNumber;
@@ -31,6 +32,14 @@ public class FiscalItem {
 	private int itemType; // article, option, etc
 
 	public FiscalItem() {
+	}
+
+	public String getSizeModifierName() {
+		return sizeModifierName;
+	}
+
+	public void setSizeModifierName(String sizeModifierName) {
+		this.sizeModifierName = sizeModifierName;
 	}
 
 	public int getArticleNumber() {

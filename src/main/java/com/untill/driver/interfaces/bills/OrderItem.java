@@ -26,6 +26,8 @@ public class OrderItem {
 	private String vatSign;
 
 	private long articleId;
+	private long sizeModifierId;
+	private String sizeModifierName;
 
 	private String articleHqId;
 	private int articleNumber;
@@ -37,6 +39,22 @@ public class OrderItem {
 	private String signature;
 
 	
+	public String getSizeModifierName() {
+		return sizeModifierName;
+	}
+
+	public void setSizeModifierName(String sizeModifierName) {
+		this.sizeModifierName = sizeModifierName;
+	}
+
+	public long getSizeModifierId() {
+		return sizeModifierId;
+	}
+
+	public void setSizeModifierId(long sizeModifierId) {
+		this.sizeModifierId = sizeModifierId;
+	}
+
 	public String getDiscountDescription() {
 		return discountDescription;
 	}
