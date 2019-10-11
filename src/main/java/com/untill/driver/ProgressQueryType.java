@@ -2,7 +2,7 @@ package com.untill.driver;
 
 /**
  * Declares progress query kinds
- * @see {@link IDriverProgress#showQuery}
+ * @see IDriverProgress#showQuery
  * 
  */
 public enum ProgressQueryType {
