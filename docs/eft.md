@@ -99,6 +99,14 @@ There is a way to execute any custom command if you need this in your interface:
 
 When setting up the button for a custom command in unTill(r) screen, layout for receipt printing may be also specified. EFT driver may return any data, including pre-formatted receipts, to be printed by unTill(r) as a result of custom command operation. Use "EFT Payment Receipt" unTill(r) dataset for this layout, just as described in previous section.
 
+## Iteracting with user
+Your driver may report some text messages as the current operation status, these messages will be displayed in POS instead of "Please wait" title which is shown by default. This helps user to understand what happens if operation takes a while.
+```java
+ctx.getProgress().showProgressMessage(guid, "Waiting for the answer from bank");
+```
+
+It is also possible to post some question which is displayed in POS and needs to be answered with "Yes" or "No". This may be used for example for the signature validation, [See example](https://github.com/michael-say/untill-driver-devkit-queries-example/blob/master/src/main/java/com/untill/drivers/example/TestQueryDriver.java).     
+
 ## EFT Settings
 There is a way to customize some default EFT driver behaviour:
 ```java
