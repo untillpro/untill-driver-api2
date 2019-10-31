@@ -8,7 +8,7 @@ package com.untill.driver;
 public enum ProgressQueryType {
 
 	/**
-	 * A text query with two buttons: YES or NO.  {@link IDriverProgress#getQueryResult} returns "y" or "n"
+	 * A text query with two buttons: YES or NO.  {@link IDriverProgress#getQueryResult} returns "yes" or "no"
 	 */
 	YES_NO(1);
 
