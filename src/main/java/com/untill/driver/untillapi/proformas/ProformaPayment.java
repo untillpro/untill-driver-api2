@@ -6,8 +6,8 @@ import java.util.Map;
 
 /**
  * Proforma payment data
- * @see Proforma
  *
+ * @see Proforma
  */
 public class ProformaPayment {
 
@@ -16,6 +16,16 @@ public class ProformaPayment {
 	private BigDecimal tip;
 
 	private Long paymentId;
+
+	/**
+	 * AppToken is a TPAPI app token identifying your application. Please refer to TPAPI POS documentation for details.
+	 */
+	private String appToken;
+
+	/**
+	 * AppName is a TPAPI app name identifying your application. Please refer to TPAPI POS documentation for details.
+	 */
+	private String appName;
 
 	private Map<String, String> dataFields = new HashMap<String, String>();
 
@@ -51,4 +61,19 @@ public class ProformaPayment {
 		this.paymentId = paymentId;
 	}
 
+	public String getAppToken() {
+		return appToken;
+	}
+
+	public void setAppToken(String appToken) {
+		this.appToken = appToken;
+	}
+
+	public String getAppName() {
+		return appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
 }
