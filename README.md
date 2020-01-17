@@ -37,6 +37,10 @@ To provide certain functionality which can be used by unTill(r) POS, driver must
 - [IConfigurationValidation](docs/configuration_validation.md) - implement if you need to additionally validate driver configuration before it is saved in backoffice.
 - [IPrepaidArticles](docs/prepaid_articles.md) - implement for handling pre-paid articles operations.
 - [IGuestNotifier](docs/guest_notifier.md) - implement for handling guest notification
+- [ICustomBillsHandler](docs/custom_bills.md) - implement for handling custom bill operations (voucher purchase)
+- [ICashHandler](docs/cash.md) - implement for handling cash operations (deposit, withdraw, initialization)
+- [IInvoiceHandler](docs/invoice.md) - implement for handling invoice operations (print, re-print, pay)
+- [IReportHandler](docs/report.md) - implement for handling report operations (print, re-print)
 
 Declaration of supported interfaces is made by `init` method which is called at driver initialization stage. Driver must return a map of supported interfaces:
 ```java
