@@ -1,48 +1,28 @@
 package com.untill.driver.interfaces.bills;
 
-import com.untill.driver.interfaces.cash.ICashHandler;
-
-import java.math.BigDecimal;
+import java.util.List;
 
 /**
- * A request for {@link ICustomBillsHandler} <tt>purchase voucher</tt> operation
+ * A request for {@link ICustomBillsHandler} <tt>purchase vouchers</tt> operation
  */
 public class VoucherBillClosingRequest extends CustomBillsHandlerRequest {
 
-	/**
-	 * Voucher identifier
-	 */
-	private String voucherId;
-	/**
-	 * Voucher amount
-	 */
-	private BigDecimal amount;
-	/**
-	 * Payment kind
-	 */
-	private Integer paymentKind;
+	private List<Voucher> vouchers;
+	private List<PaymentItem> payments;
 
-	public String getVoucherId() {
-		return voucherId;
+	public List<Voucher> getVouchers() {
+		return vouchers;
 	}
 
-	public void setVoucherId(String voucherId) {
-		this.voucherId = voucherId;
+	public void setVouchers(List<Voucher> vouchers) {
+		this.vouchers = vouchers;
 	}
 
-	public BigDecimal getAmount() {
-		return amount;
+	public List<PaymentItem> getPayments() {
+		return payments;
 	}
 
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
-
-	public Integer getPaymentKind() {
-		return paymentKind;
-	}
-
-	public void setPaymentKind(Integer paymentKind) {
-		this.paymentKind = paymentKind;
+	public void setPayments(List<PaymentItem> payments) {
+		this.payments = payments;
 	}
 }
