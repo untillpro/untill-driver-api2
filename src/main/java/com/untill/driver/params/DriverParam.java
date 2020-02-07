@@ -2,6 +2,7 @@ package com.untill.driver.params;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -377,7 +378,7 @@ public class DriverParam {
 		 */
 		public Builder option(String value, String text) {
 			if (param.getOptions() == null)
-				param.setOptions(new HashMap<>());
+				param.setOptions(new LinkedHashMap<>());
 			param.getOptions().put(value, text);
 			return this;
 		}
