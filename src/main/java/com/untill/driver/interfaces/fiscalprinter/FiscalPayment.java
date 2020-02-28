@@ -19,7 +19,7 @@ public class FiscalPayment {
 	}
 
 	public FiscalPayment(int paymentKind, String paymentName, BigDecimal amount, BigDecimal customerAmount,
-			BigDecimal returnAmount) {
+	                     BigDecimal returnAmount) {
 		super();
 		this.paymentKind = paymentKind;
 		this.paymentName = paymentName;
@@ -50,19 +50,19 @@ public class FiscalPayment {
 
 	/**
 	 * @param paymentKind Sets the paymentKind
-	 * <ul>
-	 * <li>PAYMENT_CASH = 0;</li>
-	 * <li>PAYMENT_CARD = 1;</li>
-	 * <li>PAYMENT_ACCOUNT = 2;</li>
-	 * <li>PAYMENT_ROOM = 3;</li>
-	 * <li>PAYMENT_CHEQUE = 4;</li>
-	 * <li>PAYMENT_HASH = 5;</li>
-	 * <li>PAYMENT_DISCOUNT = 7;</li>
-	 * <li>PAYMENT_SMARTCARD = 8;</li>
-	 * <li>PAYMENT_CASHDRO = 9;</li>
-	 * <li>PAYMENT_NEWYSE_ONACCOUNT = 10;</li>
-	 * <li>PAYMENT_GIFT_CARD = 11;</li>
-	 * </ul>
+	 *                    <ul>
+	 *                    <li>PAYMENT_CASH = 0;</li>
+	 *                    <li>PAYMENT_CARD = 1;</li>
+	 *                    <li>PAYMENT_ACCOUNT = 2;</li>
+	 *                    <li>PAYMENT_ROOM = 3;</li>
+	 *                    <li>PAYMENT_CHEQUE = 4;</li>
+	 *                    <li>PAYMENT_HASH = 5;</li>
+	 *                    <li>PAYMENT_DISCOUNT = 7;</li>
+	 *                    <li>PAYMENT_SMARTCARD = 8;</li>
+	 *                    <li>PAYMENT_CASHDRO = 9;</li>
+	 *                    <li>PAYMENT_NEWYSE_ONACCOUNT = 10;</li>
+	 *                    <li>PAYMENT_GIFT_CARD = 11;</li>
+	 *                    </ul>
 	 */
 	public void setPaymentKind(int paymentKind) {
 		this.paymentKind = paymentKind;
@@ -108,4 +108,15 @@ public class FiscalPayment {
 		this.paymentNumber = paymentNumber;
 	}
 
+	@Override
+	public String toString() {
+		return "FiscalPayment{"
+				+ "paymentKind=" + paymentKind
+				+ ", paymentNumber=" + paymentNumber
+				+ ", paymentName='" + paymentName + '\''
+				+ ", amount=" + amount
+				+ ", customerAmount=" + customerAmount
+				+ ", returnAmount=" + returnAmount
+				+ '}';
+	}
 }

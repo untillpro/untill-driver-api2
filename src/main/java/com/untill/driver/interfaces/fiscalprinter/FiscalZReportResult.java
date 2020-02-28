@@ -2,7 +2,6 @@ package com.untill.driver.interfaces.fiscalprinter;
 
 /**
  * Defines z-report print operation result
- * 
  */
 public class FiscalZReportResult extends FiscalPrinterResult {
 
@@ -26,7 +25,8 @@ public class FiscalZReportResult extends FiscalPrinterResult {
 
 	@Override
 	public String toString() {
-		return "ZReportResult [zReportNumber=" + ((zReportNumber != null) ? zReportNumber : "null") + "]";
+		return "FiscalZReportResult{"
+				+ "zReportNumber='" + zReportNumber + '\''
+				+ '}';
 	}
-
 }

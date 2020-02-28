@@ -2,7 +2,6 @@ package com.untill.driver.interfaces.fiscalprinter;
 
 /**
  * Request for "non-fiscal print" operation
- * 
  */
 public class NonFiscalPrintRequest extends FiscalOperationRequest {
 
@@ -16,4 +15,10 @@ public class NonFiscalPrintRequest extends FiscalOperationRequest {
 		this.text = text;
 	}
 
+	@Override
+	public String toString() {
+		return "NonFiscalPrintRequest{"
+				+ "text='" + text + '\''
+				+ '}';
+	}
 }

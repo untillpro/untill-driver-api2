@@ -4,7 +4,6 @@ import java.util.Date;
 
 /**
  * Request for "print Z-reports by dates" operation
- * 
  */
 public class FiscalZReportsByDatesRequest extends FiscalOperationRequest {
 
@@ -28,4 +27,11 @@ public class FiscalZReportsByDatesRequest extends FiscalOperationRequest {
 		this.till = till;
 	}
 
+	@Override
+	public String toString() {
+		return "FiscalZReportsByDatesRequest{"
+				+ "from=" + from
+				+ ", till=" + till
+				+ '}';
+	}
 }

@@ -2,7 +2,6 @@ package com.untill.driver.interfaces.fiscalprinter;
 
 /**
  * Request for "print Z-reports by dates" operation
- * 
  */
 public class FiscalZReportsByNumbersRequest extends FiscalOperationRequest {
 
@@ -24,5 +23,13 @@ public class FiscalZReportsByNumbersRequest extends FiscalOperationRequest {
 
 	public void setTill(int till) {
 		this.till = till;
+	}
+
+	@Override
+	public String toString() {
+		return "FiscalZReportsByNumbersRequest{"
+				+ "from=" + from
+				+ ", till=" + till
+				+ '}';
 	}
 }
