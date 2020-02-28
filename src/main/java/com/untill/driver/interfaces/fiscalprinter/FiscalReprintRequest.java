@@ -2,7 +2,6 @@ package com.untill.driver.interfaces.fiscalprinter;
 
 /**
  * Request for "fiscal re-print" operation
- * 
  */
 public class FiscalReprintRequest extends FiscalOperationRequest {
 
@@ -16,4 +15,10 @@ public class FiscalReprintRequest extends FiscalOperationRequest {
 		this.documentResult = documentResult;
 	}
 
+	@Override
+	public String toString() {
+		return "FiscalReprintRequest{"
+				+ "documentResult=" + documentResult
+				+ '}';
+	}
 }
