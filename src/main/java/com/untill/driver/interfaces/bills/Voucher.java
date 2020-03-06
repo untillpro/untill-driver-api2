@@ -22,4 +22,12 @@ public class Voucher {
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
+
+	@Override
+	public String toString() {
+		return "Voucher{"
+				+ "id='" + id + '\''
+				+ ", amount=" + amount
+				+ '}';
+	}
 }

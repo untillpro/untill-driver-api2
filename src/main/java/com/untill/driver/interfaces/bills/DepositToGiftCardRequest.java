@@ -14,4 +14,11 @@ public class DepositToGiftCardRequest extends CustomBillsHandlerRequest {
 	public void setGiftCardId(String giftCardId) {
 		this.giftCardId = giftCardId;
 	}
+
+	@Override
+	public String toString() {
+		return "DepositToGiftCardRequest{"
+				+ "giftCardId='" + giftCardId + '\''
+				+ "} " + super.toString();
+	}
 }

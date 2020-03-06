@@ -16,4 +16,11 @@ public class VoucherBillClosingRequest extends CustomBillsHandlerRequest {
 	public void setVouchers(List<Voucher> vouchers) {
 		this.vouchers = vouchers;
 	}
+
+	@Override
+	public String toString() {
+		return "VoucherBillClosingRequest{"
+				+ "vouchers=" + vouchers
+				+ "} " + super.toString();
+	}
 }

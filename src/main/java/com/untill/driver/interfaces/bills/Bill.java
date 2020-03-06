@@ -9,7 +9,6 @@ import java.util.Map;
 
 /**
  * Bill data
- * 
  */
 public class Bill {
 
@@ -31,6 +30,7 @@ public class Bill {
 	private List<PaymentItem> paymentItems = new ArrayList<>();
 	private List<DiscountGroup> appliedDiscountGroups = new ArrayList<>();
 	private Map<String, String> extra = new LinkedHashMap<>();
+
 	/**
 	 * @return Returns number of covers
 	 */
@@ -40,6 +40,7 @@ public class Bill {
 
 	/**
 	 * Sets number of covers
+	 *
 	 * @param numberOfCovers Number of covers
 	 */
 	public void setNumberOfCovers(int numberOfCovers) {
@@ -55,6 +56,7 @@ public class Bill {
 
 	/**
 	 * Sets extra information. See also {@link BillExtra} for the list of keys
+	 *
 	 * @param extra Extra information to set
 	 * @see BillExtra
 	 */
@@ -72,6 +74,7 @@ public class Bill {
 
 	/**
 	 * Sets the list of discount groups applied to the bill
+	 *
 	 * @param appliedDiscountGroups List of discount groups to set
 	 * @see DiscountGroup
 	 */
@@ -88,6 +91,7 @@ public class Bill {
 
 	/**
 	 * Sets Transaction ID
+	 *
 	 * @param id ID to set
 	 */
 	public void setTransactionId(long id) {
@@ -103,6 +107,7 @@ public class Bill {
 
 	/**
 	 * Sets table number
+	 *
 	 * @param tableNumber Table number to set
 	 */
 	public void setTableNumber(int tableNumber) {
@@ -118,6 +123,7 @@ public class Bill {
 
 	/**
 	 * Sets table part
+	 *
 	 * @param tablePart Table part to set
 	 */
 	public void setTablePart(String tablePart) {
@@ -133,6 +139,7 @@ public class Bill {
 
 	/**
 	 * Sets order items
+	 *
 	 * @param orderItems Order items to set
 	 */
 	public void setOrderItems(List<OrderItem> orderItems) {
@@ -148,6 +155,7 @@ public class Bill {
 
 	/**
 	 * Sets payment items
+	 *
 	 * @param paymentItems Payment items to set
 	 */
 	public void setPaymentItems(List<PaymentItem> paymentItems) {
@@ -163,9 +171,8 @@ public class Bill {
 
 	/**
 	 * Sets waiter "operator ID" which is unique per waiter
-	 * 
-	 * @param waiterOperatorId
-	 *            Waiter "operator ID" to set
+	 *
+	 * @param waiterOperatorId Waiter "operator ID" to set
 	 */
 	public void setWaiterOperatorId(String waiterOperatorId) {
 		this.waiterOperatorId = waiterOperatorId;
@@ -180,9 +187,8 @@ public class Bill {
 
 	/**
 	 * Sets tips amount
-	 * 
-	 * @param tips
-	 *            Tips amount tos set
+	 *
+	 * @param tips Tips amount tos set
 	 */
 	public void setTips(BigDecimal tips) {
 		this.tips = tips;
@@ -197,9 +203,8 @@ public class Bill {
 
 	/**
 	 * Sets service charge amount
-	 * 
-	 * @param serviceCharge
-	 *            Service charge amount to set
+	 *
+	 * @param serviceCharge Service charge amount to set
 	 */
 	public void setServiceCharge(BigDecimal serviceCharge) {
 		this.serviceCharge = serviceCharge;
@@ -214,9 +219,8 @@ public class Bill {
 
 	/**
 	 * Sets waiter name
-	 * 
-	 * @param waiterName
-	 *            waiter name to set
+	 *
+	 * @param waiterName waiter name to set
 	 */
 	public void setWaiterName(String waiterName) {
 		this.waiterName = waiterName;
@@ -232,9 +236,8 @@ public class Bill {
 
 	/**
 	 * Sets unTill bill number
-	 * 
-	 * @param billNumber
-	 *            unTill bill number to set
+	 *
+	 * @param billNumber unTill bill number to set
 	 */
 	public void setBillNumber(String billNumber) {
 		this.billNumber = billNumber;
@@ -249,9 +252,8 @@ public class Bill {
 
 	/**
 	 * Sets unTill transaction number
-	 * 
-	 * @param transactionNumber
-	 *            unTill transaction number to set
+	 *
+	 * @param transactionNumber unTill transaction number to set
 	 */
 	public void setTransactionNumber(String transactionNumber) {
 		this.transactionNumber = transactionNumber;
@@ -266,9 +268,8 @@ public class Bill {
 
 	/**
 	 * Sets sales area number
-	 * 
-	 * @param salesAreaNumber
-	 *            Sales area number to set
+	 *
+	 * @param salesAreaNumber Sales area number to set
 	 */
 	public void setSalesAreaNumber(int salesAreaNumber) {
 		this.salesAreaNumber = salesAreaNumber;
@@ -283,7 +284,7 @@ public class Bill {
 
 	/**
 	 * Sets sales area name
-	 * 
+	 *
 	 * @param salesAreaName Sales area name
 	 */
 	public void setSalesAreaName(String salesAreaName) {
@@ -299,6 +300,7 @@ public class Bill {
 
 	/**
 	 * Sets date and time when bill was created
+	 *
 	 * @param openTime date and time when bill was created
 	 */
 	public void setOpenTime(Date openTime) {
@@ -314,10 +316,34 @@ public class Bill {
 
 	/**
 	 * Sets an amount of "open discount" which is a discount amount applied to a bill total
+	 *
 	 * @param openDiscount An open discount amount
 	 */
 	public void setOpenDiscount(BigDecimal openDiscount) {
 		this.openDiscount = openDiscount;
 	}
 
+	@Override
+	public String toString() {
+		return "Bill{"
+				+ "tableNumber=" + tableNumber
+				+ ", tablePart='" + tablePart + '\''
+				+ ", openTime=" + openTime
+				+ ", salesAreaNumber=" + salesAreaNumber
+				+ ", salesAreaName='" + salesAreaName + '\''
+				+ ", waiterName='" + waiterName + '\''
+				+ ", waiterOperatorId='" + waiterOperatorId + '\''
+				+ ", billNumber='" + billNumber + '\''
+				+ ", transactionId=" + transactionId
+				+ ", transactionNumber='" + transactionNumber + '\''
+				+ ", numberOfCovers=" + numberOfCovers
+				+ ", tips=" + tips
+				+ ", serviceCharge=" + serviceCharge
+				+ ", openDiscount=" + openDiscount
+				+ ", orderItems=" + orderItems
+				+ ", paymentItems=" + paymentItems
+				+ ", appliedDiscountGroups=" + appliedDiscountGroups
+				+ ", extra=" + extra
+				+ '}';
+	}
 }

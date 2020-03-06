@@ -18,4 +18,11 @@ public abstract class CustomBillsHandlerRequest extends DriverRequest {
 	public void setPayments(List<PaymentItem> payments) {
 		this.payments = payments;
 	}
+
+	@Override
+	public String toString() {
+		return "CustomBillsHandlerRequest{"
+				+ "payments=" + payments
+				+ "}";
+	}
 }

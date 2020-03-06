@@ -14,4 +14,11 @@ public class DepositToClientAccountRequest extends CustomBillsHandlerRequest {
 	public void setClientId(Long clientId) {
 		this.clientId = clientId;
 	}
+
+	@Override
+	public String toString() {
+		return "DepositToClientAccountRequest{" +
+				"clientId=" + clientId +
+				"} " + super.toString();
+	}
 }

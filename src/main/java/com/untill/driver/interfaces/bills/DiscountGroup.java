@@ -2,8 +2,8 @@ package com.untill.driver.interfaces.bills;
 
 /**
  * Discount group data
- * @see Bill
  *
+ * @see Bill
  */
 public class DiscountGroup {
 
@@ -37,4 +37,12 @@ public class DiscountGroup {
 		this.barcode = barcode;
 	}
 
+	@Override
+	public String toString() {
+		return "DiscountGroup{"
+				+ "id=" + id
+				+ ", description='" + description + '\''
+				+ ", barcode='" + barcode + '\''
+				+ '}';
+	}
 }

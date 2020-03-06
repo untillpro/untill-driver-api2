@@ -1,13 +1,13 @@
 package com.untill.driver.interfaces.bills;
 
 public class BillDiscountOnOrderItem extends BillDiscountItem {
-	
+
 	private String orderItemSignature;
 
 	private String discountDescription;
-	
+
 	private Long discountReason;
-	
+
 	public Long getDiscountReason() {
 		return discountReason;
 	}
@@ -30,5 +30,15 @@ public class BillDiscountOnOrderItem extends BillDiscountItem {
 
 	public void setDiscountDescription(String discountDescription) {
 		this.discountDescription = discountDescription;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "BillDiscountOnOrderItem{"
+				+ "amount=" + getAmount()
+				+ ", orderItemSignature='" + orderItemSignature + '\''
+				+ ", discountDescription='" + discountDescription + '\''
+				+ ", discountReason=" + discountReason
+				+ '}';
+	}
 }
