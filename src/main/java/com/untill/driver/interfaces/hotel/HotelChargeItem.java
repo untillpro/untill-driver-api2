@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 
 /**
  * Hotel charge item data: price, description, etc.
- * 
  */
 
 public class HotelChargeItem {
@@ -52,9 +51,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets Quantity
-	 * 
-	 * @param quantity
-	 *            Quantity to set
+	 *
+	 * @param quantity Quantity to set
 	 */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
@@ -69,9 +67,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets single price
-	 * 
-	 * @param singlePrice
-	 *            Single price to set
+	 *
+	 * @param singlePrice Single price to set
 	 */
 	public void setSinglePrice(BigDecimal singlePrice) {
 		this.singlePrice = singlePrice;
@@ -86,9 +83,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets Department number
-	 * 
-	 * @param departmentNumber
-	 *            Department number to set
+	 *
+	 * @param departmentNumber Department number to set
 	 */
 	public void setDepartmentNumber(int departmentNumber) {
 		this.departmentNumber = departmentNumber;
@@ -103,9 +99,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets Department name
-	 * 
-	 * @param departmentName
-	 *            Department name to set
+	 *
+	 * @param departmentName Department name to set
 	 */
 	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
@@ -120,9 +115,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets group number
-	 * 
-	 * @param groupNumber
-	 *            Group number to set
+	 *
+	 * @param groupNumber Group number to set
 	 */
 	public void setGroupNumber(int groupNumber) {
 		this.groupNumber = groupNumber;
@@ -137,9 +131,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets Group name
-	 * 
-	 * @param groupName
-	 *            Group name to set
+	 *
+	 * @param groupName Group name to set
 	 */
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
@@ -154,9 +147,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets V.A.T. percent
-	 * 
-	 * @param vatPercent
-	 *            V.A.T. percent to set
+	 *
+	 * @param vatPercent V.A.T. percent to set
 	 */
 	public void setVatPercent(BigDecimal vatPercent) {
 		this.vatPercent = vatPercent;
@@ -171,9 +163,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets V.A.T. sign
-	 * 
-	 * @param vatSign
-	 *            V.A.T. sign to set (up to 3 characters)
+	 *
+	 * @param vatSign V.A.T. sign to set (up to 3 characters)
 	 */
 	public void setVatSign(String vatSign) {
 		this.vatSign = vatSign;
@@ -188,9 +179,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets article number
-	 * 
-	 * @param articleNumber
-	 *            Returns article number to set
+	 *
+	 * @param articleNumber Returns article number to set
 	 */
 	public void setArticleNumber(int articleNumber) {
 		this.articleNumber = articleNumber;
@@ -205,9 +195,8 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets Article name
-	 * 
-	 * @param articleName
-	 *            Article name to set
+	 *
+	 * @param articleName Article name to set
 	 */
 	public void setArticleName(String articleName) {
 		this.articleName = articleName;
@@ -222,10 +211,29 @@ public class HotelChargeItem {
 
 	/**
 	 * Sets single V.A.T. amount
+	 *
 	 * @param singleVatAmount V.A.T. amount
 	 */
 	public void setSingleVatAmount(BigDecimal singleVatAmount) {
 		this.singleVatAmount = singleVatAmount;
 	}
 
+	@Override
+	public String toString() {
+		return "HotelChargeItem{"
+				+ "quantity=" + quantity
+				+ ", singlePrice=" + singlePrice
+				+ ", singleVatAmount=" + singleVatAmount
+				+ ", discountAmount=" + discountAmount
+				+ ", departmentNumber=" + departmentNumber
+				+ ", departmentName='" + departmentName + '\''
+				+ ", groupNumber=" + groupNumber
+				+ ", groupName='" + groupName + '\''
+				+ ", vatPercent=" + vatPercent
+				+ ", vatSign='" + vatSign + '\''
+				+ ", articleNumber=" + articleNumber
+				+ ", articleName='" + articleName + '\''
+				+ ", sizeModifierName='" + sizeModifierName + '\''
+				+ '}';
+	}
 }

@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 
 /**
  * A payment item in a "End of Day" operation request handled by {@link IHotelSupportsEndOfDay}
- *
  */
 public class EndOfDayPaymentItem {
 
@@ -74,8 +73,8 @@ public class EndOfDayPaymentItem {
 	}
 
 	/**
-	 * @deprecated Use {@link EndOfDayExtraItem} with kind "tip"
 	 * @return Tip amount
+	 * @deprecated Use {@link EndOfDayExtraItem} with kind "tip"
 	 */
 	@Deprecated
 	public BigDecimal getTotalTipAmount() {
@@ -83,8 +82,8 @@ public class EndOfDayPaymentItem {
 	}
 
 	/**
-	 * @deprecated Use {@link EndOfDayExtraItem} with kind "tip"
 	 * @param totalTipAmount Tip amount
+	 * @deprecated Use {@link EndOfDayExtraItem} with kind "tip"
 	 */
 	@Deprecated
 	public void setTotalTipAmount(BigDecimal totalTipAmount) {
@@ -99,4 +98,17 @@ public class EndOfDayPaymentItem {
 		this.paymentKind = paymentKind;
 	}
 
+	@Override
+	public String toString() {
+		return "EndOfDayPaymentItem{"
+				+ "paymentNumber=" + paymentNumber
+				+ ", paymentName='" + paymentName + '\''
+				+ ", paymentKind=" + paymentKind
+				+ ", salesAreaId=" + salesAreaId
+				+ ", salesAreaNumber=" + salesAreaNumber
+				+ ", salesAreaName='" + salesAreaName + '\''
+				+ ", totalAmount=" + totalAmount
+				+ ", totalTipAmount=" + totalTipAmount
+				+ '}';
+	}
 }

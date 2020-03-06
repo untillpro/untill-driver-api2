@@ -2,7 +2,6 @@ package com.untill.driver.interfaces.hotel;
 
 /**
  * A request for "Get Hotel Room" {@link IHotelSupportsRoomInformation} operation
- *
  */
 public class GetHotelRoomReqest extends HotelInterfaceRequest {
 
@@ -19,4 +18,10 @@ public class GetHotelRoomReqest extends HotelInterfaceRequest {
 		this.criteria = criteria;
 	}
 
+	@Override
+	public String toString() {
+		return "GetHotelRoomReqest{"
+				+ "criteria=" + criteria
+				+ '}';
+	}
 }

@@ -4,14 +4,13 @@ import java.math.BigDecimal;
 
 /**
  * An extra item in a "End of Day" operation request handled by {@link IHotelSupportsEndOfDay}
- *
  */
 public class EndOfDayExtraItem {
-	
+
 	private String itemType;
-	
+
 	private BigDecimal amount;
-	
+
 	private long salesAreaId;
 
 	private int salesAreaNumber;
@@ -61,4 +60,14 @@ public class EndOfDayExtraItem {
 		this.salesAreaName = salesAreaName;
 	}
 
+	@Override
+	public String toString() {
+		return "EndOfDayExtraItem{"
+				+ "itemType='" + itemType + '\''
+				+ ", amount=" + amount
+				+ ", salesAreaId=" + salesAreaId
+				+ ", salesAreaNumber=" + salesAreaNumber
+				+ ", salesAreaName='" + salesAreaName + '\''
+				+ '}';
+	}
 }

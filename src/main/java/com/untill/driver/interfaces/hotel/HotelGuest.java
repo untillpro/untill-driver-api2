@@ -5,7 +5,6 @@ import java.util.Map;
 
 /**
  * Hotel interface guest information
- * 
  */
 public class HotelGuest {
 
@@ -23,7 +22,7 @@ public class HotelGuest {
 
 	/**
 	 * @return Returns values which displayed for this client in
-	 *         "Hotel Guest Identification" list
+	 * "Hotel Guest Identification" list
 	 */
 	public Map<String, String> getDisplayValues() {
 		return displayValues;
@@ -32,6 +31,7 @@ public class HotelGuest {
 	/**
 	 * Sets values which displayed for this client in
 	 * "Hotel Guest Identification" list
+	 *
 	 * @param displayValues Values to display
 	 */
 	public void setDisplayValues(Map<String, String> displayValues) {
@@ -40,7 +40,7 @@ public class HotelGuest {
 
 	/**
 	 * @return Returns guest's room which can be either number or an
-	 *         alphanumerical
+	 * alphanumerical
 	 */
 	public String getRoom() {
 		return room;
@@ -48,9 +48,8 @@ public class HotelGuest {
 
 	/**
 	 * Sets guest's room which can be either number or an alphanumerical
-	 * 
-	 * @param room
-	 *            Room number
+	 *
+	 * @param room Room number
 	 */
 	public void setRoom(String room) {
 		this.room = room;
@@ -65,9 +64,8 @@ public class HotelGuest {
 
 	/**
 	 * Sets guest's sequence number
-	 * 
-	 * @param sequence
-	 *            Sequence number
+	 *
+	 * @param sequence Sequence number
 	 */
 	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
@@ -82,9 +80,8 @@ public class HotelGuest {
 
 	/**
 	 * Sets guest's name
-	 * 
-	 * @param name
-	 *            Name of a guest
+	 *
+	 * @param name Name of a guest
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -99,7 +96,7 @@ public class HotelGuest {
 
 	/**
 	 * Sets any additional information related to this guest
-	 * 
+	 *
 	 * @param extra Extra information
 	 */
 	public void setExtra(Map<String, String> extra) {
@@ -108,7 +105,7 @@ public class HotelGuest {
 
 	/**
 	 * @return Returns guest's reservation identifier which must be unique per
-	 *         quest
+	 * quest
 	 */
 	public String getReservationId() {
 		return reservationId;
@@ -116,12 +113,22 @@ public class HotelGuest {
 
 	/**
 	 * Sets guest's reservation identifier which must be unique per quest
-	 * 
-	 * @param reservationId
-	 *            Reservation identifier
+	 *
+	 * @param reservationId Reservation identifier
 	 */
 	public void setReservationId(String reservationId) {
 		this.reservationId = reservationId;
 	}
 
+	@Override
+	public String toString() {
+		return "HotelGuest{"
+				+ "room='" + room + '\''
+				+ ", sequence=" + sequence
+				+ ", name='" + name + '\''
+				+ ", reservationId='" + reservationId + '\''
+				+ ", extra=" + extra
+				+ ", displayValues=" + displayValues
+				+ '}';
+	}
 }

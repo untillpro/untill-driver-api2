@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 
 /**
  * A turnover item in a "End of Day" operation request handled by {@link IHotelSupportsEndOfDay}
- *
  */
 public class EndOfDayTurnoverItem {
 
@@ -178,4 +177,26 @@ public class EndOfDayTurnoverItem {
 		this.totalVat = totalVat;
 	}
 
+	@Override
+	public String toString() {
+		return "EndOfDayTurnoverItem{"
+				+ "articleId=" + articleId
+				+ ", articleNumber=" + articleNumber
+				+ ", articleName='" + articleName + '\''
+				+ ", departmentId=" + departmentId
+				+ ", departmentNumber=" + departmentNumber
+				+ ", departmentName='" + departmentName + '\''
+				+ ", foodGroupId=" + foodGroupId
+				+ ", foodGroupNumber=" + foodGroupNumber
+				+ ", foodGroupName='" + foodGroupName + '\''
+				+ ", salesAreaId=" + salesAreaId
+				+ ", salesAreaNumber=" + salesAreaNumber
+				+ ", salesAreaName='" + salesAreaName + '\''
+				+ ", vatPercent=" + vatPercent
+				+ ", totalPrice=" + totalPrice
+				+ ", totalVat=" + totalVat
+				+ ", vatSign='" + vatSign + '\''
+				+ ", totalQuantity=" + totalQuantity
+				+ '}';
+	}
 }

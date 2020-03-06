@@ -4,7 +4,7 @@ package com.untill.driver.interfaces.hotel;
  * Class used for requesting guest by custom value. Hotel driver must provide
  * {@link IHotelSupportsCustomLookupCriterias} interface to specify which criterias
  * supported
- * 
+ *
  * @see IHotelSupportsCustomLookupCriterias
  */
 public class GuestLookupCustom extends GuestLookupCriteria {
@@ -15,7 +15,7 @@ public class GuestLookupCustom extends GuestLookupCriteria {
 
 	/**
 	 * @return Returns a key of criteria, registered by
-	 *         {@link IHotelSupportsCustomLookupCriterias}
+	 * {@link IHotelSupportsCustomLookupCriterias}
 	 */
 	public String getKey() {
 		return key;
@@ -36,4 +36,11 @@ public class GuestLookupCustom extends GuestLookupCriteria {
 		this.value = value;
 	}
 
+	@Override
+	public String toString() {
+		return "GuestLookupCustom{"
+				+ "key='" + key + '\''
+				+ ", value='" + value + '\''
+				+ '}';
+	}
 }
