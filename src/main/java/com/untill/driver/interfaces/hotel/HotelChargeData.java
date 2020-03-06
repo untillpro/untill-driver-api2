@@ -8,7 +8,6 @@ import java.util.List;
 /**
  * Hotel charge operation data which includes list of items to be charged, tips,
  * service charge amount, and others
- * 
  */
 
 public class HotelChargeData {
@@ -40,7 +39,7 @@ public class HotelChargeData {
 
 	/**
 	 * @return Returns an amount of "open discount" which is a discount amount
-	 *         applied to a bill total
+	 * applied to a bill total
 	 */
 	public BigDecimal getOpenDiscount() {
 		return openDiscount;
@@ -49,9 +48,8 @@ public class HotelChargeData {
 	/**
 	 * Sets an amount of "open discount" which is a discount amount applied to a
 	 * bill total
-	 * 
-	 * @param openDiscount
-	 *            An open discount amount
+	 *
+	 * @param openDiscount An open discount amount
 	 */
 	public void setOpenDiscount(BigDecimal openDiscount) {
 		this.openDiscount = openDiscount;
@@ -59,9 +57,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets table number
-	 * 
-	 * @param tableNumber
-	 *            table number
+	 *
+	 * @param tableNumber table number
 	 */
 	public void setTableNumber(int tableNumber) {
 		this.tableNumber = tableNumber;
@@ -76,7 +73,7 @@ public class HotelChargeData {
 
 	/**
 	 * Sets table part
-	 * 
+	 *
 	 * @param tablePart Table part
 	 */
 	public void setTablePart(String tablePart) {
@@ -92,9 +89,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets number of covers
-	 * 
-	 * @param numberOfCovers
-	 *            Number of covers
+	 *
+	 * @param numberOfCovers Number of covers
 	 */
 	public void setNumberOfCovers(int numberOfCovers) {
 		this.numberOfCovers = numberOfCovers;
@@ -109,9 +105,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets waiter "operator ID" which is unique per waiter
-	 * 
-	 * @param waiterOperatorId
-	 *            Waiter "operator ID" to set
+	 *
+	 * @param waiterOperatorId Waiter "operator ID" to set
 	 */
 	public void setWaiterOperatorId(String waiterOperatorId) {
 		this.waiterOperatorId = waiterOperatorId;
@@ -126,9 +121,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets ISO 4217 currency char code
-	 * 
-	 * @param currencyCharCode
-	 *            Currency char code to set, for example "EUR"
+	 *
+	 * @param currencyCharCode Currency char code to set, for example "EUR"
 	 */
 	public void setCurrencyCharCode(String currencyCharCode) {
 		this.currencyCharCode = currencyCharCode;
@@ -143,9 +137,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets ISO 4217 currency digital code
-	 * 
-	 * @param currencyDigitalCode
-	 *            Dicital code to set
+	 *
+	 * @param currencyDigitalCode Dicital code to set
 	 */
 	public void setCurrencyDigitalCode(String currencyDigitalCode) {
 		this.currencyDigitalCode = currencyDigitalCode;
@@ -160,9 +153,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets the list of charged items
-	 * 
-	 * @param items
-	 *            Items to set
+	 *
+	 * @param items Items to set
 	 */
 	public void setItems(List<HotelChargeItem> items) {
 		this.items = items;
@@ -177,9 +169,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets tips amount
-	 * 
-	 * @param tips
-	 *            Tips amount tos set
+	 *
+	 * @param tips Tips amount tos set
 	 */
 	public void setTips(BigDecimal tips) {
 		this.tips = tips;
@@ -194,9 +185,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets service charge amount
-	 * 
-	 * @param serviceCharge
-	 *            Service charge amount to set
+	 *
+	 * @param serviceCharge Service charge amount to set
 	 */
 	public void setServiceCharge(BigDecimal serviceCharge) {
 		this.serviceCharge = serviceCharge;
@@ -211,9 +201,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets waiter name
-	 * 
-	 * @param waiterName
-	 *            waiter name to set
+	 *
+	 * @param waiterName waiter name to set
 	 */
 	public void setWaiterName(String waiterName) {
 		this.waiterName = waiterName;
@@ -228,9 +217,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets operation timestamp
-	 * 
-	 * @param timestamp
-	 *            Timestamp to set
+	 *
+	 * @param timestamp Timestamp to set
 	 */
 	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;
@@ -245,9 +233,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets unTill bill number
-	 * 
-	 * @param billNumber
-	 *            unTill bill number to set
+	 *
+	 * @param billNumber unTill bill number to set
 	 */
 	public void setBillNumber(String billNumber) {
 		this.billNumber = billNumber;
@@ -262,9 +249,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets unTill transaction number
-	 * 
-	 * @param transactionNumber
-	 *            unTill transaction number to set
+	 *
+	 * @param transactionNumber unTill transaction number to set
 	 */
 	public void setTransactionNumber(String transactionNumber) {
 		this.transactionNumber = transactionNumber;
@@ -279,9 +265,8 @@ public class HotelChargeData {
 
 	/**
 	 * Sets sales area number
-	 * 
-	 * @param salesAreaNumber
-	 *            Sales area number to set
+	 *
+	 * @param salesAreaNumber Sales area number to set
 	 */
 	public void setSalesAreaNumber(int salesAreaNumber) {
 		this.salesAreaNumber = salesAreaNumber;
@@ -296,7 +281,7 @@ public class HotelChargeData {
 
 	/**
 	 * Sets sales area number
-	 * 
+	 *
 	 * @param salesAreaName Sales area name
 	 */
 	public void setSalesAreaName(String salesAreaName) {
@@ -311,4 +296,26 @@ public class HotelChargeData {
 		this.billOpenDateTime = billOpenDateTime;
 	}
 
+	@Override
+	public String toString() {
+		return "HotelChargeData{"
+				+ "items=" + items
+				+ ", tips=" + tips
+				+ ", serviceCharge=" + serviceCharge
+				+ ", openDiscount=" + openDiscount
+				+ ", currencyCharCode='" + currencyCharCode + '\''
+				+ ", currencyDigitalCode='" + currencyDigitalCode + '\''
+				+ ", waiterOperatorId='" + waiterOperatorId + '\''
+				+ ", waiterName='" + waiterName + '\''
+				+ ", timestamp=" + timestamp
+				+ ", billOpenDateTime=" + billOpenDateTime
+				+ ", billNumber='" + billNumber + '\''
+				+ ", transactionNumber='" + transactionNumber + '\''
+				+ ", salesAreaNumber=" + salesAreaNumber
+				+ ", salesAreaName='" + salesAreaName + '\''
+				+ ", tableNumber=" + tableNumber
+				+ ", tablePart='" + tablePart + '\''
+				+ ", numberOfCovers=" + numberOfCovers
+				+ '}';
+	}
 }

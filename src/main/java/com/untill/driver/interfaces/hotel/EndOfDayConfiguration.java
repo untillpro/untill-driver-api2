@@ -2,7 +2,6 @@ package com.untill.driver.interfaces.hotel;
 
 /**
  * A configuration of "End Of Day" export by {@link IHotelSupportsEndOfDay}
- *
  */
 public class EndOfDayConfiguration {
 
@@ -17,9 +16,8 @@ public class EndOfDayConfiguration {
 
 	/**
 	 * Sets if EOD includes ROOM-payments turnover or not
-	 * 
-	 * @param roomPaymentTurnoverIncluded
-	 *            true if EOD includes ROOM-payments turnover
+	 *
+	 * @param roomPaymentTurnoverIncluded true if EOD includes ROOM-payments turnover
 	 */
 	public void setRoomPaymentTurnoverIncluded(boolean roomPaymentTurnoverIncluded) {
 		this.roomPaymentTurnoverIncluded = roomPaymentTurnoverIncluded;
@@ -42,4 +40,10 @@ public class EndOfDayConfiguration {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "EndOfDayConfiguration{"
+				+ "roomPaymentTurnoverIncluded=" + roomPaymentTurnoverIncluded
+				+ '}';
+	}
 }

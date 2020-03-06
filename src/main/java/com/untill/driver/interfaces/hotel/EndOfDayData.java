@@ -6,7 +6,6 @@ import java.util.List;
 
 /**
  * Data of an "End of Day" operation handled by {@link IHotelSupportsEndOfDay}
- *
  */
 public class EndOfDayData {
 
@@ -75,7 +74,15 @@ public class EndOfDayData {
 	public void setExtra(List<EndOfDayExtraItem> extra) {
 		this.extra = extra;
 	}
-	
-	
 
+	@Override
+	public String toString() {
+		return "EndOfDayData{"
+				+ "from=" + from
+				+ ", till=" + till
+				+ ", turnover=" + turnover
+				+ ", extra=" + extra
+				+ ", payments=" + payments
+				+ '}';
+	}
 }

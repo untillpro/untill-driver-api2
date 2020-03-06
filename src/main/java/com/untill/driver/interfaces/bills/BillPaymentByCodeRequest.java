@@ -2,14 +2,14 @@ package com.untill.driver.interfaces.bills;
 
 /**
  * Class representing a request for "Request Payment by Code" action in POS, handled by {@link IBillsHandler}}
- * 
+ *
  * @see IBillsHandler
  * @see BillsHandlerRequest
  */
 public class BillPaymentByCodeRequest extends BillsHandlerRequest {
 
 	String code;
-	
+
 	private boolean billSplit;
 
 	/**
@@ -34,5 +34,12 @@ public class BillPaymentByCodeRequest extends BillsHandlerRequest {
 	public void setCode(String code) {
 		this.code = code;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "BillPaymentByCodeRequest{"
+				+ "code='" + code + '\''
+				+ ", billSplit=" + billSplit
+				+ "} " + super.toString();
+	}
 }

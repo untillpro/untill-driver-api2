@@ -6,7 +6,6 @@ import com.untill.driver.interfaces.DriverRequest;
 
 /**
  * Basic class for {@link IBillsHandler} method requests
- * 
  */
 public abstract class BillsHandlerRequest extends DriverRequest {
 
@@ -23,6 +22,7 @@ public abstract class BillsHandlerRequest extends DriverRequest {
 
 	/**
 	 * Sets the timestamp of the operation
+	 *
 	 * @param timestamp Timestamp to set
 	 */
 	public void setTimestamp(Date timestamp) {
@@ -38,10 +38,18 @@ public abstract class BillsHandlerRequest extends DriverRequest {
 
 	/**
 	 * Sets the bill associated with the operation
+	 *
 	 * @param bill Bill to set
 	 */
 	public void setBill(Bill bill) {
 		this.bill = bill;
 	}
 
+	@Override
+	public String toString() {
+		return "BillsHandlerRequest{"
+				+ "bill=" + bill
+				+ ", timestamp=" + timestamp
+				+ "}";
+	}
 }

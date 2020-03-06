@@ -2,7 +2,6 @@ package com.untill.driver.interfaces.hotel;
 
 /**
  * A request for {@link IHotelInterface} "charge" operation
- *
  */
 public class HotelChargeRequest extends HotelInterfaceRequest {
 
@@ -25,9 +24,9 @@ public class HotelChargeRequest extends HotelInterfaceRequest {
 
 	/**
 	 * @return Returns guest lookup criteria. Either
-	 *         {@link GuestLookupByReservationId} or {@link GuestLookupByRoom}
-	 *         passed to this method, depending if client has reservationId
-	 *         filled or not.
+	 * {@link GuestLookupByReservationId} or {@link GuestLookupByRoom}
+	 * passed to this method, depending if client has reservationId
+	 * filled or not.
 	 */
 	public GuestLookupCriteria getCriteria() {
 		return criteria;
@@ -48,4 +47,12 @@ public class HotelChargeRequest extends HotelInterfaceRequest {
 		this.data = data;
 	}
 
+	@Override
+	public String toString() {
+		return "HotelChargeRequest{"
+				+ "data=" + data
+				+ ", criteria=" + criteria
+				+ ", requestKind=" + requestKind
+				+ '}';
+	}
 }

@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 /**
  * Class representing a request for "Bill Proforma" operation handled by {@link IBillsHandler}}
- * 
+ *
  * @see IBillsHandler
  * @see BillsHandlerRequest
  */
@@ -35,6 +35,7 @@ public class BillProformaRequest extends BillsHandlerRequest {
 
 	/**
 	 * Sets total amount to pay by this proforma, including tips.
+	 *
 	 * @param proformaTotal Total amount to pay by proforma
 	 */
 	public void setProformaTotal(BigDecimal proformaTotal) {
@@ -57,4 +58,13 @@ public class BillProformaRequest extends BillsHandlerRequest {
 		this.proformaId = proformaId;
 	}
 
+	@Override
+	public String toString() {
+		return "BillProformaRequest{"
+				+ "proformaId=" + proformaId
+				+ ", proformaTotal=" + proformaTotal
+				+ ", proformaTips=" + proformaTips
+				+ ", billSplit=" + billSplit
+				+ "} " + super.toString();
+	}
 }

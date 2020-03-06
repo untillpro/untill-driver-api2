@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * Description of the custom lookup criterias supported by hotel interface.
+ *
  * @see IHotelSupportsCustomLookupCriterias
  * @see GuestLookupCriteria
  */
@@ -16,8 +17,8 @@ public class CustomLookupCriterias {
 
 	/**
 	 * @return Returns a key of criteria which is used for hardware input (MSR,
-	 *         Cardreaders, etc). When not specified, unTill users
-	 *         "Folio Number" field.
+	 * Cardreaders, etc). When not specified, unTill users
+	 * "Folio Number" field.
 	 */
 	public String getHardwareInputCriteriaKey() {
 		return hardwareInputCriteriaKey;
@@ -29,8 +30,8 @@ public class CustomLookupCriterias {
 
 	/**
 	 * @return Returns a map (key-title) of additional supported lookup
-	 *         criterias. A key is sent in
-	 *         {@link GuestLookupCustom}.
+	 * criterias. A key is sent in
+	 * {@link GuestLookupCustom}.
 	 */
 	public Map<String, String> getItems() {
 		return items;
@@ -40,4 +41,11 @@ public class CustomLookupCriterias {
 		this.items = items;
 	}
 
+	@Override
+	public String toString() {
+		return "CustomLookupCriterias{"
+				+ "items=" + items
+				+ ", hardwareInputCriteriaKey='" + hardwareInputCriteriaKey + '\''
+				+ '}';
+	}
 }

@@ -7,13 +7,13 @@ public class BillDiscountByVatItem extends BillDiscountItem {
 	private BigDecimal vatPercent;
 
 	private String vatSign;
-	
+
 	private String discountKey;
-	
+
 	private String discountTitle;
-	
+
 	private String discountDescription;
-	
+
 	public String getDiscountDescription() {
 		return discountDescription;
 	}
@@ -54,5 +54,15 @@ public class BillDiscountByVatItem extends BillDiscountItem {
 		this.vatSign = vatSign;
 	}
 
-
+	@Override
+	public String toString() {
+		return "BillDiscountByVatItem{"
+				+ "amount=" + getAmount()
+				+ ", vatPercent=" + vatPercent
+				+ ", vatSign='" + vatSign + '\''
+				+ ", discountKey='" + discountKey + '\''
+				+ ", discountTitle='" + discountTitle + '\''
+				+ ", discountDescription='" + discountDescription + '\''
+				+ '}';
+	}
 }

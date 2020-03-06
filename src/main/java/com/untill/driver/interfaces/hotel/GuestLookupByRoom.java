@@ -2,7 +2,6 @@ package com.untill.driver.interfaces.hotel;
 
 /**
  * Criteria for requesting guest by room
- * 
  */
 public class GuestLookupByRoom extends GuestLookupCriteria {
 
@@ -19,9 +18,8 @@ public class GuestLookupByRoom extends GuestLookupCriteria {
 
 	/**
 	 * Sets room number which is used for searching guest
-	 * 
-	 * @param room
-	 *            Room number
+	 *
+	 * @param room Room number
 	 */
 	public void setRoom(String room) {
 		this.room = room;
@@ -36,9 +34,18 @@ public class GuestLookupByRoom extends GuestLookupCriteria {
 
 	/**
 	 * Sets guest's sequence number
+	 *
 	 * @param sequence Sequence number
 	 */
 	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
+	}
+
+	@Override
+	public String toString() {
+		return "GuestLookupByRoom{"
+				+ "room='" + room + '\''
+				+ ", sequence=" + sequence
+				+ '}';
 	}
 }

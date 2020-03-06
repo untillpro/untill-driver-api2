@@ -14,4 +14,11 @@ public class DepositToSmartCardRequest extends CustomBillsHandlerRequest {
 	public void setSmartCardUid(String smartCardUid) {
 		this.smartCardUid = smartCardUid;
 	}
+
+	@Override
+	public String toString() {
+		return "DepositToSmartCardRequest{"
+				+ "smartCardUid='" + smartCardUid + '\''
+				+ "} " + super.toString();
+	}
 }

@@ -6,8 +6,8 @@ import java.util.Map;
 
 /**
  * Payment item which includes payment information.
+ *
  * @see Bill
- * 
  */
 
 public class PaymentItem {
@@ -25,7 +25,7 @@ public class PaymentItem {
 	}
 
 	public PaymentItem(int paymentKind, String paymentName,
-			BigDecimal amount, BigDecimal customerAmount) {
+	                   BigDecimal amount, BigDecimal customerAmount) {
 		super();
 		this.paymentKind = paymentKind;
 		this.paymentName = paymentName;
@@ -74,19 +74,19 @@ public class PaymentItem {
 
 	/**
 	 * @param paymentKind Sets the paymentKind
-	 * <ul>
-	 * <li>PAYMENT_CASH = 0;</li>
-	 * <li>PAYMENT_CARD = 1;</li>
-	 * <li>PAYMENT_ACCOUNT = 2;</li>
-	 * <li>PAYMENT_ROOM = 3;</li>
-	 * <li>PAYMENT_CHEQUE = 4;</li>
-	 * <li>PAYMENT_HASH = 5;</li>
-	 * <li>PAYMENT_DISCOUNT = 7;</li>
-	 * <li>PAYMENT_SMARTCARD = 8;</li>
-	 * <li>PAYMENT_CASHDRO = 9;</li>
-	 * <li>PAYMENT_NEWYSE_ONACCOUNT = 10;</li>
-	 * <li>PAYMENT_GIFT_CARD = 11;</li>
-	 * </ul>
+	 *                    <ul>
+	 *                    <li>PAYMENT_CASH = 0;</li>
+	 *                    <li>PAYMENT_CARD = 1;</li>
+	 *                    <li>PAYMENT_ACCOUNT = 2;</li>
+	 *                    <li>PAYMENT_ROOM = 3;</li>
+	 *                    <li>PAYMENT_CHEQUE = 4;</li>
+	 *                    <li>PAYMENT_HASH = 5;</li>
+	 *                    <li>PAYMENT_DISCOUNT = 7;</li>
+	 *                    <li>PAYMENT_SMARTCARD = 8;</li>
+	 *                    <li>PAYMENT_CASHDRO = 9;</li>
+	 *                    <li>PAYMENT_NEWYSE_ONACCOUNT = 10;</li>
+	 *                    <li>PAYMENT_GIFT_CARD = 11;</li>
+	 *                    </ul>
 	 */
 	public void setPaymentKind(int paymentKind) {
 		this.paymentKind = paymentKind;
@@ -128,9 +128,8 @@ public class PaymentItem {
 
 	/**
 	 * Sets ISO 4217 currency char code
-	 * 
-	 * @param currencyCharCode
-	 *            Currency char code to set, for example "EUR"
+	 *
+	 * @param currencyCharCode Currency char code to set, for example "EUR"
 	 */
 	public void setCurrencyCharCode(String currencyCharCode) {
 		this.currencyCharCode = currencyCharCode;
@@ -145,9 +144,8 @@ public class PaymentItem {
 
 	/**
 	 * Sets ISO 4217 currency digital code
-	 * 
-	 * @param currencyDigitalCode
-	 *            Dicital code to set
+	 *
+	 * @param currencyDigitalCode Dicital code to set
 	 */
 	public void setCurrencyDigitalCode(String currencyDigitalCode) {
 		this.currencyDigitalCode = currencyDigitalCode;
@@ -161,4 +159,18 @@ public class PaymentItem {
 		this.paymentNumber = paymentNumber;
 	}
 
+	@Override
+	public String toString() {
+		return "PaymentItem{"
+				+ "paymentId=" + paymentId
+				+ ", paymentKind=" + paymentKind
+				+ ", paymentNumber=" + paymentNumber
+				+ ", paymentName='" + paymentName + '\''
+				+ ", amount=" + amount
+				+ ", customerAmount=" + customerAmount
+				+ ", currencyDigitalCode='" + currencyDigitalCode + '\''
+				+ ", currencyCharCode='" + currencyCharCode + '\''
+				+ ", data=" + data
+				+ '}';
+	}
 }

@@ -2,6 +2,7 @@ package com.untill.driver.interfaces.hotel;
 
 /**
  * Criteria for requesting guest by reservation Id
+ *
  * @see GuestLookupCriteria
  */
 public class GuestLookupByReservationId extends GuestLookupCriteria {
@@ -17,12 +18,17 @@ public class GuestLookupByReservationId extends GuestLookupCriteria {
 
 	/**
 	 * Sets reservation Id for searching guest
-	 * 
-	 * @param reservationId
-	 *            Reservation Id for searching guest
+	 *
+	 * @param reservationId Reservation Id for searching guest
 	 */
 	public void setReservationId(String reservationId) {
 		this.reservationId = reservationId;
 	}
 
+	@Override
+	public String toString() {
+		return "GuestLookupByReservationId{"
+				+ "reservationId='" + reservationId + '\''
+				+ '}';
+	}
 }

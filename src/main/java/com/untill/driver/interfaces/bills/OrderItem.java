@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 /**
  * Order item data which includes price, description, etc.
+ *
  * @see Bill
  */
 
@@ -34,11 +35,11 @@ public class OrderItem {
 	private String articleName;
 	private BigDecimal discountAmount;
 	private String discountDescription;
-	
+
 	private boolean discountAllowed;
 	private String signature;
 
-	
+
 	public String getSizeModifierName() {
 		return sizeModifierName;
 	}
@@ -72,6 +73,7 @@ public class OrderItem {
 
 	/**
 	 * Specifies if the discount is allowed for this item
+	 *
 	 * @param discountAllowed True when discount is allowed
 	 */
 	public void setDiscountAllowed(boolean discountAllowed) {
@@ -79,7 +81,7 @@ public class OrderItem {
 	}
 
 	/**
-	 * @return Returns the string which is unique per order item configuration. 
+	 * @return Returns the string which is unique per order item configuration.
 	 * unTill guarantees that if there is any difference between order items (price, course, quantity, options, etc) they've got different signatures.
 	 * Only if items are absolutely identical then signature is the same.
 	 */
@@ -89,6 +91,7 @@ public class OrderItem {
 
 	/**
 	 * Sets the signature
+	 *
 	 * @param signature Item signature
 	 */
 	public void setSignature(String signature) {
@@ -104,6 +107,7 @@ public class OrderItem {
 
 	/**
 	 * Sets article HQ Id
+	 *
 	 * @param articleHqId article HQ Id to set
 	 */
 	public void setArticleHqId(String articleHqId) {
@@ -119,6 +123,7 @@ public class OrderItem {
 
 	/**
 	 * Sets if article is a menu or not
+	 *
 	 * @param menu True if article is a menu
 	 */
 	public void setMenu(boolean menu) {
@@ -134,6 +139,7 @@ public class OrderItem {
 
 	/**
 	 * Sets department ID
+	 *
 	 * @param departmentId Department ID
 	 */
 	public void setDepartmentId(long departmentId) {
@@ -149,6 +155,7 @@ public class OrderItem {
 
 	/**
 	 * Sets Food Group ID
+	 *
 	 * @param groupId Food Group ID
 	 */
 	public void setGroupId(long groupId) {
@@ -164,6 +171,7 @@ public class OrderItem {
 
 	/**
 	 * Sets Article ID
+	 *
 	 * @param articleId Article ID
 	 */
 	public void setArticleId(long articleId) {
@@ -193,9 +201,8 @@ public class OrderItem {
 
 	/**
 	 * Sets Quantity
-	 * 
-	 * @param quantity
-	 *            Quantity to set
+	 *
+	 * @param quantity Quantity to set
 	 */
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
@@ -210,9 +217,8 @@ public class OrderItem {
 
 	/**
 	 * Sets single price
-	 * 
-	 * @param singlePrice
-	 *            Single price to set
+	 *
+	 * @param singlePrice Single price to set
 	 */
 	public void setSinglePrice(BigDecimal singlePrice) {
 		this.singlePrice = singlePrice;
@@ -227,9 +233,8 @@ public class OrderItem {
 
 	/**
 	 * Sets Department number
-	 * 
-	 * @param departmentNumber
-	 *            Department number to set
+	 *
+	 * @param departmentNumber Department number to set
 	 */
 	public void setDepartmentNumber(int departmentNumber) {
 		this.departmentNumber = departmentNumber;
@@ -244,9 +249,8 @@ public class OrderItem {
 
 	/**
 	 * Sets Department name
-	 * 
-	 * @param departmentName
-	 *            Department name to set
+	 *
+	 * @param departmentName Department name to set
 	 */
 	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
@@ -261,9 +265,8 @@ public class OrderItem {
 
 	/**
 	 * Sets group number
-	 * 
-	 * @param groupNumber
-	 *            Group number to set
+	 *
+	 * @param groupNumber Group number to set
 	 */
 	public void setGroupNumber(int groupNumber) {
 		this.groupNumber = groupNumber;
@@ -278,9 +281,8 @@ public class OrderItem {
 
 	/**
 	 * Sets Group name
-	 * 
-	 * @param groupName
-	 *            Group name to set
+	 *
+	 * @param groupName Group name to set
 	 */
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
@@ -295,9 +297,8 @@ public class OrderItem {
 
 	/**
 	 * Sets V.A.T. percent
-	 * 
-	 * @param vatPercent
-	 *            V.A.T. percent to set
+	 *
+	 * @param vatPercent V.A.T. percent to set
 	 */
 	public void setVatPercent(BigDecimal vatPercent) {
 		this.vatPercent = vatPercent;
@@ -312,9 +313,8 @@ public class OrderItem {
 
 	/**
 	 * Sets V.A.T. sign
-	 * 
-	 * @param vatSign
-	 *            V.A.T. sign to set (up to 3 characters)
+	 *
+	 * @param vatSign V.A.T. sign to set (up to 3 characters)
 	 */
 	public void setVatSign(String vatSign) {
 		this.vatSign = vatSign;
@@ -329,9 +329,8 @@ public class OrderItem {
 
 	/**
 	 * Sets article number
-	 * 
-	 * @param articleNumber
-	 *            Returns article number to set
+	 *
+	 * @param articleNumber Returns article number to set
 	 */
 	public void setArticleNumber(int articleNumber) {
 		this.articleNumber = articleNumber;
@@ -346,9 +345,8 @@ public class OrderItem {
 
 	/**
 	 * Sets Article name
-	 * 
-	 * @param articleName
-	 *            Article name to set
+	 *
+	 * @param articleName Article name to set
 	 */
 	public void setArticleName(String articleName) {
 		this.articleName = articleName;
@@ -363,10 +361,38 @@ public class OrderItem {
 
 	/**
 	 * Sets single V.A.T. amount
+	 *
 	 * @param singleVatAmount V.A.T. amount
 	 */
 	public void setSingleVatAmount(BigDecimal singleVatAmount) {
 		this.singleVatAmount = singleVatAmount;
 	}
 
+	@Override
+	public String toString() {
+		return "OrderItem{"
+				+ "quantity=" + quantity
+				+ ", menu=" + menu
+				+ ", singlePrice=" + singlePrice
+				+ ", singleVatAmount=" + singleVatAmount
+				+ ", departmentId=" + departmentId
+				+ ", departmentNumber=" + departmentNumber
+				+ ", departmentName='" + departmentName + '\''
+				+ ", groupId=" + groupId
+				+ ", groupNumber=" + groupNumber
+				+ ", groupName='" + groupName + '\''
+				+ ", vatPercent=" + vatPercent
+				+ ", vatSign='" + vatSign + '\''
+				+ ", articleId=" + articleId
+				+ ", sizeModifierId=" + sizeModifierId
+				+ ", sizeModifierName='" + sizeModifierName + '\''
+				+ ", articleHqId='" + articleHqId + '\''
+				+ ", articleNumber=" + articleNumber
+				+ ", articleName='" + articleName + '\''
+				+ ", discountAmount=" + discountAmount
+				+ ", discountDescription='" + discountDescription + '\''
+				+ ", discountAllowed=" + discountAllowed
+				+ ", signature='" + signature + '\''
+				+ '}';
+	}
 }
