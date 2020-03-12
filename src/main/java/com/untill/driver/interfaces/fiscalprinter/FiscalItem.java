@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 /**
  * Represents single fiscal {@link FiscalDocument} item
- * 
+ *
  * @see FiscalDocument
  */
 public class FiscalItem {
@@ -210,4 +210,31 @@ public class FiscalItem {
 		this.surcharge = surcharge;
 	}
 
+	@Override
+	public String toString() {
+		return "FiscalItem{"
+				+ "articleNumber=" + articleNumber
+				+ ", articleName='" + articleName + '\''
+				+ ", sizeModifierName='" + sizeModifierName + '\''
+				+ ", departmentNumber=" + departmentNumber
+				+ ", departmentName='" + departmentName + '\''
+				+ ", courseNumber=" + courseNumber
+				+ ", courseName='" + courseName + '\''
+				+ ", groupNumber=" + groupNumber
+				+ ", groupName='" + groupName + '\''
+				+ ", categoryNumber=" + categoryNumber
+				+ ", categoryName='" + categoryName + '\''
+				+ ", quantity=" + quantity
+				+ ", unit='" + unit + '\''
+				+ ", price=" + price
+				+ ", discount=" + discount
+				+ ", discountPercent=" + discountPercent
+				+ ", vat=" + vat
+				+ ", vatPercent=" + vatPercent
+				+ ", purcharsePrice=" + purcharsePrice
+				+ ", vatSign='" + vatSign + '\''
+				+ ", surcharge=" + surcharge
+				+ ", itemType=" + itemType
+				+ '}';
+	}
 }

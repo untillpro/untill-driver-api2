@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Describes the fiscal document (bill), including items and payments
- * 
+ *
  * @see FiscalItem
  * @see FiscalPayment
  * @see IFiscalPrinter
@@ -43,30 +43,15 @@ public class FiscalDocument {
 	private String comments;
 	private String pcName;
 
+	public FiscalDocument() {
+	}
+
 	public String getPcName() {
 		return pcName;
 	}
 
 	public void setPcName(String pcName) {
 		this.pcName = pcName;
-	}
-
-	public FiscalDocument() {
-	}
-
-	@Override
-	public String toString() {
-		return "FiscalDocument [timestamp=" + timestamp + ", branchName=" + branchName + ", waiterTerminalId="
-				+ waiterTerminalId + ", waiterName=" + waiterName + ", tableNumber=" + tableNumber + ", tablePart="
-				+ tablePart + ", billNo=" + billNo + ", billPrefix=" + billPrefix + ", failuredBillNo=" + failuredBillNo
-				+ ", tranNo=" + tranNo + ", tranPrefix=" + tranPrefix + ", failuredTranNo=" + failuredTranNo
-				+ ", fiscalBillNumber=" + fiscalBillNumber + ", reopenedFiscalBillNumber=" + reopenedFiscalBillNumber
-				+ ", businessUse=" + businessUse + ", discount=" + discount + ", discountPercent=" + discountPercent
-				+ ", discountDescription=" + discountDescription + ", serviceCharge=" + serviceCharge
-				+ ", serviceChargePercent=" + serviceChargePercent + ", serviceChargeDescription="
-				+ serviceChargeDescription + ", customerName=" + customerName + ", customerNumber=" + customerNumber
-				+ ", customerExempted=" + customerExempted + ", customerTaxId=" + customerTaxId + ", items=" + items
-				+ ", payments=" + payments + ", comments=" + comments + ", pcName=" + pcName + "]";
 	}
 
 	public Date getTimestamp() {
@@ -287,9 +272,8 @@ public class FiscalDocument {
 	/**
 	 * Specify if the document created for company/business or for personal
 	 * customer.
-	 * 
-	 * @param businessUse
-	 *            - True if document is for company/business
+	 *
+	 * @param businessUse - True if document is for company/business
 	 */
 	public void setBusinessUse(boolean businessUse) {
 		this.businessUse = businessUse;
@@ -303,4 +287,38 @@ public class FiscalDocument {
 		this.comments = comments;
 	}
 
+	@Override
+	public String toString() {
+		return "FiscalDocument{"
+				+ "timestamp=" + timestamp
+				+ ", branchName='" + branchName + '\''
+				+ ", waiterTerminalId='" + waiterTerminalId + '\''
+				+ ", waiterName='" + waiterName + '\''
+				+ ", tableNumber=" + tableNumber
+				+ ", tablePart='" + tablePart + '\''
+				+ ", billNo=" + billNo
+				+ ", billPrefix='" + billPrefix + '\''
+				+ ", failuredBillNo=" + failuredBillNo
+				+ ", tranNo=" + tranNo
+				+ ", tranPrefix='" + tranPrefix + '\''
+				+ ", failuredTranNo=" + failuredTranNo
+				+ ", fiscalBillNumber=" + fiscalBillNumber
+				+ ", reopenedFiscalBillNumber=" + reopenedFiscalBillNumber
+				+ ", businessUse=" + businessUse
+				+ ", discount=" + discount
+				+ ", discountPercent=" + discountPercent
+				+ ", discountDescription='" + discountDescription + '\''
+				+ ", serviceCharge=" + serviceCharge
+				+ ", serviceChargePercent=" + serviceChargePercent
+				+ ", serviceChargeDescription='" + serviceChargeDescription + '\''
+				+ ", customerName='" + customerName + '\''
+				+ ", customerNumber=" + customerNumber
+				+ ", customerExempted=" + customerExempted
+				+ ", customerTaxId='" + customerTaxId + '\''
+				+ ", items=" + items
+				+ ", payments=" + payments
+				+ ", comments='" + comments + '\''
+				+ ", pcName='" + pcName + '\''
+				+ '}';
+	}
 }

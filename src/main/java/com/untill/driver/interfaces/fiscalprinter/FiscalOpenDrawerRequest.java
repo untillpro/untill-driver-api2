@@ -2,7 +2,6 @@ package com.untill.driver.interfaces.fiscalprinter;
 
 /**
  * Request for "fiscal open drawer" operation
- * 
  */
 public class FiscalOpenDrawerRequest extends FiscalOperationRequest {
 
@@ -16,4 +15,10 @@ public class FiscalOpenDrawerRequest extends FiscalOperationRequest {
 		this.drawerNumber = drawerNumber;
 	}
 
+	@Override
+	public String toString() {
+		return "FiscalOpenDrawerRequest{"
+				+ "drawerNumber=" + drawerNumber
+				+ '}';
+	}
 }

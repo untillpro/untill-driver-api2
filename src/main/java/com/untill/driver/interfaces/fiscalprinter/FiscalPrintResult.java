@@ -5,13 +5,19 @@ import java.util.Map;
 
 /**
  * A result of fiscal printer "print" operation
- * 
  */
 public class FiscalPrintResult extends FiscalPrinterResult {
 
-	private Map<String, String> data = new HashMap<String, String>();
+	private Map<String, String> data = new HashMap<>();
 
 	private String documentId;
+
+	public FiscalPrintResult() {
+	}
+
+	public FiscalPrintResult(String documentId) {
+		this.documentId = documentId;
+	}
 
 	/**
 	 * @return The unique identifier of printed document. Used for document identification in unTill
@@ -35,8 +41,11 @@ public class FiscalPrintResult extends FiscalPrinterResult {
 		this.data = data;
 	}
 
-	public FiscalPrintResult() {
+	@Override
+	public String toString() {
+		return "FiscalPrintResult{"
+				+ "data=" + data
+				+ ", documentId='" + documentId + '\''
+				+ '}';
 	}
-
-
 }

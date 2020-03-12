@@ -15,4 +15,10 @@ public class FiscalZReportRequest extends FiscalPrinterRequest {
 		this.printed = printed;
 	}
 
+	@Override
+	public String toString() {
+		return "FiscalZReportRequest{"
+				+ "printed=" + printed
+				+ '}';
+	}
 }
