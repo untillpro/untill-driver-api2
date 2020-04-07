@@ -41,6 +41,7 @@ To provide certain functionality which can be used by unTill(r) POS, driver must
 - [ICashHandler](docs/cash.md) - implement for handling cash operations (deposit, withdraw, initialization)
 - [IInvoiceHandler](docs/invoice.md) - implement for handling invoice operations (print, re-print, pay)
 - [IReportHandler](docs/report.md) - implement for handling report operations (print, re-print)
+- [ITimeAttendance](docs/time_and_attendance.md) - implement for handling time and attendance operations (clock in, end break)
 
 Declaration of supported interfaces is made by `init` method which is called at driver initialization stage. Driver must return a map of supported interfaces:
 ```java
