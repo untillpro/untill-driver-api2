@@ -7,6 +7,7 @@ import com.untill.driver.untillapi.IUntillApi;
 
 /**
  * UntillAPI for working with Time
+ *
  * @see IUntillApi
  * @see IDriverContext
  */
@@ -17,4 +18,10 @@ public interface IUntillTimeApi extends IUntillApi {
 	 */
 	TimeZone getSystemTimeZone();
 
+	/**
+	 * Returns working hours
+	 *
+	 * @return {@link WorkingHours}
+	 */
+	WorkingHours getWorkingHours();
 }
