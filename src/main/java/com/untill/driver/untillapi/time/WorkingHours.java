@@ -1,6 +1,6 @@
 package com.untill.driver.untillapi.time;
 
-import java.util.Date;
+import java.time.LocalTime;
 
 /**
  * Hours of service
@@ -9,25 +9,25 @@ public class WorkingHours {
 	/**
 	 * Start of work
 	 */
-	private Date from;
+	private LocalTime from;
 	/**
 	 * End of work
 	 */
-	private Date to;
+	private LocalTime to;
 
-	public Date getFrom() {
+	public LocalTime getFrom() {
 		return from;
 	}
 
-	public void setFrom(Date from) {
+	public void setFrom(LocalTime from) {
 		this.from = from;
 	}
 
-	public Date getTo() {
+	public LocalTime getTo() {
 		return to;
 	}
 
-	public void setTo(Date to) {
+	public void setTo(LocalTime to) {
 		this.to = to;
 	}
 }
