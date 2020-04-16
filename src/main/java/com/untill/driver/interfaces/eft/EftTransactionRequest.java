@@ -17,9 +17,18 @@ public abstract class EftTransactionRequest extends EftRequest {
 	private Date timestamp;
 	private int billNumber;
 	private String orderId;
+	private String transactionId;
 	private boolean manualEntry;
 
 	public EftTransactionRequest() {
+	}
+
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
 	}
 
 	public BigDecimal getAmount() {
