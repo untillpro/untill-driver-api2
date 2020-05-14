@@ -1,11 +1,37 @@
 # Bills Handler - IBillsHandler
+Interface has two methods:
+- `operation` which gets called with an instance of a class derived from `BillsHandlerRequest`, depending on the POS event: 
+  - `BillClosingRequest` when bill is closed (printed)
+  - `BillReOpeningRequest` when bill is re-opened
+  - `BillRePrintingRequest` when bill is re-printed
+  - `BillProformaRequest` when proforma is printed
+  - `BillCancelArticlesRequest` when void unpaid order
+  - `BillPaymentByCodeRequest` when payment by code
+  - `BillPaymentCancelledRequest` when user exits from payment screen and cancels payments which he has already chosen
+  - `BillAddingOrderRequest` when order added to bill
+- `supportedRequests` default method witch returns set of supported requests. By default almost all requests are supported for 
+backward compatibility. See `Javadoc`. It is possible to change number of supported requests based on driver instance configuration
 
-Interface implements single method `operation` which gets called with an instance of a class derived from `BillsHandlerRequest`, depending on the POS event: 
+```java
+public class VariableQuantitySupportedRequestsBillsHandler implements IBillsHandler {
 
-- `BillClosingRequest` when bill is closed (printed);
-- `BillReOpeningRequest` when bill is re-opened;
-- `BillRePrintingRequest` when bill is re-printed;
-- `BillProformaRequest` when proforma is printed.
+	@Override
+	public BillsHandlerResult operation(DriverConfiguration cfg, BillsHandlerRequest request) {
+		//Sophisticated code goes here
+		return null;
+	}
+
+	@Override
+	public Set<Class<? extends BillsHandlerRequest>> supportedRequests(DriverConfiguration cfg) {
+		Set<Class<? extends BillsHandlerRequest>> requests = new HashSet<>();
+		requests.add(BillPaymentCancelledRequest.class);
+		if ("true".equals(cfg.getParams().get("SOME_DRIVER_PARAM"))) {
+			requests.add(BillCancelArticlesRequest.class);
+		}
+		return requests;
+	}
+}
+```
 
 Every request contains bill structure: items, payments, etc. For any of operations above method should return instance of `BillsHandlerResult`, or null.
 
