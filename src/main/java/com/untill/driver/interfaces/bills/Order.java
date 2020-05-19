@@ -1,6 +1,6 @@
 package com.untill.driver.interfaces.bills;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,7 +19,7 @@ public class Order {
 	/**
 	 * Timestamp when order was created
 	 */
-	private LocalDateTime timestamp;
+	private Date timestamp;
 	/**
 	 * Waiter name
 	 */
@@ -45,11 +45,11 @@ public class Order {
 		this.orderNumber = orderNumber;
 	}
 
-	public LocalDateTime getTimestamp() {
+	public Date getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(LocalDateTime timestamp) {
+	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;
 	}
 
