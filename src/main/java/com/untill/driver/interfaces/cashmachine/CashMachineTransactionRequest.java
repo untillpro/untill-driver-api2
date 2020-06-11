@@ -13,7 +13,7 @@ public abstract class CashMachineTransactionRequest extends CashMachineRequest {
 	/**
 	 * Transaction ID
 	 */
-	private long transactionId;
+	private String transactionId;
 
 	public BigDecimal getAmount() {
 		return amount;
@@ -23,11 +23,11 @@ public abstract class CashMachineTransactionRequest extends CashMachineRequest {
 		this.amount = amount;
 	}
 
-	public long getTransactionId() {
+	public String getTransactionId() {
 		return transactionId;
 	}
 
-	public void setTransactionId(long transactionId) {
+	public void setTransactionId(String transactionId) {
 		this.transactionId = transactionId;
 	}
 }
