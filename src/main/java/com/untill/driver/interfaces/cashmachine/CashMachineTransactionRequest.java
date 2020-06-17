@@ -30,4 +30,12 @@ public abstract class CashMachineTransactionRequest extends CashMachineRequest {
 	public void setTransactionId(String transactionId) {
 		this.transactionId = transactionId;
 	}
+
+	@Override
+	public String toString() {
+		return "CashMachineTransactionRequest{"
+				+ "amount=" + amount
+				+ ", transactionId='" + transactionId + '\''
+				+ "} " + super.toString();
+	}
 }
