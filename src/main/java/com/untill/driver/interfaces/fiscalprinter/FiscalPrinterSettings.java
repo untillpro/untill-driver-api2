@@ -12,7 +12,6 @@ public class FiscalPrinterSettings {
 
 	/**
 	 * Supported Z-report kinds printed by dates. Each map entry, key is report kind, value is report name.
-	 * Report name is visible on POS screen
 	 */
 	private Map<String, String> zReportByDatesKinds = new LinkedHashMap<>();
 
