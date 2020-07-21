@@ -1,6 +1,6 @@
 # Fiscal Printer - IFiscalPrinter
 
-Drivers of this interface handles connection to fiscal printers and fiscal registrators. There are 3 methods in `IFiscalPrinter`:
+Drivers of this interface handles connection to fiscal printers and fiscal registrators. There are 4 methods in `IFiscalPrinter`:
 
 - `print` - called when either bill paid or re-opened. Takes `FiscalPrintRequest` as an argument with all the information about bill passed. 
 - `zReport` - called when z-report is printed.
@@ -12,3 +12,5 @@ Drivers of this interface handles connection to fiscal printers and fiscal regis
   - `FiscalZReportsByDatesRequest` - Z-reports by date range requested
   - `FiscalZReportsByNumbersRequest` - Z-reports by number range requested
   - `NonFiscalPrintRequest` - non-fiscal print requested
+- `getSettings` - is a way to customize some default driver behaviour
+  - `zReportByDatesKinds` - supported Z-report kinds printed by dates
