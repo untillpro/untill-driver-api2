@@ -11,6 +11,11 @@ public class FiscalZReportsByDatesRequest extends FiscalOperationRequest {
 
 	private Date till;
 
+	/**
+	 * Report kind
+	 */
+	private String kind;
+
 	public Date getFrom() {
 		return from;
 	}
@@ -27,11 +32,20 @@ public class FiscalZReportsByDatesRequest extends FiscalOperationRequest {
 		this.till = till;
 	}
 
+	public String getKind() {
+		return kind;
+	}
+
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+
 	@Override
 	public String toString() {
 		return "FiscalZReportsByDatesRequest{"
 				+ "from=" + from
 				+ ", till=" + till
+				+ ", kind='" + kind + '\''
 				+ '}';
 	}
 }
