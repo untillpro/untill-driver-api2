@@ -8,7 +8,7 @@ import com.untill.driver.untillapi.IUntillApi;
  * @see IUntillApi
  * @see IDriverContext
  */
-public interface IUntillPaymentsApi {
+public interface IUntillPaymentsApi extends IUntillApi {
 	
 	/**
 	 * @param guid Payment GUID

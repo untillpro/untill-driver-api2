@@ -8,7 +8,7 @@ import com.untill.driver.untillapi.IUntillApi;
  * @see IUntillApi
  * @see IDriverContext
  */
-public interface IUntillReasonsApi {
+public interface IUntillReasonsApi extends IUntillApi {
 
 	/**
 	 * @param guid void-reason or discount-reason GUID
