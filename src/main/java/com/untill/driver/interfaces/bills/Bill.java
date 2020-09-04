@@ -26,10 +26,42 @@ public class Bill {
 	private BigDecimal tips;
 	private BigDecimal serviceCharge;
 	private BigDecimal openDiscount;
+	private int servingTimeNumber;
+	private String servingTimeName;
 	private List<OrderItem> orderItems = new ArrayList<>();
 	private List<PaymentItem> paymentItems = new ArrayList<>();
 	private List<DiscountGroup> appliedDiscountGroups = new ArrayList<>();
 	private Map<String, String> extra = new LinkedHashMap<>();
+
+	/**
+	 * @return Returns number of serving time
+	 */
+	public int getServingTimeNumber() {
+		return servingTimeNumber;
+	}
+
+	/**
+	 * Sets the number of serving time 
+	 * @param servingTimeNumber number of serving time 
+	 */
+	public void setServingTimeNumber(int servingTimeNumber) {
+		this.servingTimeNumber = servingTimeNumber;
+	}
+
+	/**
+	 * @return Returns name of serving time
+	 */
+	public String getServingTimeName() {
+		return servingTimeName;
+	}
+
+	/**
+	 * Sets the name of serving time
+	 * @param servingTimeName name of serving time
+	 */
+	public void setServingTimeName(String servingTimeName) {
+		this.servingTimeName = servingTimeName;
+	}
 
 	/**
 	 * @return Returns number of covers

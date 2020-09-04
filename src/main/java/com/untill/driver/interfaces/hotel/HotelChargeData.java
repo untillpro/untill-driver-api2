@@ -29,6 +29,38 @@ public class HotelChargeData {
 	private int tableNumber;
 	private String tablePart;
 	private int numberOfCovers;
+	private int servingTimeNumber;
+	private String servingTimeName;
+
+	/**
+	 * @return Returns number of serving time
+	 */
+	public int getServingTimeNumber() {
+		return servingTimeNumber;
+	}
+
+	/**
+	 * Sets the number of serving time 
+	 * @param servingTimeNumber number of serving time 
+	 */
+	public void setServingTimeNumber(int servingTimeNumber) {
+		this.servingTimeNumber = servingTimeNumber;
+	}
+
+	/**
+	 * @return Returns name of serving time
+	 */
+	public String getServingTimeName() {
+		return servingTimeName;
+	}
+
+	/**
+	 * Sets the name of serving time
+	 * @param servingTimeName name of serving time
+	 */
+	public void setServingTimeName(String servingTimeName) {
+		this.servingTimeName = servingTimeName;
+	}
 
 	/**
 	 * @return Returns table number
