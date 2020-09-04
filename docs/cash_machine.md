@@ -8,10 +8,7 @@ class MyCashMachine implements ICashMachine {
 
 	@Override
 	public CashMachineSettings getSettings() {
-		return new CashMachineSettings.Builder()
-				.setCancellingByWaiterSupported(true)
-				.setWaitTimeout(210 * 1000)
-				.build();
+		return new CashMachineSettings();
 	}
 
 	@Override
@@ -26,6 +23,16 @@ class MyCashMachine implements ICashMachine {
 ```
 
 ## Cash machine settings
+There is a way to customize some default driver behaviour
+```java
+@Override
+public CashMachineSettings getSettings() {
+	return new CashMachineSettings.Builder()
+			.setCancellingByWaiterSupported(true)
+			.setWaitTimeout(210 * 1000)
+			.build();
+}
+```
 - `cancellingByWaiterSupported` - return true if you want to support cancelling from POS. In this way unTill(r) shows 
 `Cancel` button on `Wait please...` popup and sends cancel signal to driver which can be caught using 
 [IDriverProgress](progress.md) interface.
