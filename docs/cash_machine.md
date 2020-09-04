@@ -1,7 +1,6 @@
 # Cash-machine interface - ICashMachine
 
-Cash-machine interface is used for handling cash operations with cash-machines. Also interface has settings for 
-behaviour customization
+Cash-machine interface is used for handling cash operations with cash-machines. 
 
 Example implementation
 ```java
@@ -9,9 +8,10 @@ class MyCashMachine implements ICashMachine {
 
 	@Override
 	public CashMachineSettings getSettings() {
-		CashMachineSettings settings = new CashMachineSettings();
-		settings.setCancellingByWaiterSupported(true);
-		return settings;
+		return new CashMachineSettings.Builder()
+				.setCancellingByWaiterSupported(true)
+				.setWaitTimeout(210 * 1000)
+				.build();
 	}
 
 	@Override
@@ -24,6 +24,13 @@ class MyCashMachine implements ICashMachine {
 	}
 }
 ```
+
+## Cash machine settings
+- `cancellingByWaiterSupported` - return true if you want to support cancelling from POS. In this way unTill(r) shows 
+`Cancel` button on `Wait please...` popup and sends cancel signal to driver which can be caught using 
+[IDriverProgress](progress.md) interface.
+- `waitTimeout` - overrides default 180 second timeout.
+
 ## Cash machine result
 Cash machine result `must` has transaction result. Available transaction results:
 - `SUCCESS` - indicates successful completion
