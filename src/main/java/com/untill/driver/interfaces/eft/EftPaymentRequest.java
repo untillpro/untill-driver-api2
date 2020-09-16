@@ -18,6 +18,11 @@ public class EftPaymentRequest extends EftTransactionRequest {
 	 * Can be ignored when not supported by integration.
 	 */
 	private BigDecimal cashout;
+	/**
+	 * Indicates that partial authorization allowed for this request.
+	 * Can be ignored when not supported by integration
+	 */
+	private boolean allowPartialAuth;
 
 	public BigDecimal getVat() {
 		return vat;
@@ -33,5 +38,13 @@ public class EftPaymentRequest extends EftTransactionRequest {
 
 	public void setCashout(BigDecimal cashout) {
 		this.cashout = cashout;
+	}
+
+	public boolean isAllowPartialAuth() {
+		return allowPartialAuth;
+	}
+
+	public void setAllowPartialAuth(boolean allowPartialAuth) {
+		this.allowPartialAuth = allowPartialAuth;
 	}
 }
