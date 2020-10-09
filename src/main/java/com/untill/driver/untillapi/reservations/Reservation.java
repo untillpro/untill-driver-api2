@@ -1,5 +1,7 @@
 package com.untill.driver.untillapi.reservations;
 
+import java.math.BigDecimal;
+
 public class Reservation {
 	
 	Long id;
@@ -35,6 +37,16 @@ public class Reservation {
 	ReservationCancelReason cancelReason;
 	
 	Long userId;
+	
+	BigDecimal depositAmount;
+
+	public BigDecimal getDepositAmount() {
+		return depositAmount;
+	}
+
+	public void setDepositAmount(BigDecimal depositAmount) {
+		this.depositAmount = depositAmount;
+	}
 
 	public ReservationCancelReason getCancelReason() {
 		return cancelReason;
