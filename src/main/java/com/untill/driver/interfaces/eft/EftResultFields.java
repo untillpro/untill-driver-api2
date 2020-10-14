@@ -2,6 +2,7 @@ package com.untill.driver.interfaces.eft;
 
 /**
  * EFT data keys for using in {@link EftResult}.data
+ *
  * @see EftResult
  */
 
@@ -46,5 +47,9 @@ public abstract class EftResultFields {
 	 * must return tips amount in cents (integer value)
 	 */
 	public static final String EFT_ADDED_TIPS = "eft_added_tips";
-
+	/**
+	 * Some terminals allows partially authorized amount. In this case, this field
+	 * must return partially authorized amount in cents (integer value)
+	 */
+	public static final String PARTIALLY_AUTHORIZED_AMOUNT = "partially_authorized_amount";
 }
