@@ -200,7 +200,8 @@ public class Reservation {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, reference, tableNumber, clientId, startTime, updateTime, closeTime, status, note, origin, persons, children, clientInfo, clientContact, extraData, cancelReason, userId);
+		return Objects.hash(id, reference, tableNumber, clientId, startTime, updateTime, closeTime, status, note, origin,
+				persons, children, clientInfo, clientContact, extraData, cancelReason, userId);
 	}
 
 	@Override
