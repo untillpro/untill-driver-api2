@@ -41,6 +41,30 @@ public class Reservation {
 	
 	BigDecimal depositAmount;
 
+	public Reservation() {
+	}
+
+	public Reservation(Reservation that) {
+		this.id = that.id;
+		this.reference = that.reference;
+		this.tableNumber = that.tableNumber;
+		this.clientId = that.clientId;
+		this.startTime = that.startTime;
+		this.updateTime = that.updateTime;
+		this.closeTime = that.closeTime;
+		this.status = that.status;
+		this.note = that.note;
+		this.origin = that.origin;
+		this.persons = that.persons;
+		this.children = that.children;
+		this.clientInfo = that.clientInfo;
+		this.clientContact = that.clientContact;
+		this.extraData = that.extraData;
+		this.cancelReason = that.cancelReason;
+		this.userId = that.userId;
+		this.depositAmount = that.depositAmount;
+	}
+
 	public BigDecimal getDepositAmount() {
 		return depositAmount;
 	}
