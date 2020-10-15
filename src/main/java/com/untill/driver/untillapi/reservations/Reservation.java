@@ -1,6 +1,7 @@
 package com.untill.driver.untillapi.reservations;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Reservation {
 	
@@ -184,4 +185,58 @@ public class Reservation {
 		this.extraData = extraData;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Reservation that = (Reservation) o;
+		return Objects.equals(id, that.id)
+				&& Objects.equals(reference, that.reference)
+				&& Objects.equals(tableNumber, that.tableNumber)
+				&& Objects.equals(clientId, that.clientId)
+				&& Objects.equals(startTime, that.startTime)
+				&& Objects.equals(updateTime, that.updateTime)
+				&& Objects.equals(closeTime, that.closeTime)
+				&& status == that.status
+				&& Objects.equals(note, that.note)
+				&& origin == that.origin
+				&& Objects.equals(persons, that.persons)
+				&& Objects.equals(children, that.children)
+				&& Objects.equals(clientInfo, that.clientInfo)
+				&& Objects.equals(clientContact, that.clientContact)
+				&& Objects.equals(extraData, that.extraData)
+				&& cancelReason == that.cancelReason
+				&& Objects.equals(userId, that.userId)
+				&& Objects.equals(depositAmount, that.depositAmount);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, reference, tableNumber, clientId, startTime, updateTime, closeTime, status, note,
+				origin, persons, children, clientInfo, clientContact, extraData, cancelReason, userId, depositAmount);
+	}
+
+	@Override
+	public String toString() {
+		return "Reservation{"
+				+ "id=" + id
+				+ ", reference='" + reference + '\''
+				+ ", tableNumber=" + tableNumber
+				+ ", clientId=" + clientId
+				+ ", startTime=" + startTime
+				+ ", updateTime=" + updateTime
+				+ ", closeTime=" + closeTime
+				+ ", status=" + status
+				+ ", note='" + note + '\''
+				+ ", origin=" + origin
+				+ ", persons=" + persons
+				+ ", children=" + children
+				+ ", clientInfo='" + clientInfo + '\''
+				+ ", clientContact='" + clientContact + '\''
+				+ ", extraData='" + extraData + '\''
+				+ ", cancelReason=" + cancelReason
+				+ ", userId=" + userId
+				+ ", depositAmount=" + depositAmount
+				+ '}';
+	}
 }
