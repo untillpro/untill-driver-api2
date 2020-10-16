@@ -133,8 +133,11 @@ unTill(r) API is an interface providing some additional predefined functionality
 - `IUntillTimeApi` requesting system timezone;
 - `IUntillCurrencyApi` working with currency, getting main currency information;
 - `IUntillProformasApi` working with proformas;
-- `IUntillSystemNotificationsApi` sending POS notifications to unTill(r) users.
-- `IUntillBeverageControlApi` working with beverage control
+- `IUntillSystemNotificationsApi` sending POS notifications to unTill(r) users;
+- `IUntillBeverageControlApi` working with beverage control;
+- `IUntillCountriesApi` managing countries;
+- `IUntillClientsApi` managing clients;  
+- `IUntillReservationsApi` managing reservations; 
 
 Example:
 ```java
