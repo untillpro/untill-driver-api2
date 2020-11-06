@@ -25,4 +25,10 @@ public class BillClosingRequest extends BillsHandlerRequest {
 		this.partialBill = partialBill;
 	}
 
+	@Override
+	public String toString() {
+		return "BillClosingRequest{"
+				+ "partialBill=" + partialBill
+				+ "} " + super.toString();
+	}
 }
