@@ -28,10 +28,27 @@ public class Bill {
 	private BigDecimal openDiscount;
 	private int servingTimeNumber;
 	private String servingTimeName;
+	private Long clientId;
 	private List<OrderItem> orderItems = new ArrayList<>();
 	private List<PaymentItem> paymentItems = new ArrayList<>();
 	private List<DiscountGroup> appliedDiscountGroups = new ArrayList<>();
 	private Map<String, String> extra = new LinkedHashMap<>();
+	
+
+	/**
+	 * @return Returns Client ID
+	 */
+	public Long getClientId() {
+		return clientId;
+	}
+
+	/**
+	 * Sets the client ID
+	 * @param clientId client ID
+	 */
+	public void setClientId(Long clientId) {
+		this.clientId = clientId;
+	}
 
 	/**
 	 * @return Returns number of serving time
