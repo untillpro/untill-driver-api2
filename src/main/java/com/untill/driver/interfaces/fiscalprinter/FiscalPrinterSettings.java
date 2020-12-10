@@ -14,6 +14,23 @@ public class FiscalPrinterSettings {
 	 * Supported Z-report kinds printed by dates. Each map entry, key is report kind, value is report name.
 	 */
 	private Map<String, String> zReportByDatesKinds = new LinkedHashMap<>();
+	
+	private FiscalOperationProgressKind printProgressKind = FiscalOperationProgressKind.HIDDEN;
+
+	/**
+	 * @return Returns kind of progress for "print" operation
+	 */
+	public FiscalOperationProgressKind getPrintProgressKind() {
+		return printProgressKind;
+	}
+
+	/**
+	 * Sets kind of progress for "print" operation
+	 * @param printProgressKind kind of progress
+	 */
+	public void setPrintProgressKind(FiscalOperationProgressKind printProgressKind) {
+		this.printProgressKind = printProgressKind;
+	}
 
 	public Map<String, String> getZReportByDatesKinds() {
 		return zReportByDatesKinds;
