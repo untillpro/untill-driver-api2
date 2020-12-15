@@ -9,7 +9,7 @@ import com.untill.driver.untillapi.IUntillApi;
  * @see IDriverContext
  *
  */
-public interface ITakeawayOrders {
+public interface IUntillTakeawayOrders {
 	
 	/**
 	 * Returns take-away status for the order specified by externalId 
