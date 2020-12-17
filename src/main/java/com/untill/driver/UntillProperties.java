@@ -17,4 +17,9 @@ public abstract class UntillProperties {
 	 * Returns the license Uid, or null when no license loaded
 	 */
 	public static final String LICENSE_UID = "untill.licenseUid";
+
+	/**
+	 * Returns the TP-API port number
+	 */
+	public static final String TPAPI_PORT = "tpapi.port";
 }
