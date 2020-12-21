@@ -17,6 +17,6 @@ public interface IUntillTakeawayOrders extends IUntillApi {
 	 * @return Returns take-away status of the order
 	 * @throws ETakeawayOrderNotFound when order by given externalId is not found
 	 */
-	TakeawayOrderStatus getOrderStatus(String externalId) throws ETakeawayOrderNotFound;
+	TakeawayOrderStatusInfo getOrderStatus(String externalId) throws ETakeawayOrderNotFound;
 
 }
