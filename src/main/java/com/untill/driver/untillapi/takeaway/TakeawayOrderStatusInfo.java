@@ -4,9 +4,19 @@ public class TakeawayOrderStatusInfo {
 	
 	private TakeawayOrderStatus status;
 	
+	private String statusComment;
+	
 	private int tableNumber;
 	
 	private String tablePart;
+
+	public String getStatusComment() {
+		return statusComment;
+	}
+
+	public void setStatusComment(String statusComment) {
+		this.statusComment = statusComment;
+	}
 
 	public TakeawayOrderStatus getStatus() {
 		return status;
