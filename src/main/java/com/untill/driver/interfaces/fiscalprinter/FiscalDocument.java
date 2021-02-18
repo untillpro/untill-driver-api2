@@ -2,7 +2,9 @@ package com.untill.driver.interfaces.fiscalprinter;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Describes the fiscal document (bill), including items and payments
@@ -46,6 +48,11 @@ public class FiscalDocument {
 	private List<FiscalPayment> payments;
 	private String comments;
 	private String pcName;
+	/**
+	 * Contains fiscal document extra data. Keys see here {@link FiscalDocumentExtra}
+	 */
+	private Map<String, String> extra = new LinkedHashMap<>();
+
 
 	public FiscalDocument() {
 	}
@@ -299,6 +306,14 @@ public class FiscalDocument {
 		this.comments = comments;
 	}
 
+	public Map<String, String> getExtra() {
+		return extra;
+	}
+
+	public void setExtra(Map<String, String> extra) {
+		this.extra = extra;
+	}
+
 	@Override
 	public String toString() {
 		return "FiscalDocument{"
@@ -316,6 +331,7 @@ public class FiscalDocument {
 				+ ", failuredTranNo=" + failuredTranNo
 				+ ", fiscalBillNumber=" + fiscalBillNumber
 				+ ", reopenedFiscalBillNumber=" + reopenedFiscalBillNumber
+				+ ", reopenedDocumentId='" + reopenedDocumentId + '\''
 				+ ", businessUse=" + businessUse
 				+ ", discount=" + discount
 				+ ", discountPercent=" + discountPercent
@@ -331,6 +347,7 @@ public class FiscalDocument {
 				+ ", payments=" + payments
 				+ ", comments='" + comments + '\''
 				+ ", pcName='" + pcName + '\''
+				+ ", extra=" + extra
 				+ '}';
 	}
 }
