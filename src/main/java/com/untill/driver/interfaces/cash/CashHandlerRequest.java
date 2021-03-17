@@ -32,4 +32,12 @@ public abstract class CashHandlerRequest extends DriverRequest {
 	public void setWaiterName(String waiterName) {
 		this.waiterName = waiterName;
 	}
+
+	@Override
+	public String toString() {
+		return "CashHandlerRequest{"
+				+ "amount=" + amount
+				+ ", waiterName='" + waiterName + '\''
+				+ '}';
+	}
 }
