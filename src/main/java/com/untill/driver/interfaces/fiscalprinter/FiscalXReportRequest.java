@@ -5,5 +5,8 @@ package com.untill.driver.interfaces.fiscalprinter;
  * 
  */
 public class FiscalXReportRequest extends FiscalOperationRequest {
-
+	@Override
+	public String toString() {
+		return "FiscalXReportRequest{}";
+	}
 }
