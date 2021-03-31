@@ -20,4 +20,10 @@ public class EftRequest extends DriverRequest {
 		this.waiterTerminalId = waiterTerminalId;
 	}
 
+	@Override
+	public String toString() {
+		return "EftRequest{"
+				+ "waiterTerminalId='" + waiterTerminalId + '\''
+				+ "} " + super.toString();
+	}
 }

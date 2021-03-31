@@ -15,5 +15,8 @@ package com.untill.driver.interfaces.eft;
  *
  */
 public class EftGiftCardCancelRequest extends EftGiftCardModifyTransactionRequest {
-
+	@Override
+	public String toString() {
+		return "EftGiftCardCancelRequest{} " + super.toString();
+	}
 }

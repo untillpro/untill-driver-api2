@@ -8,5 +8,8 @@ package com.untill.driver.interfaces.eft;
  * @see IEft
  */
 public class EftGiftCardReloadRequest extends EftGiftCardValueTransactionRequest {
-	
+	@Override
+	public String toString() {
+		return "EftGiftCardReloadRequest{} " + super.toString();
+	}
 }
