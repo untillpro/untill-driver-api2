@@ -18,4 +18,10 @@ public class EftGiftCardReadRequest extends EftRequest {
 		this.cardId = cardId;
 	}
 
+	@Override
+	public String toString() {
+		return "EftGiftCardReadRequest{"
+				+ "cardId='" + cardId + '\''
+				+ "} " + super.toString();
+	}
 }

@@ -6,5 +6,8 @@ package com.untill.driver.interfaces.eft;
  *
  */
 public class EftGiftCardDeactivateRequest extends EftGiftCardTransactionRequest {
-
+	@Override
+	public String toString() {
+		return "EftGiftCardDeactivateRequest{} " + super.toString();
+	}
 }
