@@ -9,7 +9,7 @@ public abstract class EftGiftCardModifyTransactionRequest extends EftRequest {
 	private Map<String, String> data = new HashMap<>();
 
 	private Date timestamp;
-	
+
 	private String cardId;
 
 	public String getCardId() {
@@ -36,4 +36,12 @@ public abstract class EftGiftCardModifyTransactionRequest extends EftRequest {
 		this.data = data;
 	}
 
+	@Override
+	public String toString() {
+		return "EftGiftCardModifyTransactionRequest{"
+				+ "data=" + data
+				+ ", timestamp=" + timestamp
+				+ ", cardId='" + cardId + '\''
+				+ "} " + super.toString();
+	}
 }

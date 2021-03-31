@@ -11,7 +11,7 @@ public class DriverRequest {
 
 	/**
 	 * @return Returns POS Id (e.g. "POS:PC1", "HHT:192.168.1.21",
-	 *         "Orderman:12987")
+	 * "Orderman:12987")
 	 */
 	public String getPosId() {
 		return posId;
@@ -19,7 +19,7 @@ public class DriverRequest {
 
 	/**
 	 * Sets Pos Id
-	 * 
+	 *
 	 * @param posId PosId to set
 	 */
 	public void setPosId(String posId) {
@@ -40,4 +40,11 @@ public class DriverRequest {
 		this.guid = guid;
 	}
 
+	@Override
+	public String toString() {
+		return "DriverRequest{"
+				+ "guid='" + guid + '\''
+				+ ", posId='" + posId + '\''
+				+ '}';
+	}
 }

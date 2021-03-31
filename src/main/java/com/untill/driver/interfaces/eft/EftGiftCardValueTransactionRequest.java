@@ -34,4 +34,12 @@ public abstract class EftGiftCardValueTransactionRequest extends EftGiftCardTran
 		this.currencyCharCode = currencyCharCode;
 	}
 
+	@Override
+	public String toString() {
+		return "EftGiftCardValueTransactionRequest{"
+				+ "amount=" + amount
+				+ ", currencyCode='" + currencyCode + '\''
+				+ ", currencyCharCode='" + currencyCharCode + '\''
+				+ "} " + super.toString();
+	}
 }

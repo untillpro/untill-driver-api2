@@ -34,4 +34,12 @@ public abstract class EftGiftCardTransactionRequest extends EftRequest {
 		this.operationId = operationId;
 	}
 
+	@Override
+	public String toString() {
+		return "EftGiftCardTransactionRequest{"
+				+ "cardId='" + cardId + '\''
+				+ ", operationId='" + operationId + '\''
+				+ ", timestamp=" + timestamp
+				+ "} " + super.toString();
+	}
 }

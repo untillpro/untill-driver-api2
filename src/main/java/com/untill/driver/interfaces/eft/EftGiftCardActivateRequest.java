@@ -12,5 +12,8 @@ package com.untill.driver.interfaces.eft;
  *
  */
 public class EftGiftCardActivateRequest extends EftGiftCardValueTransactionRequest {
-	
+	@Override
+	public String toString() {
+		return "EftGiftCardActivateRequest{} " + super.toString();
+	}
 }
