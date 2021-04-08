@@ -1,9 +1,9 @@
 package com.untill.driver.interfaces.prepaidarticles;
 
+import com.untill.driver.interfaces.DriverResult;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import com.untill.driver.interfaces.DriverResult;
 
 /**
  * Basic class for {@link IPrepaidArticles} results
@@ -29,5 +29,12 @@ public abstract class PrepaidArticlesResult extends DriverResult {
 	 */
 	public void setData(Map<String, String> data) {
 		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return "PrepaidArticlesResult{"
+				+ "data=" + data
+				+ "} " + super.toString();
 	}
 }
