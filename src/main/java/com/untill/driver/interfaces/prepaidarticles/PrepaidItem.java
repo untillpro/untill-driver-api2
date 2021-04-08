@@ -28,7 +28,7 @@ public class PrepaidItem {
 	}
 
 	/**
-	 * This type describes the measure units. Currently only supported value is "0" (pieces)<br>
+	 * This type describes the measure units. Supported types {@link PrepaidItemValueType}
 	 *
 	 * @return value type
 	 */
