@@ -24,4 +24,11 @@ public class ReadPrepaidArticlesRequest extends PrepaidArticlesRequest {
 	public void setCode(String code) {
 		this.code = code;
 	}
+
+	@Override
+	public String toString() {
+		return "ReadPrepaidArticlesRequest{"
+				+ "code='" + code + '\''
+				+ "} " + super.toString();
+	}
 }

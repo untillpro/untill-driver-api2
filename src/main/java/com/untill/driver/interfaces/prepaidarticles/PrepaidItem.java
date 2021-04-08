@@ -62,4 +62,13 @@ public class PrepaidItem {
 	public void setValue(int value) {
 		this.value = value;
 	}
+
+	@Override
+	public String toString() {
+		return "PrepaidItem{"
+				+ "groupId='" + groupId + '\''
+				+ ", valueType=" + valueType
+				+ ", value=" + value
+				+ '}';
+	}
 }
