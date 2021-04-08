@@ -69,4 +69,13 @@ public class ChargePrepaidArticlesRequest extends PrepaidArticlesRequest {
 	public void setPrepaidItems(List<PrepaidItem> prepaidItems) {
 		this.prepaidItems = prepaidItems;
 	}
+
+	@Override
+	public String toString() {
+		return "ChargePrepaidArticlesRequest{"
+				+ "code='" + code + '\''
+				+ ", data=" + data
+				+ ", prepaidItems=" + prepaidItems
+				+ "} " + super.toString();
+	}
 }
