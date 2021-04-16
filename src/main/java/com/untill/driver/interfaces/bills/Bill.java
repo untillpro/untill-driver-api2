@@ -389,6 +389,9 @@ public class Bill {
 				+ ", tips=" + tips
 				+ ", serviceCharge=" + serviceCharge
 				+ ", openDiscount=" + openDiscount
+				+ ", servingTimeNumber=" + servingTimeNumber
+				+ ", servingTimeName='" + servingTimeName + '\''
+				+ ", clientId=" + clientId
 				+ ", orderItems=" + orderItems
 				+ ", paymentItems=" + paymentItems
 				+ ", appliedDiscountGroups=" + appliedDiscountGroups
