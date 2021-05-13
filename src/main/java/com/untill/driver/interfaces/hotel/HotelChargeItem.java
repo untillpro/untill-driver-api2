@@ -25,6 +25,16 @@ public class HotelChargeItem {
 	private int articleNumber;
 	private String articleName;
 	private String sizeModifierName;
+	private String thirdPartyId;
+
+	public String getThirdPartyId() {
+		return thirdPartyId;
+	}
+
+	public void setThirdPartyId(String thirdPartyId) {
+		this.thirdPartyId = thirdPartyId;
+	}
+
 
 	public String getSizeModifierName() {
 		return sizeModifierName;

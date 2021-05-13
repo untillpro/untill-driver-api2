@@ -20,6 +20,16 @@ public class EndOfDayPaymentItem {
 	private String salesAreaName;
 
 	private BigDecimal totalAmount;
+	
+	private String thirdPartyId;
+
+	public String getThirdPartyId() {
+		return thirdPartyId;
+	}
+
+	public void setThirdPartyId(String thirdPartyId) {
+		this.thirdPartyId = thirdPartyId;
+	}
 
 	@Deprecated
 	private BigDecimal totalTipAmount;

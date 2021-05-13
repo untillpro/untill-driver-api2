@@ -41,6 +41,17 @@ public class EndOfDayTurnoverItem {
 
 	private int totalQuantity;
 
+	private String thirdPartyId;
+
+	public String getThirdPartyId() {
+		return thirdPartyId;
+	}
+
+	public void setThirdPartyId(String thirdPartyId) {
+		this.thirdPartyId = thirdPartyId;
+	}
+
+
 	public long getArticleId() {
 		return articleId;
 	}
