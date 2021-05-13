@@ -19,6 +19,8 @@ public class EndOfDayTurnoverItem {
 
 	private String departmentName;
 
+	private String departmentThirdPartyId;
+
 	private long foodGroupId;
 
 	private int foodGroupNumber;
@@ -41,16 +43,15 @@ public class EndOfDayTurnoverItem {
 
 	private int totalQuantity;
 
-	private String thirdPartyId;
 
-	public String getThirdPartyId() {
-		return thirdPartyId;
+
+	public String getDepartmentThirdPartyId() {
+		return departmentThirdPartyId;
 	}
 
-	public void setThirdPartyId(String thirdPartyId) {
-		this.thirdPartyId = thirdPartyId;
+	public void setDepartmentThirdPartyId(String departmentThirdPartyId) {
+		this.departmentThirdPartyId = departmentThirdPartyId;
 	}
-
 
 	public long getArticleId() {
 		return articleId;

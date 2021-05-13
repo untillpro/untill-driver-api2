@@ -13,6 +13,8 @@ public class EndOfDayPaymentItem {
 
 	private int paymentKind;
 
+	private String paymentThirdPartyId;
+
 	private long salesAreaId;
 
 	private int salesAreaNumber;
@@ -21,14 +23,13 @@ public class EndOfDayPaymentItem {
 
 	private BigDecimal totalAmount;
 	
-	private String thirdPartyId;
-
-	public String getThirdPartyId() {
-		return thirdPartyId;
+	
+	public String getPaymentThirdPartyId() {
+		return paymentThirdPartyId;
 	}
 
-	public void setThirdPartyId(String thirdPartyId) {
-		this.thirdPartyId = thirdPartyId;
+	public void setPaymentThirdPartyId(String paymentThirdPartyId) {
+		this.paymentThirdPartyId = paymentThirdPartyId;
 	}
 
 	@Deprecated

@@ -15,6 +15,7 @@ public class HotelChargeItem {
 
 	private int departmentNumber;
 	private String departmentName;
+	private String departmentThirdPartyId;
 
 	private int groupNumber;
 	private String groupName;
@@ -25,16 +26,14 @@ public class HotelChargeItem {
 	private int articleNumber;
 	private String articleName;
 	private String sizeModifierName;
-	private String thirdPartyId;
-
-	public String getThirdPartyId() {
-		return thirdPartyId;
+	
+	public String getDepartmentThirdPartyId() {
+		return departmentThirdPartyId;
 	}
 
-	public void setThirdPartyId(String thirdPartyId) {
-		this.thirdPartyId = thirdPartyId;
+	public void setDepartmentThirdPartyId(String departmentThirdPartyId) {
+		this.departmentThirdPartyId = departmentThirdPartyId;
 	}
-
 
 	public String getSizeModifierName() {
 		return sizeModifierName;
