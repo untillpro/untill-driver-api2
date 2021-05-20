@@ -18,6 +18,7 @@ public class OrderItem {
 	private long departmentId;
 	private int departmentNumber;
 	private String departmentName;
+	private String departmentThirdPartyId;
 
 	private long groupId;
 	private int groupNumber;
@@ -257,6 +258,22 @@ public class OrderItem {
 	}
 
 	/**
+	 * @return Department 3rd party ID
+	 */
+	public String getDepartmentThirdPartyId() {
+		return departmentThirdPartyId;
+	}
+
+	/**
+	 * Set department 3rd party ID
+	 *
+	 * @param departmentThirdPartyId Department 3rd party ID to set
+	 */
+	public void setDepartmentThirdPartyId(String departmentThirdPartyId) {
+		this.departmentThirdPartyId = departmentThirdPartyId;
+	}
+
+	/**
 	 * @return Group number
 	 */
 	public int getGroupNumber() {
@@ -378,6 +395,7 @@ public class OrderItem {
 				+ ", departmentId=" + departmentId
 				+ ", departmentNumber=" + departmentNumber
 				+ ", departmentName='" + departmentName + '\''
+				+ ", departmentThirdPartyId='" + departmentThirdPartyId + '\''
 				+ ", groupId=" + groupId
 				+ ", groupNumber=" + groupNumber
 				+ ", groupName='" + groupName + '\''
