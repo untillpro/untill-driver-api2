@@ -15,6 +15,7 @@ public class PaymentItem {
 	private int paymentKind;
 	private int paymentNumber;
 	private String paymentName;
+	private String paymentThirdPartyId;
 	private BigDecimal amount;
 	private BigDecimal customerAmount;
 	private String currencyDigitalCode;
@@ -103,6 +104,22 @@ public class PaymentItem {
 		this.paymentName = paymentName;
 	}
 
+	/**
+	 * @return Payment 3rd party ID
+	 */
+	public String getPaymentThirdPartyId() {
+		return paymentThirdPartyId;
+	}
+
+	/**
+	 * Set payment 3rd party ID
+	 *
+	 * @param paymentThirdPartyId Payment 3rd party ID to set
+	 */
+	public void setPaymentThirdPartyId(String paymentThirdPartyId) {
+		this.paymentThirdPartyId = paymentThirdPartyId;
+	}
+
 	public BigDecimal getAmount() {
 		return amount;
 	}
@@ -166,6 +183,7 @@ public class PaymentItem {
 				+ ", paymentKind=" + paymentKind
 				+ ", paymentNumber=" + paymentNumber
 				+ ", paymentName='" + paymentName + '\''
+				+ ", paymentThirdPartyId='" + paymentThirdPartyId + '\''
 				+ ", amount=" + amount
 				+ ", customerAmount=" + customerAmount
 				+ ", currencyDigitalCode='" + currencyDigitalCode + '\''
