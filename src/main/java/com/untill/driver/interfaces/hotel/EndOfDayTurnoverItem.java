@@ -33,6 +33,8 @@ public class EndOfDayTurnoverItem {
 
 	private String salesAreaName;
 
+	private String salesAreaThirdPartyId;
+
 	private BigDecimal vatPercent;
 
 	private BigDecimal totalPrice;
@@ -149,6 +151,14 @@ public class EndOfDayTurnoverItem {
 		this.salesAreaName = salesAreaName;
 	}
 
+	public String getSalesAreaThirdPartyId() {
+		return salesAreaThirdPartyId;
+	}
+
+	public void setSalesAreaThirdPartyId(String salesAreaThirdPartyId) {
+		this.salesAreaThirdPartyId = salesAreaThirdPartyId;
+	}
+
 	public BigDecimal getVatPercent() {
 		return vatPercent;
 	}
@@ -198,12 +208,14 @@ public class EndOfDayTurnoverItem {
 				+ ", departmentId=" + departmentId
 				+ ", departmentNumber=" + departmentNumber
 				+ ", departmentName='" + departmentName + '\''
+				+ ", departmentThirdPartyId='" + departmentThirdPartyId + '\''
 				+ ", foodGroupId=" + foodGroupId
 				+ ", foodGroupNumber=" + foodGroupNumber
 				+ ", foodGroupName='" + foodGroupName + '\''
 				+ ", salesAreaId=" + salesAreaId
 				+ ", salesAreaNumber=" + salesAreaNumber
 				+ ", salesAreaName='" + salesAreaName + '\''
+				+ ", salesAreaThirdPartyId='" + salesAreaThirdPartyId + '\''
 				+ ", vatPercent=" + vatPercent
 				+ ", totalPrice=" + totalPrice
 				+ ", totalVat=" + totalVat
