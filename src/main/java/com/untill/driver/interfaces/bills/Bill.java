@@ -17,6 +17,7 @@ public class Bill {
 	private Date openTime;
 	private int salesAreaNumber;
 	private String salesAreaName;
+	private String salesAreaThirdPartyId;
 	private String waiterName;
 	private String waiterOperatorId;
 	private String billNumber;
@@ -341,6 +342,22 @@ public class Bill {
 	}
 
 	/**
+	 * @return Sales area 3rd party ID
+	 */
+	public String getSalesAreaThirdPartyId() {
+		return salesAreaThirdPartyId;
+	}
+
+	/**
+	 * Set sales area 3rd party ID
+	 *
+	 * @param salesAreaThirdPartyId Sales area 3rd party ID to set
+	 */
+	public void setSalesAreaThirdPartyId(String salesAreaThirdPartyId) {
+		this.salesAreaThirdPartyId = salesAreaThirdPartyId;
+	}
+
+	/**
 	 * @return Date and time when bill was created
 	 */
 	public Date getOpenTime() {
@@ -380,6 +397,7 @@ public class Bill {
 				+ ", openTime=" + openTime
 				+ ", salesAreaNumber=" + salesAreaNumber
 				+ ", salesAreaName='" + salesAreaName + '\''
+				+ ", salesAreaThirdPartyId='" + salesAreaThirdPartyId + '\''
 				+ ", waiterName='" + waiterName + '\''
 				+ ", waiterOperatorId='" + waiterOperatorId + '\''
 				+ ", billNumber='" + billNumber + '\''
