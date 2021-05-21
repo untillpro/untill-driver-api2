@@ -26,6 +26,7 @@ public class HotelChargeData {
 	private String transactionNumber;
 	private int salesAreaNumber;
 	private String salesAreaName;
+	private String salesAreaThirdPartyId;
 	private int tableNumber;
 	private String tablePart;
 	private int numberOfCovers;
@@ -320,6 +321,22 @@ public class HotelChargeData {
 		this.salesAreaName = salesAreaName;
 	}
 
+	/**
+	 * @return Sales area 3rd party ID
+	 */
+	public String getSalesAreaThirdPartyId() {
+		return salesAreaThirdPartyId;
+	}
+
+	/**
+	 * Set sales area 3rd party ID
+	 *
+	 * @param salesAreaThirdPartyId Sales area 3rd party ID to set
+	 */
+	public void setSalesAreaThirdPartyId(String salesAreaThirdPartyId) {
+		this.salesAreaThirdPartyId = salesAreaThirdPartyId;
+	}
+
 	public Date getBillOpenDateTime() {
 		return billOpenDateTime;
 	}
@@ -345,9 +362,12 @@ public class HotelChargeData {
 				+ ", transactionNumber='" + transactionNumber + '\''
 				+ ", salesAreaNumber=" + salesAreaNumber
 				+ ", salesAreaName='" + salesAreaName + '\''
+				+ ", salesAreaThirdPartyId='" + salesAreaThirdPartyId + '\''
 				+ ", tableNumber=" + tableNumber
 				+ ", tablePart='" + tablePart + '\''
 				+ ", numberOfCovers=" + numberOfCovers
+				+ ", servingTimeNumber=" + servingTimeNumber
+				+ ", servingTimeName='" + servingTimeName + '\''
 				+ '}';
 	}
 }
