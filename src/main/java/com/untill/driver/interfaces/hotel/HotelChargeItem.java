@@ -19,6 +19,9 @@ public class HotelChargeItem {
 
 	private int groupNumber;
 	private String groupName;
+	private String groupThirdPartyId;
+
+	private String categoryThirdPartyId;
 
 	private BigDecimal vatPercent;
 	private String vatSign;
@@ -148,6 +151,38 @@ public class HotelChargeItem {
 	}
 
 	/**
+	 * @return Group 3rd party ID
+	 */
+	public String getGroupThirdPartyId() {
+		return groupThirdPartyId;
+	}
+
+	/**
+	 * Sets group 3rd party ID
+	 *
+	 * @param groupThirdPartyId group 3rd party ID to set
+	 */
+	public void setGroupThirdPartyId(String groupThirdPartyId) {
+		this.groupThirdPartyId = groupThirdPartyId;
+	}
+
+	/**
+	 * @return Category 3rd party ID
+	 */
+	public String getCategoryThirdPartyId() {
+		return categoryThirdPartyId;
+	}
+
+	/**
+	 * Sets category 3rd party ID
+	 *
+	 * @param categoryThirdPartyId category 3rd party ID to set
+	 */
+	public void setCategoryThirdPartyId(String categoryThirdPartyId) {
+		this.categoryThirdPartyId = categoryThirdPartyId;
+	}
+
+	/**
 	 * @return V.A.T. percent
 	 */
 	public BigDecimal getVatPercent() {
@@ -236,8 +271,11 @@ public class HotelChargeItem {
 				+ ", discountAmount=" + discountAmount
 				+ ", departmentNumber=" + departmentNumber
 				+ ", departmentName='" + departmentName + '\''
+				+ ", departmentThirdPartyId='" + departmentThirdPartyId + '\''
 				+ ", groupNumber=" + groupNumber
 				+ ", groupName='" + groupName + '\''
+				+ ", groupThirdPartyId='" + groupThirdPartyId + '\''
+				+ ", categoryThirdPartyId='" + categoryThirdPartyId + '\''
 				+ ", vatPercent=" + vatPercent
 				+ ", vatSign='" + vatSign + '\''
 				+ ", articleNumber=" + articleNumber
