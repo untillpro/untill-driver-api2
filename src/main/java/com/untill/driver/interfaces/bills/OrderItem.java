@@ -23,6 +23,9 @@ public class OrderItem {
 	private long groupId;
 	private int groupNumber;
 	private String groupName;
+	private String groupThirdPartyId;
+
+	private String categoryThirdPartyId;
 
 	private BigDecimal vatPercent;
 	private String vatSign;
@@ -306,6 +309,38 @@ public class OrderItem {
 	}
 
 	/**
+	 * @return Group 3rd party ID
+	 */
+	public String getGroupThirdPartyId() {
+		return groupThirdPartyId;
+	}
+
+	/**
+	 * Sets group 3rd party ID
+	 *
+	 * @param groupThirdPartyId group 3rd party ID to set
+	 */
+	public void setGroupThirdPartyId(String groupThirdPartyId) {
+		this.groupThirdPartyId = groupThirdPartyId;
+	}
+
+	/**
+	 * @return Category 3rd party ID
+	 */
+	public String getCategoryThirdPartyId() {
+		return categoryThirdPartyId;
+	}
+
+	/**
+	 * Sets category 3rd party ID
+	 *
+	 * @param categoryThirdPartyId category 3rd party ID to set
+	 */
+	public void setCategoryThirdPartyId(String categoryThirdPartyId) {
+		this.categoryThirdPartyId = categoryThirdPartyId;
+	}
+
+	/**
 	 * @return V.A.T. percent
 	 */
 	public BigDecimal getVatPercent() {
@@ -399,6 +434,8 @@ public class OrderItem {
 				+ ", groupId=" + groupId
 				+ ", groupNumber=" + groupNumber
 				+ ", groupName='" + groupName + '\''
+				+ ", groupThirdPartyId='" + groupThirdPartyId + '\''
+				+ ", categoryThirdPartyId='" + categoryThirdPartyId + '\''
 				+ ", vatPercent=" + vatPercent
 				+ ", vatSign='" + vatSign + '\''
 				+ ", articleId=" + articleId
