@@ -21,6 +21,7 @@ public class HotelChargeItem {
 	private String groupName;
 	private String groupThirdPartyId;
 
+	private String categoryName;
 	private String categoryThirdPartyId;
 
 	private BigDecimal vatPercent;
@@ -167,6 +168,22 @@ public class HotelChargeItem {
 	}
 
 	/**
+	 * @return Category name
+	 */
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	/**
+	 * Sets category name
+	 *
+	 * @param categoryName category name to set
+	 */
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	/**
 	 * @return Category 3rd party ID
 	 */
 	public String getCategoryThirdPartyId() {
@@ -275,6 +292,7 @@ public class HotelChargeItem {
 				+ ", groupNumber=" + groupNumber
 				+ ", groupName='" + groupName + '\''
 				+ ", groupThirdPartyId='" + groupThirdPartyId + '\''
+				+ ", categoryName='" + categoryName + '\''
 				+ ", categoryThirdPartyId='" + categoryThirdPartyId + '\''
 				+ ", vatPercent=" + vatPercent
 				+ ", vatSign='" + vatSign + '\''
