@@ -11,7 +11,7 @@ import java.util.List;
  * @see IUntillApi
  * @see IDriverContext
  */
-public interface IArticlesApi extends IUntillApi {
+public interface IUntillArticlesApi extends IUntillApi {
 	/**
 	 * Returns all available articles
 	 *
