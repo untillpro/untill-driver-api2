@@ -14,6 +14,10 @@ public class Article {
 	 * Article 3rd party ID
 	 */
 	private String thirdPartyId;
+	/**
+	 * Article active flag
+	 */
+	private Boolean active;
 
 	public Long getId() {
 		return id;
@@ -39,12 +43,21 @@ public class Article {
 		this.thirdPartyId = thirdPartyId;
 	}
 
+	public Boolean isActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
 	@Override
 	public String toString() {
 		return "Article{"
 				+ "id=" + id
 				+ ", name='" + name + '\''
 				+ ", thirdPartyId='" + thirdPartyId + '\''
+				+ ", active=" + active
 				+ '}';
 	}
 }
