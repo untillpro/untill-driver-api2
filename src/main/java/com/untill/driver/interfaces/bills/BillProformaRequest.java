@@ -12,7 +12,7 @@ public class BillProformaRequest extends BillsHandlerRequest {
 
 	private long proformaId;
 
-	private int proformaNumber;
+	private String proformaNumber;
 
 	private BigDecimal proformaTotal;
 
@@ -60,11 +60,11 @@ public class BillProformaRequest extends BillsHandlerRequest {
 		this.proformaId = proformaId;
 	}
 
-	public int getProformaNumber() {
+	public String getProformaNumber() {
 		return proformaNumber;
 	}
 
-	public void setProformaNumber(int proformaNumber) {
+	public void setProformaNumber(String proformaNumber) {
 		this.proformaNumber = proformaNumber;
 	}
 
@@ -72,7 +72,7 @@ public class BillProformaRequest extends BillsHandlerRequest {
 	public String toString() {
 		return "BillProformaRequest{"
 				+ "proformaId=" + proformaId
-				+ ", proformaNumber=" + proformaNumber
+				+ ", proformaNumber='" + proformaNumber + '\''
 				+ ", proformaTotal=" + proformaTotal
 				+ ", proformaTips=" + proformaTips
 				+ ", billSplit=" + billSplit
