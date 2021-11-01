@@ -32,6 +32,8 @@ public class DriverParam {
 	private String defaultValue;
 
 	private Map<String, List<String>> visibilityConditions;
+	
+	private boolean password;
 
 	/**
 	 * @return Returns list of visibility conditions. Key for the map is
@@ -335,6 +337,17 @@ public class DriverParam {
 		}
 
 		/**
+		 * Declares if param is a password (input will be masked). For {@link ParamType} STRING only
+		 * 
+		 * @param value True if param is a password 
+		 * @return {@link Builder} instance
+		 */
+		public Builder password(boolean value) {
+			param.setPassword(value);
+			return this;
+		}
+
+		/**
 		 * Declares if param is read-only
 		 * 
 		 * @param value True if param is read-only 
@@ -416,5 +429,21 @@ public class DriverParam {
 		}
 
 	}
+
+	/**
+	 * Returns true if the param is password (input is masked). For {@link ParamType} STRING only
+	 */
+	public boolean isPassword() {
+		return password;
+	}
+
+	/**
+	 * Declares if the param is password (input is masked). For {@link ParamType} STRING only
+	 * @param password True when param is password
+	 */
+	public void setPassword(boolean password) {
+		this.password = password;
+	}
+	
 
 }
