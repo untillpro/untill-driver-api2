@@ -8,10 +8,12 @@ import com.untill.driver.params.DriverConfiguration;
  */
 public interface IPosPrinter extends IDriverInterface {
 
-	/** Handles <tt>POS printer</tt> operation
+	/**
+	 * Handles <tt>POS printer</tt> operation
 	 *
-	 * @param cfg driver configuration
+	 * @param cfg     driver configuration
 	 * @param request request details
+	 * @return operation result
 	 */
-	void operation(DriverConfiguration cfg, PosPrinterRequest request);
+	PosPrinterResult operation(DriverConfiguration cfg, PosPrinterRequest request);
 }
