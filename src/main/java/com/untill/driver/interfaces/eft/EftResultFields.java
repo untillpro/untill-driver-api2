@@ -52,4 +52,9 @@ public abstract class EftResultFields {
 	 * must return partially authorized amount in cents (integer value)
 	 */
 	public static final String PARTIALLY_AUTHORIZED_AMOUNT = "partially_authorized_amount";
+	/**
+	 * Some terminals have embedded printer and prints EFT receipts itself.
+	 * In this case this field indicates that POS must no print EFT receipt
+	 */
+	public static final String NO_EFT_RECEIPT = "no_eft_receipt";
 }
