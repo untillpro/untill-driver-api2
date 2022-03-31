@@ -8,7 +8,6 @@ import java.util.Map;
 
 /**
  * A description of a backoffice configuration parameter
- *
  */
 public class DriverParam {
 	private String key;
@@ -32,24 +31,24 @@ public class DriverParam {
 	private String defaultValue;
 
 	private Map<String, List<String>> visibilityConditions;
-	
+
 	private boolean password;
 
 	/**
 	 * @return Returns list of visibility conditions. Key for the map is
-	 *         {@link DriverParam}'s key, and the value is a list of allowed
-	 *         values for this param.
-	 *         <p>
-	 *         Example of map with 2 entries:
-	 *         </p>
-	 *         <ol>
-	 *         <li>param1 &mdash; "value1", "value2"</li>
-	 *         <li>param2 &mdash; "value3"</li>
-	 *         </ol>
-	 *         <p>
-	 *         Result: param is visible when param1 is either "value1" or
-	 *         "value2" AND param2 is "value3"
-	 *         </p>
+	 * {@link DriverParam}'s key, and the value is a list of allowed
+	 * values for this param.
+	 * <p>
+	 * Example of map with 2 entries:
+	 * </p>
+	 * <ol>
+	 * <li>param1 &mdash; "value1", "value2"</li>
+	 * <li>param2 &mdash; "value3"</li>
+	 * </ol>
+	 * <p>
+	 * Result: param is visible when param1 is either "value1" or
+	 * "value2" AND param2 is "value3"
+	 * </p>
 	 */
 	public Map<String, List<String>> getVisibilityConditions() {
 		return visibilityConditions;
@@ -57,9 +56,8 @@ public class DriverParam {
 
 	/**
 	 * Sets visibility conditions. See {@link #getVisibilityConditions()}
-	 * 
-	 * @param visibilityConditions
-	 *            Visibility conditions to set
+	 *
+	 * @param visibilityConditions Visibility conditions to set
 	 */
 	public void setVisibilityConditions(Map<String, List<String>> visibilityConditions) {
 		this.visibilityConditions = visibilityConditions;
@@ -74,7 +72,7 @@ public class DriverParam {
 
 	/**
 	 * Sets the min value (for {@link ParamType} INT)
-	 * 
+	 *
 	 * @param min Min value
 	 */
 	public void setMin(int min) {
@@ -90,7 +88,7 @@ public class DriverParam {
 
 	/**
 	 * Sets the max value (for {@link ParamType} INT)
-	 * 
+	 *
 	 * @param max Max value
 	 */
 	public void setMax(int max) {
@@ -106,7 +104,7 @@ public class DriverParam {
 
 	/**
 	 * Sets options for params of {@link ParamType} LIST
-	 * 
+	 *
 	 * @param options Options to set
 	 */
 	public void setOptions(Map<String, String> options) {
@@ -123,9 +121,8 @@ public class DriverParam {
 	/**
 	 * Specify default value (optional). When parameter shown in backoffice this
 	 * value will be shown by defult.
-	 * 
-	 * @param defaultValue
-	 *            Parameter default value
+	 *
+	 * @param defaultValue Parameter default value
 	 */
 	public void setDefaultValue(String defaultValue) {
 		this.defaultValue = defaultValue;
@@ -136,7 +133,7 @@ public class DriverParam {
 
 	/**
 	 * Helper function
-	 * 
+	 *
 	 * @param params {@link DriverParam} instances
 	 * @return Array of driver params
 	 */
@@ -157,7 +154,7 @@ public class DriverParam {
 	/**
 	 * Sets parameter key. This key is used in {@link DriverConfiguration}
 	 * params to store this param value
-	 * 
+	 *
 	 * @param key Parameter key
 	 */
 	public void setKey(String key) {
@@ -173,7 +170,7 @@ public class DriverParam {
 
 	/**
 	 * Sets parameter title, displayed in unTill(r) Backoffice
-	 * 
+	 *
 	 * @param title Parameter title
 	 */
 	public void setTitle(String title) {
@@ -189,7 +186,7 @@ public class DriverParam {
 
 	/**
 	 * Sets the parameter type. Use constants from {@link ParamType}
-	 * 
+	 *
 	 * @param type Parameter Type
 	 */
 	public void setType(String type) {
@@ -206,7 +203,7 @@ public class DriverParam {
 	/**
 	 * Sets the param description, will be displayed as additional text under
 	 * the param control
-	 * 
+	 *
 	 * @param description Description
 	 */
 	public void setDescription(String description) {
@@ -214,7 +211,7 @@ public class DriverParam {
 	}
 
 	/**
-	 * @return Returns true if param value may not be empty
+	 * @return True if param value may not be empty
 	 */
 	public boolean isMandatory() {
 		return mandatory;
@@ -222,7 +219,7 @@ public class DriverParam {
 
 	/**
 	 * Declares if param value can not be empty
-	 * 
+	 *
 	 * @param mandatory True if parameter value can not be empty
 	 */
 	public void setMandatory(boolean mandatory) {
@@ -238,7 +235,7 @@ public class DriverParam {
 
 	/**
 	 * Declares if param is read-only
-	 * 
+	 *
 	 * @param readOnly True if parameter value is read-only
 	 */
 	public void setReadOnly(boolean readOnly) {
@@ -247,7 +244,6 @@ public class DriverParam {
 
 	/**
 	 * Helper class: DriverParam builder
-	 *
 	 */
 	public static class Builder {
 		private DriverParam param = new DriverParam();
@@ -268,7 +264,7 @@ public class DriverParam {
 
 		/**
 		 * Sets the parameter type
-		 * 
+		 *
 		 * @param type Parameter type
 		 * @return {@link Builder} instance
 		 */
@@ -279,7 +275,7 @@ public class DriverParam {
 
 		/**
 		 * Sets parameter title, displayed in unTill(r) Backoffice
-		 * 
+		 *
 		 * @param value Parameter title
 		 * @return {@link Builder} instance
 		 */
@@ -291,9 +287,8 @@ public class DriverParam {
 		/**
 		 * Specify default value (optional). When parameter shown in backoffice
 		 * this value will be shown by defult.
-		 * 
-		 * @param value
-		 *            Parameter default value
+		 *
+		 * @param value Parameter default value
 		 * @return {@link Builder} instance
 		 */
 		public Builder defaultValue(String value) {
@@ -304,7 +299,7 @@ public class DriverParam {
 		/**
 		 * Sets the param description, will be displayed as additional text
 		 * under the param control
-		 * 
+		 *
 		 * @param value Parameter description
 		 * @return {@link Builder} instance
 		 */
@@ -316,7 +311,7 @@ public class DriverParam {
 		/**
 		 * Sets parameter key. This key is used in {@link DriverConfiguration}
 		 * params to store this param value
-		 * 
+		 *
 		 * @param value Parameter key
 		 * @return {@link Builder} instance
 		 */
@@ -327,8 +322,8 @@ public class DriverParam {
 
 		/**
 		 * Declares if param value can not be empty
-		 * 
-		 * @param value True if param value can not be empty 
+		 *
+		 * @param value True if param value can not be empty
 		 * @return {@link Builder} instance
 		 */
 		public Builder mandatory(boolean value) {
@@ -338,8 +333,8 @@ public class DriverParam {
 
 		/**
 		 * Declares if param is a password (input will be masked). For {@link ParamType} STRING only
-		 * 
-		 * @param value True if param is a password 
+		 *
+		 * @param value True if param is a password
 		 * @return {@link Builder} instance
 		 */
 		public Builder password(boolean value) {
@@ -349,8 +344,8 @@ public class DriverParam {
 
 		/**
 		 * Declares if param is read-only
-		 * 
-		 * @param value True if param is read-only 
+		 *
+		 * @param value True if param is read-only
 		 * @return {@link Builder} instance
 		 */
 		public Builder readOnly(boolean value) {
@@ -360,7 +355,7 @@ public class DriverParam {
 
 		/**
 		 * Sets the min value (for {@link ParamType} INT)
-		 * 
+		 *
 		 * @param value Min value
 		 * @return {@link Builder} instance
 		 */
@@ -371,7 +366,7 @@ public class DriverParam {
 
 		/**
 		 * Sets the max value (for {@link ParamType} INT)
-		 * 
+		 *
 		 * @param value Max value
 		 * @return {@link Builder} instance
 		 */
@@ -382,11 +377,9 @@ public class DriverParam {
 
 		/**
 		 * Adds option to the param of type LIST
-		 * 
-		 * @param value
-		 *            An option value
-		 * @param text
-		 *            An option display text
+		 *
+		 * @param value An option value
+		 * @param text  An option display text
 		 * @return {@link Builder} instance
 		 */
 		public Builder option(String value, String text) {
@@ -411,11 +404,9 @@ public class DriverParam {
 		 * Result: param is visible when param1 is either "value1" or "value2"
 		 * AND param2 is "value3"
 		 * </p>
-		 * 
-		 * @param paramKey
-		 *            A key of parameter to check
-		 * @param values
-		 *            A list of allowed values
+		 *
+		 * @param paramKey A key of parameter to check
+		 * @param values   A list of allowed values
 		 * @return {@link Builder} instance
 		 */
 		public Builder visibilityCondition(String paramKey, String... values) {
@@ -431,7 +422,7 @@ public class DriverParam {
 	}
 
 	/**
-	 * Returns true if the param is password (input is masked). For {@link ParamType} STRING only
+	 * @return True if the param is password (input is masked). For {@link ParamType} STRING only
 	 */
 	public boolean isPassword() {
 		return password;
@@ -439,11 +430,10 @@ public class DriverParam {
 
 	/**
 	 * Declares if the param is password (input is masked). For {@link ParamType} STRING only
+	 *
 	 * @param password True when param is password
 	 */
 	public void setPassword(boolean password) {
 		this.password = password;
 	}
-	
-
 }
