@@ -3,7 +3,7 @@ package com.untill.driver.interfaces.eft;
 import com.untill.driver.IDriverProgress;
 
 /**
- * An instance of this class returned by {@link IEft}.getEftSettings to specify some details of driver behavior. 
+ * An instance of this class returned by {@link IEft}.getEftSettings to specify some details of driver behavior.
  *
  * @see IEft
  */
@@ -20,12 +20,25 @@ public class EftSettings {
 
 	private boolean cancellingByWaiterSupported = false;
 
-	private int waitTimeout = DEFAULT_WAIT_TIMEOUT;
-	
 	/**
-	 * Always return funds when bill re-opened: {@link EftReturnRequest} or {@link EftGiftCardReloadRequest} (for gift cards) 
+	 * When set to true, unTill POS validates gift card in the beginning of <tt>Issue</tt> and <tt>Reload</tt>
+	 * operations by making additional {@link EftGiftCardValidateRequest} request. This is useful when deposit
+	 * is made with EFT, to avoid bank transaction when the <tt>card</tt> is invalid. The sequence of calls when
+	 * the EFT is used for the deposit, will be the following:
+	 * <ol>
+	 * 	<li>{@link EftGiftCardValidateRequest}</li>
+	 * 	<li>{@link EftPaymentRequest} (the deposit amount handled by EFT)</li>
+	 * 	<li>{@link EftGiftCardActivateRequest}, {@link EftGiftCardReloadRequest}</li>
+	 * </ol>
 	 */
-	public static final String REOPEN_POLICY_RETURN_FUNDS = "return-funds"; 
+	private boolean eftGiftCardsValidationEnabled = false;
+
+	private int waitTimeout = DEFAULT_WAIT_TIMEOUT;
+
+	/**
+	 * Always return funds when bill re-opened: {@link EftReturnRequest} or {@link EftGiftCardReloadRequest} (for gift cards)
+	 */
+	public static final String REOPEN_POLICY_RETURN_FUNDS = "return-funds";
 	/**
 	 * Always use VoidSale when bill re-opened: {@link EftVoidSaleRequest} or {@link EftGiftCardCancelRequest} (for gift cards)
 	 */
@@ -37,9 +50,10 @@ public class EftSettings {
 	public static final String REOPEN_POLICY_VOID_WITHIN_SAME_DAY = "void-within-same-day";
 
 	private String reopenPolicy = null;
-	
+
 	/**
 	 * Defines which operation must be made when bill is re-opened
+	 *
 	 * @return Re-open policy
 	 * @see EftSettings#REOPEN_POLICY_RETURN_FUNDS
 	 * @see EftSettings#REOPEN_POLICY_VOID_SALE
@@ -50,14 +64,15 @@ public class EftSettings {
 	}
 
 	/**
-	 * Defines which operation must be made when bill is re-opened. 
+	 * Defines which operation must be made when bill is re-opened.
 	 * When not defined, unTill returns funds using {@link EftReturnRequest} or {@link EftGiftCardReloadRequest} (for gift cards).
 	 * AvailablePolicies are: <ul>
-	 * 	<li>{@link #REOPEN_POLICY_RETURN_FUNDS}</li>
-	 * 	<li>{@link #REOPEN_POLICY_VOID_SALE}</li>
-	 * 	<li>{@link #REOPEN_POLICY_VOID_WITHIN_SAME_DAY}</li>
+	 * <li>{@link #REOPEN_POLICY_RETURN_FUNDS}</li>
+	 * <li>{@link #REOPEN_POLICY_VOID_SALE}</li>
+	 * <li>{@link #REOPEN_POLICY_VOID_WITHIN_SAME_DAY}</li>
 	 * </ul>
-	 * @param reopenPolicy Reopen Policy 
+	 *
+	 * @param reopenPolicy Reopen Policy
 	 */
 	public void setReopenPolicy(String reopenPolicy) {
 		this.reopenPolicy = reopenPolicy;
@@ -65,8 +80,8 @@ public class EftSettings {
 
 	/**
 	 * @return Returns timeout in milliseconds telling how long unTill waits for
-	 *         an answer from driver before it shows "Timeout" error. Default timeout
-	 *         is 90000.
+	 * an answer from driver before it shows "Timeout" error. Default timeout
+	 * is 90000.
 	 */
 	public int getWaitTimeout() {
 		return waitTimeout;
@@ -75,6 +90,7 @@ public class EftSettings {
 	/**
 	 * Sets timeout telling how long unTill waits for an answer
 	 * from driver before it shows "Timeout" error
+	 *
 	 * @param waitTimeout Timeout, in milliseconds
 	 */
 	public void setWaitTimeout(int waitTimeout) {
@@ -83,7 +99,7 @@ public class EftSettings {
 
 	/**
 	 * @return Returns true if EFT driver supports cancelling operation by
-	 *         waiter (at ECR side).
+	 * waiter (at ECR side).
 	 * @see IDriverProgress
 	 */
 	public boolean isCancellingByWaiterSupported() {
@@ -92,9 +108,9 @@ public class EftSettings {
 
 	/**
 	 * Allows specifying if EFT driver supports cancelling operation by waiter (at
-	 * ECR side). When true, unTill(r) POS shows "Cancel" button on a progress dialog. 
-	 * Driver must request {@link IDriverProgress#isCancelRequested(String)} to see if "Cancel" pressed by operator. 
-	 * 
+	 * ECR side). When true, unTill(r) POS shows "Cancel" button on a progress dialog.
+	 * Driver must request {@link IDriverProgress#isCancelRequested(String)} to see if "Cancel" pressed by operator.
+	 *
 	 * @param cancellingByWaiterSupported True if cancelling by waiter is supported by driver
 	 */
 	public void setCancellingByWaiterSupported(boolean cancellingByWaiterSupported) {
@@ -106,8 +122,8 @@ public class EftSettings {
 
 	/**
 	 * @return Returns true if each {@link EftTipsRequest} operation replaces
-	 *         previous tips amount for the transaction, false if it adds new
-	 *         amount
+	 * previous tips amount for the transaction, false if it adds new
+	 * amount
 	 */
 	public boolean isTipsReplaced() {
 		return tipsReplaced;
@@ -116,7 +132,7 @@ public class EftSettings {
 	/**
 	 * Indicates if each {@link EftTipsRequest} operation replaces previous tips
 	 * amount for the transaction (true) or adds amount (false)
-	 * 
+	 *
 	 * @param tipsReplaced True if tips are replaced, false if tips are added
 	 */
 	public void setTipsReplaced(boolean tipsReplaced) {
@@ -125,7 +141,7 @@ public class EftSettings {
 
 	/**
 	 * @return Returns true when tips amount included (if exists) in RETURN or
-	 *         VOID request
+	 * VOID request
 	 */
 	public boolean isTipsIncludedInReturn() {
 		return tipsIncludedInReturn;
@@ -133,7 +149,7 @@ public class EftSettings {
 
 	/**
 	 * Indicates if tip amount must be included (if exists) in the amount of Return request
-	 * 
+	 *
 	 * @param tipsIncludedInReturn True when tip amount must be addedto the payment amount in Return request
 	 */
 	public void setTipsIncludedInReturn(boolean tipsIncludedInReturn) {
@@ -141,11 +157,11 @@ public class EftSettings {
 	}
 
 	/**
-	 * @deprecated Use {@link EftSettings}.REOPEN_POLICY
 	 * @return Returns true when VOID must be used instead of RETURN when
-	 *         re-opening in the timerange of the same working day
+	 * re-opening in the timerange of the same working day
+	 * @deprecated Use {@link EftSettings}.REOPEN_POLICY
 	 */
-	@Deprecated 
+	@Deprecated
 	public boolean isVoidWhenSameDay() {
 		return voidWhenSameDay;
 	}
@@ -154,9 +170,9 @@ public class EftSettings {
 	 * indicates if "void" operation must be used instead of "return" when
 	 * re-opening bill within the same working hours (true). Otherwise (false)
 	 * "return" operation executed
-	 * 
+	 *
 	 * @param voidWhenSameDay True if "void" operation must be used instead of "return" when
-	 * re-opening bill within the same working hours
+	 *                        re-opening bill within the same working hours
 	 * @deprecated Use {@link EftSettings}.REOPEN_POLICY
 	 */
 	@Deprecated
@@ -164,12 +180,21 @@ public class EftSettings {
 		this.voidWhenSameDay = voidWhenSameDay;
 	}
 
+	public boolean isEftGiftCardsValidationEnabled() {
+		return eftGiftCardsValidationEnabled;
+	}
+
+	public void setEftGiftCardsValidationEnabled(boolean eftGiftCardsValidationEnabled) {
+		this.eftGiftCardsValidationEnabled = eftGiftCardsValidationEnabled;
+	}
+
 	public static class Builder {
-		private EftSettings s = new EftSettings();
+		private final EftSettings s = new EftSettings();
 
 		public Builder() {
 		}
 
+		@Deprecated
 		public Builder setVoidWhenSameDay(boolean voidWhenSameDay) {
 			s.setVoidWhenSameDay(voidWhenSameDay);
 			return this;
@@ -187,6 +212,16 @@ public class EftSettings {
 
 		public Builder setCancellingByWaiterSupported(boolean cancellingByWaiterSupported) {
 			s.setCancellingByWaiterSupported(cancellingByWaiterSupported);
+			return this;
+		}
+
+		public Builder setEftGiftCardsValidationEnabled(boolean eftGiftCardsValidationEnabled) {
+			s.setEftGiftCardsValidationEnabled(eftGiftCardsValidationEnabled);
+			return this;
+		}
+
+		public Builder setReopenPolicy(String reopenPolicy) {
+			s.setReopenPolicy(reopenPolicy);
 			return this;
 		}
 
