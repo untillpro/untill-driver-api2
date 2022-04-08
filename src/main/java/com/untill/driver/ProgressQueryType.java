@@ -19,7 +19,13 @@ public enum ProgressQueryType {
 	 * The title isn't displayed by POS terminal and used by terminal which executes some action(s) and send response which 
 	 * is obtained with {@link IDriverProgress#getQueryResult}
 	 */
-	CUSTOM(2);
+	CUSTOM(2),
+
+	/**
+	 * A query that prompt the user to enter text on POS screen.
+	 * {@link IDriverProgress#getQueryResult} returns entered text
+	 */
+	TEXT(3);
 
 	ProgressQueryType(int type) {
 		this.type = type;
