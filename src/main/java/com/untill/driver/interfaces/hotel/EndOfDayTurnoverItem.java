@@ -3,7 +3,7 @@ package com.untill.driver.interfaces.hotel;
 import java.math.BigDecimal;
 
 /**
- * A turnover item in a "End of Day" operation request handled by {@link IHotelSupportsEndOfDay}
+ * A turnover item in an "End of Day" operation request handled by {@link IHotelSupportsEndOfDay}
  */
 public class EndOfDayTurnoverItem {
 
@@ -27,6 +27,8 @@ public class EndOfDayTurnoverItem {
 
 	private String foodGroupName;
 
+	private String foodGroupThirdPartyId;
+
 	private long salesAreaId;
 
 	private int salesAreaNumber;
@@ -44,7 +46,6 @@ public class EndOfDayTurnoverItem {
 	private String vatSign;
 
 	private int totalQuantity;
-
 
 
 	public String getDepartmentThirdPartyId() {
@@ -125,6 +126,14 @@ public class EndOfDayTurnoverItem {
 
 	public void setFoodGroupName(String foodGroupName) {
 		this.foodGroupName = foodGroupName;
+	}
+
+	public String getFoodGroupThirdPartyId() {
+		return foodGroupThirdPartyId;
+	}
+
+	public void setFoodGroupThirdPartyId(String foodGroupThirdPartyId) {
+		this.foodGroupThirdPartyId = foodGroupThirdPartyId;
 	}
 
 	public long getSalesAreaId() {
@@ -212,6 +221,7 @@ public class EndOfDayTurnoverItem {
 				+ ", foodGroupId=" + foodGroupId
 				+ ", foodGroupNumber=" + foodGroupNumber
 				+ ", foodGroupName='" + foodGroupName + '\''
+				+ ", foodGroupThirdPartyId='" + foodGroupThirdPartyId + '\''
 				+ ", salesAreaId=" + salesAreaId
 				+ ", salesAreaNumber=" + salesAreaNumber
 				+ ", salesAreaName='" + salesAreaName + '\''
