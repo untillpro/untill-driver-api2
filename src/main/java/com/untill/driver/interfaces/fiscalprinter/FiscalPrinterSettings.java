@@ -16,6 +16,22 @@ public class FiscalPrinterSettings {
 	private Map<String, String> zReportByDatesKinds = new LinkedHashMap<>();
 	
 	private FiscalOperationProgressKind printProgressKind = FiscalOperationProgressKind.HIDDEN;
+	
+	private boolean zReportDbSynchronizationStatusIgnored;
+
+	/**
+	 * @return Returns true when no DB synchronization status needs to be done before Z-report
+	 */
+	public boolean isZReportDbSynchronizationStatusIgnored() {
+		return zReportDbSynchronizationStatusIgnored;
+	}
+
+	/**
+	 * @param zReportDbSynchronizationStatusIgnored Set to true when no DB synchronization status needs to be done before Z-report
+	 */
+	public void setZReportDbSynchronizationStatusIgnored(boolean zReportDbSynchronizationStatusIgnored) {
+		this.zReportDbSynchronizationStatusIgnored = zReportDbSynchronizationStatusIgnored;
+	}
 
 	/**
 	 * @return Returns kind of progress for "print" operation
