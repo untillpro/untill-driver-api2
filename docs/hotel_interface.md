@@ -79,3 +79,6 @@ Driver may introduce `IHotelSupportsRoomInformation` interface which allows to h
 
 ## Support "End Of Day" 
 Driver may introduce `IHotelSupportsEndOfDay` interface which allows to handle "End Of Day" request.
+
+## Custom commands
+Driver may introduce `IHotelSupportsCustomCommand` interface which allows to handle "Custom command" operation.
