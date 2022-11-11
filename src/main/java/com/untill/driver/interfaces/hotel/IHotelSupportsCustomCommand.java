@@ -4,6 +4,7 @@ import com.untill.driver.interfaces.IDriverInterface;
 import com.untill.driver.params.DriverConfiguration;
 
 /**
+ * <p><tt>IMPORTANT:</tt> Not supported yet</p>
  * Interface for supporting "Custom command" operation of a hotel interface
  */
 public interface IHotelSupportsCustomCommand extends IDriverInterface {
