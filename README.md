@@ -140,6 +140,7 @@ unTill(r) API is an interface providing some additional predefined functionality
 - `IUntillClientsApi` managing clients;  
 - `IUntillReservationsApi` managing reservations; 
 - `IUntillDbStorageApi` allows to write/read data to/from DB; 
+- `IUntillIUntillUsersApi` allows to read users from DB; 
 
 Example:
 ```java
