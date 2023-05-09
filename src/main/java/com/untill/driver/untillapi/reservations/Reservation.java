@@ -4,42 +4,27 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Reservation {
-	
-	Long id;
-	
-	String reference;
-		
-	Integer tableNumber;
-	
-	Long clientId;
-	
-	Long startTime;
-	
-	Long updateTime;
-	
-	Long closeTime;
-	
-	ReservationStatus status;
-	
-	String note;
-	
-	ReservationOrigin origin;
-	
-	Integer persons;
-	
-	Integer children;
-	
-	String clientInfo;
-	
-	String clientContact;
-	
-	String extraData;
-	
-	ReservationCancelReason cancelReason;
-	
-	Long userId;
-	
-	BigDecimal depositAmount;
+	private Long id;
+	private String reference;
+	private Integer tableNumber;
+	private Long clientId;
+	private Long startTime;
+	private Long updateTime;
+	private Long closeTime;
+	private ReservationStatus status;
+	private String note;
+	private ReservationOrigin origin;
+	private Integer persons;
+	private Integer children;
+	private String clientInfo;
+	private String clientContact;
+	private String extraData;
+	private ReservationCancelReason cancelReason;
+	private Long userId;
+	private BigDecimal depositAmount;
+	private String tags;
+	private Long paidByUserId;
+	private String phone;
 
 	public Reservation() {
 	}
@@ -63,6 +48,9 @@ public class Reservation {
 		this.cancelReason = that.cancelReason;
 		this.userId = that.userId;
 		this.depositAmount = that.depositAmount;
+		this.tags = that.tags;
+		this.paidByUserId = that.paidByUserId;
+		this.phone = that.phone;
 	}
 
 	public BigDecimal getDepositAmount() {
@@ -209,6 +197,30 @@ public class Reservation {
 		this.extraData = extraData;
 	}
 
+	public String getTags() {
+		return tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+	}
+
+	public Long getPaidByUserId() {
+		return paidByUserId;
+	}
+
+	public void setPaidByUserId(Long paidByUserId) {
+		this.paidByUserId = paidByUserId;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -231,13 +243,35 @@ public class Reservation {
 				&& Objects.equals(extraData, that.extraData)
 				&& cancelReason == that.cancelReason
 				&& Objects.equals(userId, that.userId)
-				&& Objects.equals(depositAmount, that.depositAmount);
+				&& Objects.equals(depositAmount, that.depositAmount)
+				&& Objects.equals(tags, that.tags)
+				&& Objects.equals(paidByUserId, that.paidByUserId)
+				&& Objects.equals(phone, that.phone);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, reference, tableNumber, clientId, startTime, updateTime, closeTime, status, note,
-				origin, persons, children, clientInfo, clientContact, extraData, cancelReason, userId, depositAmount);
+		return Objects.hash(id,
+				reference,
+				tableNumber,
+				clientId,
+				startTime,
+				updateTime,
+				closeTime,
+				status,
+				note,
+				origin,
+				persons,
+				children,
+				clientInfo,
+				clientContact,
+				extraData,
+				cancelReason,
+				userId,
+				depositAmount,
+				tags,
+				paidByUserId,
+				phone);
 	}
 
 	@Override
@@ -261,6 +295,9 @@ public class Reservation {
 				+ ", cancelReason=" + cancelReason
 				+ ", userId=" + userId
 				+ ", depositAmount=" + depositAmount
+				+ ", tags='" + tags + '\''
+				+ ", paidByUserId=" + paidByUserId
+				+ ", phone='" + phone + '\''
 				+ '}';
 	}
 }
