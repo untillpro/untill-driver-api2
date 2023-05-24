@@ -3,38 +3,39 @@ package com.untill.driver.untillapi.clients;
 public class Client {
 
 	private Long id;
-	
+
 	private String name;
-	
+
 	private Integer number;
-	
+
 	private String reference;
-	
+
 	private Long birthday;
 
 	private String email;
-	
+
 	private String phone;
-	
+
 	private String fax;
-	
+
 	private String website;
-	
+
 	private Long countryId;
-		
+
 	private String zip;
-	
+
 	private String city;
-	
+
 	private String address;
-	
+
 	private String info;
-	
+
 	private Boolean onInvoice;
-	
+
 	private Long lastUpdate;
-	
+
 	private Boolean active = true;
+	private ClientType clientType;
 
 	public Boolean isActive() {
 		return active;
@@ -171,7 +172,12 @@ public class Client {
 	public void setLastUpdate(Long lastUpdate) {
 		this.lastUpdate = lastUpdate;
 	}
-	
-	
-	
+
+	public ClientType getClientType() {
+		return clientType;
+	}
+
+	public void setClientType(ClientType clientType) {
+		this.clientType = clientType;
+	}
 }
