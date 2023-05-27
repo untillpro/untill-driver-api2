@@ -43,6 +43,7 @@ To provide certain functionality which can be used by unTill(r) POS, driver must
 - [IReportHandler](docs/report.md) - implement for handling report operations (print, re-print)
 - [ITimeAttendance](docs/time_and_attendance.md) - implement for handling time and attendance operations (clock in, end break)
 - [IPosPrinter](docs/pos_printer.md) - implement for handling POS printer operations (print, upload logo)
+- [IExportHandler](docs/export_handler.md) - implement for handling exports
 
 Declaration of supported interfaces is made by `init` method which is called at driver initialization stage. Driver must return a map of supported interfaces:
 ```java
@@ -140,7 +141,8 @@ unTill(r) API is an interface providing some additional predefined functionality
 - `IUntillClientsApi` managing clients;  
 - `IUntillReservationsApi` managing reservations; 
 - `IUntillDbStorageApi` allows to write/read data to/from DB; 
-- `IUntillIUntillUsersApi` allows to read users from DB; 
+- `IUntillUsersApi` allows to read users from DB; 
+- `IExportApi` allows to write the export result;
 
 Example:
 ```java
