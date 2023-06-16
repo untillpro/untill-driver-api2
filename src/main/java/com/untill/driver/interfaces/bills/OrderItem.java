@@ -24,7 +24,7 @@ public class OrderItem {
 	private int groupNumber;
 	private String groupName;
 	private String groupThirdPartyId;
-
+	private String categoryName;
 	private String categoryThirdPartyId;
 
 	private BigDecimal vatPercent;
@@ -420,6 +420,22 @@ public class OrderItem {
 		this.singleVatAmount = singleVatAmount;
 	}
 
+	/**
+	 * @return Category name
+	 */
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	/**
+	 * Sets category name
+	 *
+	 * @param categoryName Category name to set
+	 */
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderItem{"
@@ -435,6 +451,7 @@ public class OrderItem {
 				+ ", groupNumber=" + groupNumber
 				+ ", groupName='" + groupName + '\''
 				+ ", groupThirdPartyId='" + groupThirdPartyId + '\''
+				+ ", categoryName='" + categoryName + '\''
 				+ ", categoryThirdPartyId='" + categoryThirdPartyId + '\''
 				+ ", vatPercent=" + vatPercent
 				+ ", vatSign='" + vatSign + '\''

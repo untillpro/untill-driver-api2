@@ -46,6 +46,7 @@ public class EndOfDayTurnoverItem {
 	private String vatSign;
 
 	private int totalQuantity;
+	private String categoryName;
 	private String categoryThirdPartyId;
 
 
@@ -217,6 +218,14 @@ public class EndOfDayTurnoverItem {
 		this.categoryThirdPartyId = categoryThirdPartyId;
 	}
 
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
 	@Override
 	public String toString() {
 		return "EndOfDayTurnoverItem{"
@@ -240,6 +249,7 @@ public class EndOfDayTurnoverItem {
 				+ ", totalVat=" + totalVat
 				+ ", vatSign='" + vatSign + '\''
 				+ ", totalQuantity=" + totalQuantity
+				+ ", categoryName='" + categoryName + '\''
 				+ ", categoryThirdPartyId='" + categoryThirdPartyId + '\''
 				+ '}';
 	}
