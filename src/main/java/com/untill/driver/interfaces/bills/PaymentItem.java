@@ -68,6 +68,7 @@ public class PaymentItem {
 	 * <li>PAYMENT_NEWYSE_ONACCOUNT = 10;</li>
 	 * <li>PAYMENT_GIFT_CARD = 11;</li>
 	 * </ul>
+	 * @see com.untill.driver.PaymentKind
 	 */
 	public int getPaymentKind() {
 		return paymentKind;
@@ -88,6 +89,7 @@ public class PaymentItem {
 	 *                    <li>PAYMENT_NEWYSE_ONACCOUNT = 10;</li>
 	 *                    <li>PAYMENT_GIFT_CARD = 11;</li>
 	 *                    </ul>
+	 *                    @see com.untill.driver.PaymentKind
 	 */
 	public void setPaymentKind(int paymentKind) {
 		this.paymentKind = paymentKind;
