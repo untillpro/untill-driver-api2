@@ -7,6 +7,11 @@ import java.math.BigDecimal;
  */
 public class EndOfDayExtraItem {
 
+	/**
+	 * Item kind: "tip" means total tips over the period
+	 *
+	 * @see EndOfDayExtraItemKind#TIP
+	 */
 	private String itemType;
 
 	private BigDecimal amount;
@@ -17,9 +22,6 @@ public class EndOfDayExtraItem {
 
 	private String salesAreaName;
 
-	/**
-	 * @return Returns item kind: "tip" means total tips over the period
-	 */
 	public String getItemType() {
 		return itemType;
 	}
