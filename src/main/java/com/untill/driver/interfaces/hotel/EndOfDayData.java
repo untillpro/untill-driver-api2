@@ -8,15 +8,18 @@ import java.util.List;
  * Data of an "End of Day" operation handled by {@link IHotelSupportsEndOfDay}
  */
 public class EndOfDayData {
-
 	private Date from;
-
 	private Date till;
-
+	/**
+	 * Waiter <tt>'Operator ID'</tt> which is unique per waiter
+	 */
+	private String waiterOperatorId;
+	/**
+	 * Waiter name
+	 */
+	private String waiterName;
 	private List<EndOfDayTurnoverItem> turnover = new ArrayList<>();
-
 	private List<EndOfDayExtraItem> extra = new ArrayList<>();
-
 	private List<EndOfDayPaymentItem> payments = new ArrayList<>();
 
 	/**
@@ -75,11 +78,29 @@ public class EndOfDayData {
 		this.extra = extra;
 	}
 
+	public String getWaiterOperatorId() {
+		return waiterOperatorId;
+	}
+
+	public void setWaiterOperatorId(String waiterOperatorId) {
+		this.waiterOperatorId = waiterOperatorId;
+	}
+
+	public String getWaiterName() {
+		return waiterName;
+	}
+
+	public void setWaiterName(String waiterName) {
+		this.waiterName = waiterName;
+	}
+
 	@Override
 	public String toString() {
 		return "EndOfDayData{"
 				+ "from=" + from
 				+ ", till=" + till
+				+ ", waiterOperatorId='" + waiterOperatorId + '\''
+				+ ", waiterName='" + waiterName + '\''
 				+ ", turnover=" + turnover
 				+ ", extra=" + extra
 				+ ", payments=" + payments
