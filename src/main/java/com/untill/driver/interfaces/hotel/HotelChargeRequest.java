@@ -13,6 +13,7 @@ public class HotelChargeRequest extends HotelInterfaceRequest {
 
 	/**
 	 * @return Returns 1 for normal sale, -1 when bill is re-opened (return)
+	 * @see com.untill.driver.interfaces.hotel.HotelChargeRequestKind
 	 */
 	public short getRequestKind() {
 		return requestKind;
