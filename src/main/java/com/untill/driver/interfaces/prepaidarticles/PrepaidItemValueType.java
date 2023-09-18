@@ -9,4 +9,5 @@ public final class PrepaidItemValueType {
 
 	public static final int PIECES = 0;
 	public static final int ARTICLE_CREDITS = 1;
+	public static final int MONEY = 2;
 }
