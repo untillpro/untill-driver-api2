@@ -8,11 +8,10 @@ import com.untill.driver.params.DriverConfiguration;
  */
 public interface IReservationHandler extends IDriverInterface {
 	/**
-	 * Handles reservation operations
+	 * This method called when reservation updated
 	 *
 	 * @param cfg driver configuration
-	 * @param req request details
-	 * @return instance of {@link ReservationHandlerResult}
+	 * @param id  updated reservation ID
 	 */
-	ReservationHandlerResult operation(DriverConfiguration cfg, ReservationHandlerRequest req);
+	void reservationUpdated(DriverConfiguration cfg, Long id);
 }
