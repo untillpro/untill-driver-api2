@@ -9,9 +9,14 @@ import java.math.BigDecimal;
  */
 
 public class OrderItem {
-
+	/**
+	 * Use totalQuantity when possible. For Menus and Combi-deals, quantity is always 1
+	 */
 	private int quantity;
 	private boolean menu;
+	/**
+	 * For Menus and Combi-deals, singlePrice is equal to totalPrice
+	 */
 	private BigDecimal singlePrice;
 	private BigDecimal singleVatAmount;
 
@@ -42,7 +47,18 @@ public class OrderItem {
 
 	private boolean discountAllowed;
 	private String signature;
-
+	/**
+	 * The total price of the order item
+	 */
+	private BigDecimal totalPrice;
+	/**
+	 * The total quantity of the order item
+	 */
+	private int totalQuantity;
+	/**
+	 * The total VAT amount of the order item
+	 */
+	private BigDecimal totalVatAmount;
 
 	public String getSizeModifierName() {
 		return sizeModifierName;
@@ -436,6 +452,30 @@ public class OrderItem {
 		this.categoryName = categoryName;
 	}
 
+	public BigDecimal getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(BigDecimal totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public int getTotalQuantity() {
+		return totalQuantity;
+	}
+
+	public void setTotalQuantity(int totalQuantity) {
+		this.totalQuantity = totalQuantity;
+	}
+
+	public BigDecimal getTotalVatAmount() {
+		return totalVatAmount;
+	}
+
+	public void setTotalVatAmount(BigDecimal totalVatAmount) {
+		this.totalVatAmount = totalVatAmount;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderItem{"
@@ -465,6 +505,9 @@ public class OrderItem {
 				+ ", discountDescription='" + discountDescription + '\''
 				+ ", discountAllowed=" + discountAllowed
 				+ ", signature='" + signature + '\''
+				+ ", totalPrice=" + totalPrice
+				+ ", totalQuantity=" + totalQuantity
+				+ ", totalVatAmount=" + totalVatAmount
 				+ '}';
 	}
 }
