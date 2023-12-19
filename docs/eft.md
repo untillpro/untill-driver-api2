@@ -99,6 +99,10 @@ There is a way to execute any custom command if you need this in your interface:
 
 When setting up the button for a custom command in unTill(r) screen, layout for receipt printing may be also specified. EFT driver may return any data, including pre-formatted receipts, to be printed by unTill(r) as a result of custom command operation. Use "EFT Payment Receipt" unTill(r) dataset for this layout, just as described in previous section.
 
+# I/O operations
+Some EFT devices able to interact with other things like ID cards. There are supported requests: 
+- EftReadInputRequest - read input data
+
 ## Iteracting with user
 Your driver may report some text messages as the current operation status, these messages will be displayed in POS instead of "Please wait" title which is shown by default. This helps user to understand what happens if operation takes a while.
 ```java
