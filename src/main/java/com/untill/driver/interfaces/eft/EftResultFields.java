@@ -57,4 +57,9 @@ public abstract class EftResultFields {
 	 * In this case this field indicates that POS must no print EFT receipt
 	 */
 	public static final String NO_EFT_RECEIPT = "no_eft_receipt";
+	/**
+	 * Some terminals able to read data from other things like ID cards
+	 * In this case this field indicates that terminal read something and POS able to use it
+	 */
+	public static final String INPUT_DATA = "input_data";
 }
