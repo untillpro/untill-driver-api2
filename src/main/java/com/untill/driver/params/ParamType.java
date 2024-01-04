@@ -5,7 +5,7 @@ import com.untill.driver.untillapi.reasons.IUntillReasonsApi;
 
 /**
  * Describes all possible driver parameter types
- * 
+ *
  */
 public enum ParamType {
 
@@ -24,16 +24,17 @@ public enum ParamType {
 	 * Identifies unTill payment mode. Use
 	 * {@link IUntillPaymentsApi#getPaymentIdByGuid(String)} to obtain ID of
 	 * payment
-	 * 
+	 *
 	 */
 	PAYMENT_MODE_GUID("payment_mode_guid"),
 	/**
 	 * Identifies unTill discount reason. Use
 	 * {@link IUntillReasonsApi#getReasonIdByGuid(String)} to obtain ID of
 	 * discount reason
-	 * 
+	 *
 	 */
-	DISCOUNT_REASON_GUID("discount_reason_guid");
+	DISCOUNT_REASON_GUID("discount_reason_guid"),
+	FILE_PATH("file_path");
 
 	ParamType(String id) {
 		this.id = id;
