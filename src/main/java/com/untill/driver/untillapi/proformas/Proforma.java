@@ -1,9 +1,11 @@
 package com.untill.driver.untillapi.proformas;
 
+import java.math.BigDecimal;
+
 /**
  * Proforma data
- * @see IUntillProformasApi
  *
+ * @see IUntillProformasApi
  */
 public class Proforma {
 
@@ -20,6 +22,10 @@ public class Proforma {
 	private ProformaExtraData extraData;
 
 	private Long userId;
+	/**
+	 * Amount that can be paid
+	 */
+	private BigDecimal amount;
 
 	public Long getUserId() {
 		return userId;
@@ -77,4 +83,11 @@ public class Proforma {
 		this.id = id;
 	}
 
+	public BigDecimal getAmount() {
+		return amount;
+	}
+
+	public void setAmount(BigDecimal amount) {
+		this.amount = amount;
+	}
 }
