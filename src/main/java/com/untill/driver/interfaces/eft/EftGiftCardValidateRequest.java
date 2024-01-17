@@ -8,8 +8,10 @@ package com.untill.driver.interfaces.eft;
  * @see IEft
  */
 public class EftGiftCardValidateRequest extends EftRequest {
-
+	public static final String REASON_ISSUE = "issue";
+	public static final String REASON_RELOAD = "reload";
 	private String cardId;
+	private String reason;
 
 	public String getCardId() {
 		return cardId;
@@ -19,10 +21,19 @@ public class EftGiftCardValidateRequest extends EftRequest {
 		this.cardId = cardId;
 	}
 
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+
 	@Override
 	public String toString() {
 		return "EftGiftCardValidateRequest{"
 				+ "cardId='" + cardId + '\''
+				+ ", reason='" + reason + '\''
 				+ "} " + super.toString();
 	}
 }
