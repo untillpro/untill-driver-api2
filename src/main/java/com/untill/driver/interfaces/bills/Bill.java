@@ -34,7 +34,11 @@ public class Bill {
 	private List<PaymentItem> paymentItems = new ArrayList<>();
 	private List<DiscountGroup> appliedDiscountGroups = new ArrayList<>();
 	private Map<String, String> extra = new LinkedHashMap<>();
-	
+	/**
+	 * Waiter ID
+	 */
+	private Long waiterId;
+
 
 	/**
 	 * @return Returns Client ID
@@ -45,6 +49,7 @@ public class Bill {
 
 	/**
 	 * Sets the client ID
+	 *
 	 * @param clientId client ID
 	 */
 	public void setClientId(Long clientId) {
@@ -59,8 +64,9 @@ public class Bill {
 	}
 
 	/**
-	 * Sets the number of serving time 
-	 * @param servingTimeNumber number of serving time 
+	 * Sets the number of serving time
+	 *
+	 * @param servingTimeNumber number of serving time
 	 */
 	public void setServingTimeNumber(int servingTimeNumber) {
 		this.servingTimeNumber = servingTimeNumber;
@@ -75,6 +81,7 @@ public class Bill {
 
 	/**
 	 * Sets the name of serving time
+	 *
 	 * @param servingTimeName name of serving time
 	 */
 	public void setServingTimeName(String servingTimeName) {
@@ -389,6 +396,14 @@ public class Bill {
 		this.openDiscount = openDiscount;
 	}
 
+	public Long getWaiterId() {
+		return waiterId;
+	}
+
+	public void setWaiterId(Long waiterId) {
+		this.waiterId = waiterId;
+	}
+
 	@Override
 	public String toString() {
 		return "Bill{"
@@ -414,6 +429,7 @@ public class Bill {
 				+ ", paymentItems=" + paymentItems
 				+ ", appliedDiscountGroups=" + appliedDiscountGroups
 				+ ", extra=" + extra
+				+ ", waiterId=" + waiterId
 				+ '}';
 	}
 }

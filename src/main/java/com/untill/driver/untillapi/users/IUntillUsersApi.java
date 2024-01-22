@@ -18,4 +18,12 @@ public interface IUntillUsersApi extends IUntillApi {
 	 * @return List of active users
 	 */
 	List<User> getUsers();
+
+	/**
+	 * Find active user by ID
+	 *
+	 * @param id user ID
+	 * @return active user or null if user not found
+	 */
+	User getUserById(Long id);
 }
