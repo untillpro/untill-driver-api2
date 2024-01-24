@@ -26,6 +26,7 @@ public class Proforma {
 	 * Amount that can be paid
 	 */
 	private BigDecimal amount;
+	private Long transactionId;
 
 	public Long getUserId() {
 		return userId;
@@ -89,5 +90,13 @@ public class Proforma {
 
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
+	}
+
+	public Long getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(Long transactionId) {
+		this.transactionId = transactionId;
 	}
 }
