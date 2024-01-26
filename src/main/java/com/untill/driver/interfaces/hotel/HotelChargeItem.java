@@ -7,8 +7,13 @@ import java.math.BigDecimal;
  */
 
 public class HotelChargeItem {
-
+	/**
+	 * Use totalQuantity when possible. For Menus and Combi-deals, quantity is always 1
+	 */
 	private int quantity;
+	/**
+	 * For Menus and Combi-deals, singlePrice is equal to totalPrice
+	 */
 	private BigDecimal singlePrice;
 	private BigDecimal singleVatAmount;
 	private BigDecimal discountAmount;
@@ -30,7 +35,19 @@ public class HotelChargeItem {
 	private int articleNumber;
 	private String articleName;
 	private String sizeModifierName;
-	
+	/**
+	 * The total price of the order item
+	 */
+	private BigDecimal totalPrice;
+	/**
+	 * The total quantity of the order item
+	 */
+	private int totalQuantity;
+	/**
+	 * The total VAT amount of the order item
+	 */
+	private BigDecimal totalVatAmount;
+
 	public String getDepartmentThirdPartyId() {
 		return departmentThirdPartyId;
 	}
@@ -279,6 +296,30 @@ public class HotelChargeItem {
 		this.singleVatAmount = singleVatAmount;
 	}
 
+	public BigDecimal getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(BigDecimal totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public int getTotalQuantity() {
+		return totalQuantity;
+	}
+
+	public void setTotalQuantity(int totalQuantity) {
+		this.totalQuantity = totalQuantity;
+	}
+
+	public BigDecimal getTotalVatAmount() {
+		return totalVatAmount;
+	}
+
+	public void setTotalVatAmount(BigDecimal totalVatAmount) {
+		this.totalVatAmount = totalVatAmount;
+	}
+
 	@Override
 	public String toString() {
 		return "HotelChargeItem{"
@@ -299,6 +340,9 @@ public class HotelChargeItem {
 				+ ", articleNumber=" + articleNumber
 				+ ", articleName='" + articleName + '\''
 				+ ", sizeModifierName='" + sizeModifierName + '\''
+				+ ", totalPrice=" + totalPrice
+				+ ", totalQuantity=" + totalQuantity
+				+ ", totalVatAmount=" + totalVatAmount
 				+ '}';
 	}
 }
