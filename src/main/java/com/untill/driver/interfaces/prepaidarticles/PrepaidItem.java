@@ -4,11 +4,25 @@ package com.untill.driver.interfaces.prepaidarticles;
  * This class describes a pre-paid articles
  */
 public class PrepaidItem {
-
 	private String groupId;
 	private int valueType;
 	private int value;
+	/**
+	 * A 3rd party article ID in unTill, must be specified when {@link PrepaidItem#value} = {@link PrepaidItemValueType#ARTICLE_CREDITS}
+	 */
 	private String article3rdPartyId;
+	/**
+	 * A text to display on a button in POS
+	 */
+	private String displayInfo;
+	/**
+	 * An additional text to print on a ticket
+	 */
+	private String printInfo;
+	/**
+	 * An ID of the prepaid item, can be optionally specified when {@link PrepaidItem#value} = {@link PrepaidItemValueType#ARTICLE_CREDITS}
+	 */
+	private String itemId;
 
 	/**
 	 * Group ID pre-paid articles accessible
@@ -64,22 +78,36 @@ public class PrepaidItem {
 		this.value = value;
 	}
 
-	/**
-	 * Get article third party ID
-	 *
-	 * @return article third party ID
-	 */
 	public String getArticle3rdPartyId() {
 		return article3rdPartyId;
 	}
 
-	/**
-	 * Set article third party ID
-	 *
-	 * @param article3rdPartyId article third party ID
-	 */
 	public void setArticle3rdPartyId(String article3rdPartyId) {
 		this.article3rdPartyId = article3rdPartyId;
+	}
+
+	public String getDisplayInfo() {
+		return displayInfo;
+	}
+
+	public void setDisplayInfo(String displayInfo) {
+		this.displayInfo = displayInfo;
+	}
+
+	public String getPrintInfo() {
+		return printInfo;
+	}
+
+	public void setPrintInfo(String printInfo) {
+		this.printInfo = printInfo;
+	}
+
+	public String getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
 	}
 
 	@Override
@@ -89,6 +117,9 @@ public class PrepaidItem {
 				+ ", valueType=" + valueType
 				+ ", value=" + value
 				+ ", article3rdPartyId='" + article3rdPartyId + '\''
+				+ ", displayInfo='" + displayInfo + '\''
+				+ ", printInfo='" + printInfo + '\''
+				+ ", itemId='" + itemId + '\''
 				+ '}';
 	}
 }
