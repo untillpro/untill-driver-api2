@@ -1,5 +1,7 @@
 package com.untill.driver.interfaces.bills;
 
+import com.untill.driver.interfaces.prepaidarticles.PrepaidItem;
+
 import java.math.BigDecimal;
 
 /**
@@ -59,6 +61,14 @@ public class OrderItem {
 	 * The total VAT amount of the order item
 	 */
 	private BigDecimal totalVatAmount;
+	/**
+	 * A 3rd party article ID in unTill
+	 */
+	private String articleThirdPartyId;
+	/**
+	 * An ID of the {@link PrepaidItem#itemId prepaid item}
+	 */
+	private String prepaidItemId;
 
 	public String getSizeModifierName() {
 		return sizeModifierName;
@@ -476,6 +486,22 @@ public class OrderItem {
 		this.totalVatAmount = totalVatAmount;
 	}
 
+	public String getArticleThirdPartyId() {
+		return articleThirdPartyId;
+	}
+
+	public void setArticleThirdPartyId(String articleThirdPartyId) {
+		this.articleThirdPartyId = articleThirdPartyId;
+	}
+
+	public String getPrepaidItemId() {
+		return prepaidItemId;
+	}
+
+	public void setPrepaidItemId(String prepaidItemId) {
+		this.prepaidItemId = prepaidItemId;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderItem{"
@@ -508,6 +534,8 @@ public class OrderItem {
 				+ ", totalPrice=" + totalPrice
 				+ ", totalQuantity=" + totalQuantity
 				+ ", totalVatAmount=" + totalVatAmount
+				+ ", articleThirdPartyId='" + articleThirdPartyId + '\''
+				+ ", prepaidItemId='" + prepaidItemId + '\''
 				+ '}';
 	}
 }
