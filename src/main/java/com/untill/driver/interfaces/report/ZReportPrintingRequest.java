@@ -18,6 +18,10 @@ public class ZReportPrintingRequest extends ReportHandlerRequest {
 	 * Z-report till timestamp
 	 */
 	private Date till;
+	/**
+	 * An ID of the {@link com.untill.driver.untillapi.users.User#id user}
+	 */
+	private long userId;
 
 	public int getNumber() {
 		return number;
@@ -43,12 +47,22 @@ public class ZReportPrintingRequest extends ReportHandlerRequest {
 		this.till = till;
 	}
 
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
 	@Override
 	public String toString() {
 		return "ZReportPrintingRequest{"
 				+ "number=" + number
 				+ ", from=" + from
 				+ ", till=" + till
-				+ '}';
+				+ ", userId=" + userId
+				+ "} "
+				+ super.toString();
 	}
 }
