@@ -3,6 +3,8 @@ package com.untill.driver.untillapi.dbstorage;
 import com.untill.driver.IDriverContext;
 import com.untill.driver.untillapi.IUntillApi;
 
+import java.util.List;
+
 /**
  * UntillAPI allows to write/read data bytes to/from DB by driver configuration GUID and key.
  *
@@ -50,6 +52,15 @@ public interface IUntillDbStorageApi extends IUntillApi {
 	byte[] read(String configurationGuid, String key);
 
 	/**
+	 * Returns the list of the data entries, written by any of the driver instances in network (same driverId!)
+	 *
+	 * @param thisConfigurationGuid driver configuration GUID
+	 * @param key                   data key
+	 * @return list of {@link StorageItem storage items}
+	 */
+	List<StorageItem> readFromAllConfigs(String thisConfigurationGuid, String key);
+
+	/**
 	 * Write data bytes by driver configuration GUID and key
 	 *
 	 * @param configurationGuid driver configuration GUID
@@ -57,4 +68,14 @@ public interface IUntillDbStorageApi extends IUntillApi {
 	 * @param data              data bytes
 	 */
 	void write(String configurationGuid, String key, byte[] data);
+
+	/**
+	 * Write data bytes by driver configuration GUID and key with expiry date
+	 *
+	 * @param configurationGuid driver configuration GUID
+	 * @param key               data key
+	 * @param data              data bytes
+	 * @param expiryDate        unix timestamp in milliseconds
+	 */
+	void write(String configurationGuid, String key, byte[] data, long expiryDate);
 }
