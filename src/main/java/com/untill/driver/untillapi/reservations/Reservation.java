@@ -25,6 +25,7 @@ public class Reservation {
 	private String tags;
 	private Long paidByUserId;
 	private String phone;
+	private Long billId;
 
 	public Reservation() {
 	}
@@ -51,6 +52,7 @@ public class Reservation {
 		this.tags = that.tags;
 		this.paidByUserId = that.paidByUserId;
 		this.phone = that.phone;
+		this.billId = that.billId;
 	}
 
 	public BigDecimal getDepositAmount() {
@@ -221,6 +223,14 @@ public class Reservation {
 		this.phone = phone;
 	}
 
+	public Long getBillId() {
+		return billId;
+	}
+
+	public void setBillId(Long billId) {
+		this.billId = billId;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -246,7 +256,8 @@ public class Reservation {
 				&& Objects.equals(depositAmount, that.depositAmount)
 				&& Objects.equals(tags, that.tags)
 				&& Objects.equals(paidByUserId, that.paidByUserId)
-				&& Objects.equals(phone, that.phone);
+				&& Objects.equals(phone, that.phone)
+				&& Objects.equals(billId, that.billId);
 	}
 
 	@Override
@@ -271,7 +282,9 @@ public class Reservation {
 				depositAmount,
 				tags,
 				paidByUserId,
-				phone);
+				phone,
+				billId
+		);
 	}
 
 	@Override
@@ -298,6 +311,7 @@ public class Reservation {
 				+ ", tags='" + tags + '\''
 				+ ", paidByUserId=" + paidByUserId
 				+ ", phone='" + phone + '\''
+				+ ", billId=" + billId
 				+ '}';
 	}
 }
