@@ -38,6 +38,10 @@ public class Bill {
 	 * Waiter ID
 	 */
 	private Long waiterId;
+	/**
+	 * The flag is <tt>true</tt> if the <tt>Sales area</tt> setting <tt>Close tables manually</tt> is checked otherwise <tt>false</tt>
+	 */
+	private boolean dirty;
 
 
 	/**
@@ -404,6 +408,14 @@ public class Bill {
 		this.waiterId = waiterId;
 	}
 
+	public boolean isDirty() {
+		return dirty;
+	}
+
+	public void setDirty(boolean dirty) {
+		this.dirty = dirty;
+	}
+
 	@Override
 	public String toString() {
 		return "Bill{"
@@ -430,6 +442,7 @@ public class Bill {
 				+ ", appliedDiscountGroups=" + appliedDiscountGroups
 				+ ", extra=" + extra
 				+ ", waiterId=" + waiterId
+				+ ", dirty=" + dirty
 				+ '}';
 	}
 }
