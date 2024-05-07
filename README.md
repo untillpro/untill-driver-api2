@@ -44,6 +44,7 @@ To provide certain functionality which can be used by unTill(r) POS, driver must
 - [ITimeAttendance](docs/time_and_attendance.md) - implement for handling time and attendance operations (clock in, end break)
 - [IPosPrinter](docs/pos_printer.md) - implement for handling POS printer operations (print, upload logo)
 - [IExportHandler](docs/export_handler.md) - implement for handling exports
+- [ITablesHandler](docs/tables_handler.md) - implement for handling table events
 
 Declaration of supported interfaces is made by `init` method which is called at driver initialization stage. Driver must return a map of supported interfaces:
 ```java
