@@ -50,7 +50,7 @@ public interface IBillsHandler extends IDriverInterface {
 	
 	/**
 	 * @return Returns the optional settings clarifying the driver behavior
-	 * @see {@link BillsHandlerSettings}
+	 * @see BillsHandlerSettings
 	 */
 	default BillsHandlerSettings getSettings() {
 		return new BillsHandlerSettings();

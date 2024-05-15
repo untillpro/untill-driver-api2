@@ -13,14 +13,15 @@ public class BillsHandlerSettings {
 	boolean consolidatedCombiDealsExpected;
 
 	/**
-	 * Returns true if the driver expects combi-deals to be sent from POS consolidated in the {@link Bill} object
+	 * @return true if the driver expects combi-deals to be sent from POS consolidated in the {@link Bill} object
 	 */
 	public boolean isConsolidatedCombiDealsExpected() {
 		return consolidatedCombiDealsExpected;
 	}
 
 	/**
-	 * Specifies that the driver expects combi-deals to be sent from POS consolidated in the {@link Bill} object
+	 * Specifies how the driver expects combi-deals to be sent from POS 
+	 * @param consolidatedCombiDealsExpected true to send combi-deals consolidated 
 	 */
 	public void setConsolidatedCombiDealsExpected(boolean consolidatedCombiDealsExpected) {
 		this.consolidatedCombiDealsExpected = consolidatedCombiDealsExpected;
