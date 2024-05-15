@@ -47,4 +47,12 @@ public interface IBillsHandler extends IDriverInterface {
 		requests.add(BillPaymentCancelledRequest.class);
 		return requests;
 	}
+	
+	/**
+	 * @return Returns the optional settings clarifying the driver behavior
+	 * @see {@link BillsHandlerSettings}
+	 */
+	default BillsHandlerSettings getSettings() {
+		return new BillsHandlerSettings();
+	}
 }
