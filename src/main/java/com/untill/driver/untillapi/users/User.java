@@ -6,6 +6,8 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private String operatorId;
+	private Long creationDate;
+	private Integer number;
 
 	public Long getId() {
 		return id;
@@ -47,6 +49,22 @@ public class User {
 		this.operatorId = operatorId;
 	}
 
+	public Long getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Long creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public Integer getNumber() {
+		return number;
+	}
+
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+
 	@Override
 	public String toString() {
 		return "User{"
@@ -55,6 +73,8 @@ public class User {
 				+ ", firstName='" + firstName + '\''
 				+ ", lastName='" + lastName + '\''
 				+ ", operatorId='" + operatorId + '\''
+				+ ", creationDate=" + creationDate
+				+ ", number=" + number
 				+ '}';
 	}
 }
