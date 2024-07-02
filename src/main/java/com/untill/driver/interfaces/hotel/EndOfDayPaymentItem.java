@@ -18,12 +18,12 @@ public class EndOfDayPaymentItem {
 	private long salesAreaId;
 
 	private int salesAreaNumber;
+	private String salesAreaThirdPartyId;
 
 	private String salesAreaName;
 
 	private BigDecimal totalAmount;
-	
-	
+
 	public String getPaymentThirdPartyId() {
 		return paymentThirdPartyId;
 	}
@@ -109,14 +109,24 @@ public class EndOfDayPaymentItem {
 		this.paymentKind = paymentKind;
 	}
 
+	public String getSalesAreaThirdPartyId() {
+		return salesAreaThirdPartyId;
+	}
+
+	public void setSalesAreaThirdPartyId(String salesAreaThirdPartyId) {
+		this.salesAreaThirdPartyId = salesAreaThirdPartyId;
+	}
+
 	@Override
 	public String toString() {
 		return "EndOfDayPaymentItem{"
 				+ "paymentNumber=" + paymentNumber
 				+ ", paymentName='" + paymentName + '\''
 				+ ", paymentKind=" + paymentKind
+				+ ", paymentThirdPartyId='" + paymentThirdPartyId + '\''
 				+ ", salesAreaId=" + salesAreaId
 				+ ", salesAreaNumber=" + salesAreaNumber
+				+ ", salesAreaThirdPartyId='" + salesAreaThirdPartyId + '\''
 				+ ", salesAreaName='" + salesAreaName + '\''
 				+ ", totalAmount=" + totalAmount
 				+ ", totalTipAmount=" + totalTipAmount
