@@ -21,6 +21,7 @@ public class EndOfDayExtraItem {
 	private int salesAreaNumber;
 
 	private String salesAreaName;
+	private String salesAreaThirdPartyId;
 
 	public String getItemType() {
 		return itemType;
@@ -62,6 +63,14 @@ public class EndOfDayExtraItem {
 		this.salesAreaName = salesAreaName;
 	}
 
+	public String getSalesAreaThirdPartyId() {
+		return salesAreaThirdPartyId;
+	}
+
+	public void setSalesAreaThirdPartyId(String salesAreaThirdPartyId) {
+		this.salesAreaThirdPartyId = salesAreaThirdPartyId;
+	}
+
 	@Override
 	public String toString() {
 		return "EndOfDayExtraItem{"
@@ -70,6 +79,7 @@ public class EndOfDayExtraItem {
 				+ ", salesAreaId=" + salesAreaId
 				+ ", salesAreaNumber=" + salesAreaNumber
 				+ ", salesAreaName='" + salesAreaName + '\''
+				+ ", salesAreaThirdPartyId='" + salesAreaThirdPartyId + '\''
 				+ '}';
 	}
 }
