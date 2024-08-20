@@ -32,6 +32,10 @@ public class HotelChargeData {
 	private int numberOfCovers;
 	private int servingTimeNumber;
 	private String servingTimeName;
+	/**
+	 * Transaction ID
+	 */
+	private long transactionId;
 
 	/**
 	 * @return Returns number of serving time
@@ -41,8 +45,9 @@ public class HotelChargeData {
 	}
 
 	/**
-	 * Sets the number of serving time 
-	 * @param servingTimeNumber number of serving time 
+	 * Sets the number of serving time
+	 *
+	 * @param servingTimeNumber number of serving time
 	 */
 	public void setServingTimeNumber(int servingTimeNumber) {
 		this.servingTimeNumber = servingTimeNumber;
@@ -57,6 +62,7 @@ public class HotelChargeData {
 
 	/**
 	 * Sets the name of serving time
+	 *
 	 * @param servingTimeName name of serving time
 	 */
 	public void setServingTimeName(String servingTimeName) {
@@ -345,6 +351,14 @@ public class HotelChargeData {
 		this.billOpenDateTime = billOpenDateTime;
 	}
 
+	public long getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(long transactionId) {
+		this.transactionId = transactionId;
+	}
+
 	@Override
 	public String toString() {
 		return "HotelChargeData{"
@@ -368,6 +382,7 @@ public class HotelChargeData {
 				+ ", numberOfCovers=" + numberOfCovers
 				+ ", servingTimeNumber=" + servingTimeNumber
 				+ ", servingTimeName='" + servingTimeName + '\''
+				+ ", transactionId=" + transactionId
 				+ '}';
 	}
 }
