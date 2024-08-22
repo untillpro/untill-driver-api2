@@ -16,10 +16,6 @@ public class PrepaidItem {
 	 */
 	private String displayInfo;
 	/**
-	 * An additional text to print on a ticket
-	 */
-	private String printInfo;
-	/**
 	 * An ID of the prepaid item, can be optionally specified when {@link PrepaidItem#value} = {@link PrepaidItemValueType#ARTICLE_CREDITS}
 	 */
 	private String itemId;
@@ -94,14 +90,6 @@ public class PrepaidItem {
 		this.displayInfo = displayInfo;
 	}
 
-	public String getPrintInfo() {
-		return printInfo;
-	}
-
-	public void setPrintInfo(String printInfo) {
-		this.printInfo = printInfo;
-	}
-
 	public String getItemId() {
 		return itemId;
 	}
@@ -118,7 +106,6 @@ public class PrepaidItem {
 				+ ", value=" + value
 				+ ", article3rdPartyId='" + article3rdPartyId + '\''
 				+ ", displayInfo='" + displayInfo + '\''
-				+ ", printInfo='" + printInfo + '\''
 				+ ", itemId='" + itemId + '\''
 				+ '}';
 	}
