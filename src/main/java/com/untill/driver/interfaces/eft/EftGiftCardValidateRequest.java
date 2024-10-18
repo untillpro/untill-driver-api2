@@ -12,6 +12,10 @@ public class EftGiftCardValidateRequest extends EftRequest {
 	public static final String REASON_RELOAD = "reload";
 	private String cardId;
 	private String reason;
+	/**
+	 * Specifies the amount the card is issued or reloaded with
+	 */
+	private Boolean amount;
 
 	public String getCardId() {
 		return cardId;
@@ -29,11 +33,20 @@ public class EftGiftCardValidateRequest extends EftRequest {
 		this.reason = reason;
 	}
 
+	public Boolean getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Boolean amount) {
+		this.amount = amount;
+	}
+
 	@Override
 	public String toString() {
 		return "EftGiftCardValidateRequest{"
 				+ "cardId='" + cardId + '\''
 				+ ", reason='" + reason + '\''
+				+ ", amount=" + amount
 				+ "} " + super.toString();
 	}
 }
