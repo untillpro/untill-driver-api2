@@ -1,5 +1,7 @@
 package com.untill.driver.interfaces.eft;
 
+import java.math.BigDecimal;
+
 /**
  * Gift Card Validate Request - called before issue or reload operations.
  * Driver responds with {@link EftResult} or throws {@link java.lang.RuntimeException} when gift card with provided
@@ -15,7 +17,7 @@ public class EftGiftCardValidateRequest extends EftRequest {
 	/**
 	 * Specifies the amount the card is issued or reloaded with
 	 */
-	private Boolean amount;
+	private BigDecimal amount;
 
 	public String getCardId() {
 		return cardId;
@@ -33,11 +35,11 @@ public class EftGiftCardValidateRequest extends EftRequest {
 		this.reason = reason;
 	}
 
-	public Boolean getAmount() {
+	public BigDecimal getAmount() {
 		return amount;
 	}
 
-	public void setAmount(Boolean amount) {
+	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
 
