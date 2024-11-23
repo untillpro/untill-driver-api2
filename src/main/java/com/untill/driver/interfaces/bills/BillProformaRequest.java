@@ -19,6 +19,10 @@ public class BillProformaRequest extends BillsHandlerRequest {
 	private BigDecimal proformaTips;
 
 	private boolean billSplit;
+	/**
+	 * Fiscal proforma footer
+	 */
+	private String fiscalProformaFooter;
 
 	public boolean isBillSplit() {
 		return billSplit;
@@ -68,6 +72,14 @@ public class BillProformaRequest extends BillsHandlerRequest {
 		this.proformaNumber = proformaNumber;
 	}
 
+	public String getFiscalProformaFooter() {
+		return fiscalProformaFooter;
+	}
+
+	public void setFiscalProformaFooter(String fiscalProformaFooter) {
+		this.fiscalProformaFooter = fiscalProformaFooter;
+	}
+
 	@Override
 	public String toString() {
 		return "BillProformaRequest{"
@@ -76,6 +88,7 @@ public class BillProformaRequest extends BillsHandlerRequest {
 				+ ", proformaTotal=" + proformaTotal
 				+ ", proformaTips=" + proformaTips
 				+ ", billSplit=" + billSplit
+				+ ", fiscalProformaFooter='" + fiscalProformaFooter + '\''
 				+ '}';
 	}
 }
