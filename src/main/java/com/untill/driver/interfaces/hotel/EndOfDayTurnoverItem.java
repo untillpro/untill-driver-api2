@@ -48,7 +48,10 @@ public class EndOfDayTurnoverItem {
 	private int totalQuantity;
 	private String categoryName;
 	private String categoryThirdPartyId;
-
+	/**
+	 * A 3rd party article ID in unTill
+	 */
+	private String articleThirdPartyId;
 
 	public String getDepartmentThirdPartyId() {
 		return departmentThirdPartyId;
@@ -226,6 +229,14 @@ public class EndOfDayTurnoverItem {
 		this.categoryName = categoryName;
 	}
 
+	public String getArticleThirdPartyId() {
+		return articleThirdPartyId;
+	}
+
+	public void setArticleThirdPartyId(String articleThirdPartyId) {
+		this.articleThirdPartyId = articleThirdPartyId;
+	}
+
 	@Override
 	public String toString() {
 		return "EndOfDayTurnoverItem{"
@@ -251,6 +262,7 @@ public class EndOfDayTurnoverItem {
 				+ ", totalQuantity=" + totalQuantity
 				+ ", categoryName='" + categoryName + '\''
 				+ ", categoryThirdPartyId='" + categoryThirdPartyId + '\''
+				+ ", articleThirdPartyId='" + articleThirdPartyId + '\''
 				+ '}';
 	}
 }
