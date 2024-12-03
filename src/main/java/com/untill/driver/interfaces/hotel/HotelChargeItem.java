@@ -47,6 +47,10 @@ public class HotelChargeItem {
 	 * The total VAT amount of the order item
 	 */
 	private BigDecimal totalVatAmount;
+	/**
+	 * A 3rd party article ID in unTill
+	 */
+	private String articleThirdPartyId;
 
 	public String getDepartmentThirdPartyId() {
 		return departmentThirdPartyId;
@@ -320,6 +324,14 @@ public class HotelChargeItem {
 		this.totalVatAmount = totalVatAmount;
 	}
 
+	public String getArticleThirdPartyId() {
+		return articleThirdPartyId;
+	}
+
+	public void setArticleThirdPartyId(String articleThirdPartyId) {
+		this.articleThirdPartyId = articleThirdPartyId;
+	}
+
 	@Override
 	public String toString() {
 		return "HotelChargeItem{"
@@ -343,6 +355,7 @@ public class HotelChargeItem {
 				+ ", totalPrice=" + totalPrice
 				+ ", totalQuantity=" + totalQuantity
 				+ ", totalVatAmount=" + totalVatAmount
+				+ ", articleThirdPartyId='" + articleThirdPartyId + '\''
 				+ '}';
 	}
 }
