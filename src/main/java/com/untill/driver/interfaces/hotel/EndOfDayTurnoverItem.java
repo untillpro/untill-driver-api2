@@ -52,6 +52,10 @@ public class EndOfDayTurnoverItem {
 	 * A 3rd party article ID in unTill
 	 */
 	private String articleThirdPartyId;
+	/**
+	 * The name of the size modifier, used to represent specific size-related attributes.
+	 */
+	private String sizeModifierName;
 
 	public String getDepartmentThirdPartyId() {
 		return departmentThirdPartyId;
@@ -237,6 +241,14 @@ public class EndOfDayTurnoverItem {
 		this.articleThirdPartyId = articleThirdPartyId;
 	}
 
+	public String getSizeModifierName() {
+		return sizeModifierName;
+	}
+
+	public void setSizeModifierName(String sizeModifierName) {
+		this.sizeModifierName = sizeModifierName;
+	}
+
 	@Override
 	public String toString() {
 		return "EndOfDayTurnoverItem{"
@@ -263,6 +275,7 @@ public class EndOfDayTurnoverItem {
 				+ ", categoryName='" + categoryName + '\''
 				+ ", categoryThirdPartyId='" + categoryThirdPartyId + '\''
 				+ ", articleThirdPartyId='" + articleThirdPartyId + '\''
+				+ ", sizeModifierName='" + sizeModifierName + '\''
 				+ '}';
 	}
 }
