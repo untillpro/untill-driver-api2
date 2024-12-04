@@ -48,7 +48,10 @@ public class EndOfDayTurnoverItem {
 	private int totalQuantity;
 	private String categoryName;
 	private String categoryThirdPartyId;
-
+	/**
+	 * The name of the size modifier, used to represent specific size-related attributes.
+	 */
+	private String sizeModifierName;
 
 	public String getDepartmentThirdPartyId() {
 		return departmentThirdPartyId;
@@ -226,6 +229,14 @@ public class EndOfDayTurnoverItem {
 		this.categoryName = categoryName;
 	}
 
+	public String getSizeModifierName() {
+		return sizeModifierName;
+	}
+
+	public void setSizeModifierName(String sizeModifierName) {
+		this.sizeModifierName = sizeModifierName;
+	}
+
 	@Override
 	public String toString() {
 		return "EndOfDayTurnoverItem{"
@@ -251,6 +262,7 @@ public class EndOfDayTurnoverItem {
 				+ ", totalQuantity=" + totalQuantity
 				+ ", categoryName='" + categoryName + '\''
 				+ ", categoryThirdPartyId='" + categoryThirdPartyId + '\''
+				+ ", sizeModifierName='" + sizeModifierName + '\''
 				+ '}';
 	}
 }
