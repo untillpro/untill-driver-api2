@@ -8,6 +8,20 @@ public class User {
 	private String operatorId;
 	private Long creationDate;
 	private Integer number;
+	/**
+	 * Role restaurant
+	 * <ul>
+	 * <li>{@link RoleRestaurant#WAITER Waiter}</li>
+	 * <li>{@link RoleRestaurant#WAITER_PLUS Waiter+}</li>
+	 * <li>{@link RoleRestaurant#RESPONSIBLE Responsible}</li>
+	 * <li>{@link RoleRestaurant#RESPONSIBLE_PLUS Responsible+}</li>
+	 * <li>{@link RoleRestaurant#MANAGER Manager}</li>
+	 * <li>{@link RoleRestaurant#SUPERVISOR Supervisor}</li>
+	 * </ul>
+	 *
+	 * @see RoleRestaurant
+	 */
+	private Integer roleRestaurant;
 
 	public Long getId() {
 		return id;
@@ -65,6 +79,14 @@ public class User {
 		this.number = number;
 	}
 
+	public Integer getRoleRestaurant() {
+		return roleRestaurant;
+	}
+
+	public void setRoleRestaurant(Integer roleRestaurant) {
+		this.roleRestaurant = roleRestaurant;
+	}
+
 	@Override
 	public String toString() {
 		return "User{"
@@ -75,6 +97,7 @@ public class User {
 				+ ", operatorId='" + operatorId + '\''
 				+ ", creationDate=" + creationDate
 				+ ", number=" + number
+				+ ", roleRestaurant=" + roleRestaurant
 				+ '}';
 	}
 }
