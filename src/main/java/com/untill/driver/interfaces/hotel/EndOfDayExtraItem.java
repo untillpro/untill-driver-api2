@@ -6,11 +6,13 @@ import java.math.BigDecimal;
  * An extra item in a "End of Day" operation request handled by {@link IHotelSupportsEndOfDay}
  */
 public class EndOfDayExtraItem {
-
 	/**
-	 * Item kind: "tip" means total tips over the period
+	 * <ul>
+	 * <li>{@link EndOfDayExtraItemKind#TIP Tips}</li>
+	 * <li>{@link EndOfDayExtraItemKind#EFT_ADDED_TIPS EFT added tips}</li>
+	 * </ul>
 	 *
-	 * @see EndOfDayExtraItemKind#TIP
+	 * @see EndOfDayExtraItemKind
 	 */
 	private String itemType;
 
