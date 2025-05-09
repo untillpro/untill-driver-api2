@@ -19,4 +19,8 @@ public abstract class BillExtra {
 	public static final String EXTRA_8 = "extra8";
 	public static final String EXTRA_9 = "extra9";
 	public static final String EXTRA_10 = "extra10";
+	/**
+	 * When the value is set, it means that bill has deposit article with this ID. Deposit article is specified in the backoffice: Restaurant - Restaurant settings - Reservation - Deposit article
+	 */
+	public static final String DEPOSIT_ARTICLE_ID = "DepositArticleID";
 }
