@@ -23,4 +23,8 @@ public abstract class BillExtra {
 	 * When the value is set, it means that bill has deposit article with this ID. Deposit article is specified in the backoffice: Restaurant - Restaurant settings - Reservation - Deposit article
 	 */
 	public static final String DEPOSIT_ARTICLE_ID = "DepositArticleID";
+	/**
+	 * ID of the transaction that was transferred and closed
+	 */
+	public static final String TRANSFERRED_FROM_TRANSACTION_ID = "transfered_from_transaction_id";
 }
