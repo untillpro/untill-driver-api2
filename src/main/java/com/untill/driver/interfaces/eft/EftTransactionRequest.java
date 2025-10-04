@@ -19,8 +19,24 @@ public abstract class EftTransactionRequest extends EftRequest {
 	private String orderId;
 	private String transactionId;
 	private boolean manualEntry;
+	private boolean lastResultUnknown;
 
 	public EftTransactionRequest() {
+	}
+
+	/**
+	 * @return Indicates that POS didn't receive the result of previous transaction.
+	 */
+	public boolean isLastResultUnknown() {
+		return lastResultUnknown;
+	}
+
+	/**
+	 * Sets the flag indicating that POS didn't receive the result of previous transaction.
+	 * @param lastResultUnknown True if POS didn't receive the result of previous transaction
+	 */
+	public void setLastResultUnknown(boolean lastResultUnknown) {
+		this.lastResultUnknown = lastResultUnknown;
 	}
 
 	public String getTransactionId() {
