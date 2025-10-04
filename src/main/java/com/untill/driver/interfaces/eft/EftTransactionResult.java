@@ -43,7 +43,7 @@ public abstract class EftTransactionResult {
 	/**
 	 * Indicates that the driver didn't even start handling the request because the request is not valid. 
 	 * Response returns error details in displayMessage. 
-	 * POS must show error and do not apply payment.
+	 * POS must show error and not apply payment.
 	 */
 	public static final int BAD_REQUEST = 5;
 
