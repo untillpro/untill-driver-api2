@@ -33,4 +33,18 @@ public abstract class EftTransactionResult {
 	 */
 	public static final int RECOVERY = 3;
 
+	/**
+	 * If driver supports de-duplication, this code indicates that the payment has been already processed. 
+	 * Response returns payment result of original transaction. 
+	 * POS must apply payment.
+	 */
+	public static final int DUPLICATE = 4;
+
+	/**
+	 * Indicates that the driver didn't even start handling the request because the request is not valid. 
+	 * Response returns error details in displayMessage. 
+	 * POS must show error and do not apply payment.
+	 */
+	public static final int BAD_REQUEST = 5;
+
 }
