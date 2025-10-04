@@ -34,7 +34,7 @@ public abstract class EftTransactionResult {
 	public static final int RECOVERY = 3;
 
 	/**
-	 * If driver supports de-duplication, this code indicates that the payment has been already processed. 
+	 * If driver supports deduplication, this code indicates that the payment has been already processed. 
 	 * Response returns payment result of original transaction. 
 	 * POS must apply payment.
 	 */
