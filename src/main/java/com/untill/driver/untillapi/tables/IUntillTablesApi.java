@@ -13,10 +13,12 @@ import java.util.Set;
  */
 public interface IUntillTablesApi extends IUntillApi {
 	/**
-	 * Returns linked tables by main table number with the main table number or empty set if there are no linked tables
+	 * Returns a set containing the main table number and its linked tables,
+	 * or an empty set if there are no linked tables for the given main table number and reservation reference.
 	 *
-	 * @param mainTableNumber main table number
+	 * @param mainTableNumber      main table number
+	 * @param reservationReference reservation reference
 	 * @return table numbers
 	 */
-	Set<Integer> getLinkedTables(int mainTableNumber);
+	Set<Integer> getLinkedTables(int mainTableNumber, String reservationReference);
 }
