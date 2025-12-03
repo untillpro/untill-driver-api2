@@ -9,6 +9,11 @@ public class BillsHandlerSettings {
 	public static final int DEFAULT_WAIT_TIMEOUT = 50_000;
 	private boolean consolidatedCombiDealsExpected;
 	private int waitTimeout = DEFAULT_WAIT_TIMEOUT;
+	/**
+	 * Indicates whether open discounts should be applied during bill processing.
+	 * When set to true, then POS sends order items with applied open discount.
+	 */
+	private boolean applyOpenDiscount;
 
 	/**
 	 * @return true if the driver expects combi-deals to be sent from POS consolidated in the {@link Bill} object
@@ -43,5 +48,13 @@ public class BillsHandlerSettings {
 	 */
 	public void setWaitTimeout(int waitTimeout) {
 		this.waitTimeout = waitTimeout;
+	}
+
+	public boolean isApplyOpenDiscount() {
+		return applyOpenDiscount;
+	}
+
+	public void setApplyOpenDiscount(boolean applyOpenDiscount) {
+		this.applyOpenDiscount = applyOpenDiscount;
 	}
 }
