@@ -27,4 +27,9 @@ public abstract class BillExtra {
 	 * ID of the transaction that was transferred and closed
 	 */
 	public static final String TRANSFERRED_FROM_TRANSACTION_ID = "transfered_from_transaction_id";
+	/**
+	 * When <b>False</b> it means that all articles moved from source table to destination table and source transaction is closed.
+	 * When <b>True</b> it means that some articles moved from source table to destination table and source transaction is opened
+	 */
+	public static final String PARTLY_TRANSFERRED = "partly_transferred";
 }
