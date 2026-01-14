@@ -15,6 +15,10 @@ public class BillAddingOrderRequest extends BillsHandlerRequest {
 	 * When the bill has associated reservation, this field is filled otherwise it is <tt>null</tt>
 	 */
 	private Long reservationId;
+	/**
+	 * Indicates if the bill is voided
+	 */
+	private boolean voided;
 
 	public Order getOrder() {
 		return order;
@@ -32,11 +36,20 @@ public class BillAddingOrderRequest extends BillsHandlerRequest {
 		this.reservationId = reservationId;
 	}
 
+	public boolean isVoided() {
+		return voided;
+	}
+
+	public void setVoided(boolean voided) {
+		this.voided = voided;
+	}
+
 	@Override
 	public String toString() {
 		return "BillAddingOrderRequest{"
 				+ "order=" + order
 				+ ", reservationId=" + reservationId
+				+ ", voided=" + voided
 				+ "} " + super.toString();
 	}
 }
