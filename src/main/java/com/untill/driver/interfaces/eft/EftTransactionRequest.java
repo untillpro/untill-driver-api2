@@ -5,12 +5,15 @@ import java.util.Date;
 
 /**
  * Baic class for {@link IEft} transaction requests
- * @see			IEft
- * @see			EftRequest
+ *
+ * @see IEft
+ * @see EftRequest
  *
  */
 public abstract class EftTransactionRequest extends EftRequest {
-
+	/**
+	 * Transaction amount, POS added tips included
+	 */
 	private BigDecimal amount;
 	private String currencyCode;
 	private String currencyCharCode;
@@ -20,6 +23,10 @@ public abstract class EftTransactionRequest extends EftRequest {
 	private String transactionId;
 	private boolean manualEntry;
 	private boolean lastResultUnknown;
+	/**
+	 * POS added tips
+	 */
+	private BigDecimal tips;
 
 	public EftTransactionRequest() {
 	}
@@ -33,6 +40,7 @@ public abstract class EftTransactionRequest extends EftRequest {
 
 	/**
 	 * Sets the flag indicating that POS didn't receive the result of previous transaction.
+	 *
 	 * @param lastResultUnknown True if POS didn't receive the result of previous transaction
 	 */
 	public void setLastResultUnknown(boolean lastResultUnknown) {
@@ -80,6 +88,7 @@ public abstract class EftTransactionRequest extends EftRequest {
 
 	/**
 	 * Sets the receipt number which is unique per database
+	 *
 	 * @param billNumber Bill number
 	 */
 	public void setBillNumber(int billNumber) {
@@ -95,6 +104,7 @@ public abstract class EftTransactionRequest extends EftRequest {
 
 	/**
 	 * Sets the receipt ID which is unique per all synced databases in location
+	 *
 	 * @param orderId Order Id
 	 */
 	public void setOrderId(String orderId) {
@@ -117,4 +127,11 @@ public abstract class EftTransactionRequest extends EftRequest {
 		this.currencyCharCode = currencyCharCode;
 	}
 
+	public BigDecimal getTips() {
+		return tips;
+	}
+
+	public void setTips(BigDecimal tips) {
+		this.tips = tips;
+	}
 }
