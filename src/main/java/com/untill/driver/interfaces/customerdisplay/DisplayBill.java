@@ -4,7 +4,7 @@ public class DisplayBill {
 	/**
 	 * QR code for the bill
 	 */
-	public String qrCode;
+	private String qrCode;
 
 	public String getQrCode() {
 		return qrCode;
