@@ -7,25 +7,25 @@ Example implementation
 
 ```java
 public class MyCustomerDisplay implements ICustomerDisplay {
-	private final CustomerDisplayApi api;
+	private final CustomerDisplayApiProvider provider;
 
-	public MyCustomerDisplay(CustomerDisplayApi api) {
-		this.api = api;
+	public MyCustomerDisplay(CustomerDisplayApiProvider provider) {
+		this.provider = provider;
 	}
 
 	@Override
-	public void displayOrder(DisplayOrder order) {
-		api.displayOrder(order);
+	public void displayOrder(DriverConfiguration cfg, DisplayOrder order) {
+		provider.getApi(cfg).displayOrder(order);
 	}
 
 	@Override
-	public void displayBill(DisplayBill bill) {
-		api.displayBill(bill);
+	public void displayBill(DriverConfiguration cfg, DisplayBill bill) {
+		provider.getApi(cfg).displayBill(bill);
 	}
 
 	@Override
-	public void displayStandby() {
-		api.displayStandby();
+	public void displayStandby(DriverConfiguration cfg) {
+		provider.getApi(cfg).displayStandby();
 	}
 }
 ```
