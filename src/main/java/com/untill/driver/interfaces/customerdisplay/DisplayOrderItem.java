@@ -11,7 +11,7 @@ public class DisplayOrderItem {
 	/**
 	 * Child items, optional
 	 */
-	private List<DisplayOrderItem> item = new ArrayList<>();
+	private List<DisplayOrderItem> items = new ArrayList<>();
 
 	public int getQuantity() {
 		return quantity;
@@ -37,11 +37,11 @@ public class DisplayOrderItem {
 		this.name = name;
 	}
 
-	public List<DisplayOrderItem> getItem() {
-		return item;
+	public List<DisplayOrderItem> getItems() {
+		return items;
 	}
 
-	public void setItem(List<DisplayOrderItem> item) {
-		this.item = item;
+	public void setItems(List<DisplayOrderItem> items) {
+		this.items = items;
 	}
 }
